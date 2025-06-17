@@ -8,6 +8,9 @@ Id: ServiceRequestTC
 Description: "Profilo  della ServiceRequest utilizzata per la relazione finale di Teleconsulto"
 * ^status = #draft
 * identifier ^short = "Identificativo della richiesta di teleconsulto."
+
+* identifier ^short = "Numero ricetta medica (NRE)"
+
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "extension.value"
 * code.coding ^slicing.rules = #open
@@ -21,8 +24,11 @@ Description: "Profilo  della ServiceRequest utilizzata per la relazione finale d
 * code.coding[codiceCatalogoRegionalePrestazione].code ^short = "Codice valido per il sistema terminologico di riferimento"
 * code.coding[codiceCatalogoRegionalePrestazione].code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
 
-* requester ^short = "medico richiedente"
+* requester ^short = "Medico richiedente" 
 * requester only Reference(PractitionerTelemedicina)
+
+* performer ^short = "Medico consultato" 
+* performer only Reference(PractitionerTelemedicina)
 
 // * code.coding[codiceCatalogoNazionalePrestazione] from VsCatalogoNazionalePrestazioni (preferred)
 // * code.coding[codiceCatalogoNazionalePrestazione].system ^short = "Identifica il sistema di terminologia"

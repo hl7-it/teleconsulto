@@ -9,3 +9,7 @@ Description: "Profilo base di Observation condiviso in tutti i documenti di Tele
 * code MS
 * note MS
 * effective[x] ^short = "Data di rilevazione del parametro"
+
+* performer ^short = "Medico consultato"
+* performer only Reference(PractitionerRoleTelemedicina) 
+* performer 1..1

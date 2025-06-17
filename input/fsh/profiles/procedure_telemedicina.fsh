@@ -25,6 +25,7 @@ Description:  "Profilo base della Procedure condiviso in tutti i documenti di Te
 * recorder ^short = "Chi ha registrato la procedura"
 * recorder ^definition = "Persona che ha registrato la registrazione e si assume la responsabilità del suo contenuto."
 
+// TODO: Capire se modificare per indicare il medico consultato
 * performer ^short = "Le persone che hanno eseguito la procedura"
 * performer ^definition = "Elemento ripetibile contenente i riferimenti a chi prende parte alla procedura di intervento e alle tipologie di performance offerte durante la procedure."
 * performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationTelemedicina or Patient or DeviceTelemedicinaTesserino)

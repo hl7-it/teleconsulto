@@ -20,6 +20,10 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * subject 1..1
 * subject only Reference(PatientTelemedicina)
 
+* event.code ^short = "Tipologia di accesso"
+ // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
+
+// TODO: eliminare l'encounter
 * encounter 1..1
 * encounter only Reference(EncounterTelemedicina)
 
@@ -84,6 +88,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
 
 // Slice: prestazioni
+// TODO: eliminare l'encounter
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].code = $loinc#62387-6 (exactly)
 * section[prestazioni].entry only Reference(EncounterTelemedicina)
@@ -122,5 +127,5 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 // Slice: oggettiCorrelati
 * section[oggettiCorrelati] ^sliceName = "oggettiCorrelati"
-* section[oggettiCorrelati].code = $loinc#18748-4 (exactly)
-* section[oggettiCorrelati].entry only Reference(ImagingStudy)
+* section[oggettiCorrelati].code = $loinc#77599-9 (exactly)
+* section[oggettiCorrelati].entry only Reference(ImagingStudy or DocumentReference or Media or Binary)
