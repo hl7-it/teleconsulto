@@ -79,4 +79,4 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 * entry[procedure].resource only ProcedureTelemedicina
 
 // Entry slice: deviceUseStatement
-* entry[deviceUseStatement].resource only DeviceUseStatementTelemedicina
+// * entry[deviceUseStatement].resource only DeviceUseStatementTelemedicina
