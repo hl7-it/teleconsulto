@@ -6,7 +6,7 @@
 id: teleconsulto
 canonical: https://agenas.gov.it/fhir
 name: Teleconsulto
-# title: Example Title
+title: Teleconsulto
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
 version: 0.1.0

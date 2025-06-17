@@ -29,7 +29,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section ^slicing.rules = #open
 
 * section contains
-    terapiaFarmacologica 0..1 and
+    // terapiaFarmacologica 0..1 and
     questitoDiagnostico 0..1 and
     InquadramentoClinicoIniziale 0..1 and
     precedentiEsamiEseguiti 0..1 and
@@ -44,12 +44,15 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     oggettiCorrelati 0..*
 
 // Slice: terapiaFarmacologica
-* section[terapiaFarmacologica] ^sliceName = "terapiaFarmacologica"
-* section[terapiaFarmacologica].entry only Reference(MedicationRequestTelemedicina)
+// * section[terapiaFarmacologica] ^sliceName = "terapiaFarmacologica"
+// * section[terapiaFarmacologica].entry only Reference(MedicationRequestTelemedicina)
+// * section[terapiaFarmacologica].code = $loinc#30954-2 (exactly)
 
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
 * section[questitoDiagnostico].entry only Reference(ObservationTelemedicina)
+* section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
+
 
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
@@ -96,15 +99,18 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 // Slice: referto
 * section[referto] ^sliceName = "referto"
 * section[referto].entry only Reference(ObservationTelemedicina)
+* section[referto].code = $loinc#47045-0 (exactly)
 
 // Slice: diagnosi
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].code = $loinc#29548-5 (exactly)
 * section[diagnosi].entry only Reference(ObservationTelemedicina)
 
+
 // Slice: conclusioni
 * section[conclusioni] ^sliceName = "conclusioni"
 * section[conclusioni].entry only Reference(ObservationTelemedicina)
+* section[conclusioni].code = $loinc#55110-1 (exactly)
 
 // Slice: suggerimentiPerMedicoPrescrittore
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
@@ -119,6 +125,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
+* section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
 
 // Slice: oggettiCorrelati
 * section[oggettiCorrelati] ^sliceName = "oggettiCorrelati"

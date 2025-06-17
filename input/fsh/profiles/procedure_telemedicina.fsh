@@ -27,7 +27,7 @@ Description:  "Profilo base della Procedure condiviso in tutti i documenti di Te
 
 * performer ^short = "Le persone che hanno eseguito la procedura"
 * performer ^definition = "Elemento ripetibile contenente i riferimenti a chi prende parte alla procedura di intervento e alle tipologie di performance offerte durante la procedure."
-* performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationTelemedicina or Patient or DeviceTelemedicinaTesserino)
+* performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationTelemedicina or Patient)
 
 * outcome ^short = "Parametri rilevanti al fine di caratterizzare la procedura"
 * outcome ^definition = "Elemento utilizzato per gestire la relazione del professionista generata al termine dell'erogazione"
