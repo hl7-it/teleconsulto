@@ -30,6 +30,8 @@ Description: "Profilo  della ServiceRequest utilizzata per la relazione finale d
 * performer ^short = "Medico consultato" 
 * performer only Reference(PractitionerTelemedicina)
 
+* authoredOn ^short = "Data di ricezione della richiesta di teleconsulto"
+
 // * code.coding[codiceCatalogoNazionalePrestazione] from VsCatalogoNazionalePrestazioni (preferred)
 // * code.coding[codiceCatalogoNazionalePrestazione].system ^short = "Identifica il sistema di terminologia"
 // * code.coding[codiceCatalogoNazionalePrestazione].system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice."
