@@ -58,17 +58,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 // * subject 1..1
 // * subject only Reference(PatientTelemedicina)
 
-<<<<<<< Updated upstream
-* event.code ^short = "Tipologia di accesso"
- // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
-
-// TODO: eliminare l'encounter
-* encounter 1..1
-* encounter only Reference(EncounterTelemedicina)
-=======
 // * encounter 1..1
 // * encounter only Reference(EncounterTeleconsulto)
->>>>>>> Stashed changes
 
 // Slicing delle sezioni interne
 * section ^slicing.discriminator.type = #value
@@ -134,16 +125,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
 
 // Slice: prestazioni
-<<<<<<< Updated upstream
-// TODO: eliminare l'encounter
-* section[prestazioni] ^sliceName = "prestazioni"
-* section[prestazioni].code = $loinc#62387-6 (exactly)
-* section[prestazioni].entry only Reference(EncounterTelemedicina)
-=======
 // * section[prestazioni] ^sliceName = "prestazioni"
 // * section[prestazioni].code = $loinc#62387-6 (exactly)
 // * section[prestazioni].entry only Reference(EncounterTeleconsulto)
->>>>>>> Stashed changes
 
 // Slice: confrontoPrecedentiEsamiEseguiti
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
@@ -181,12 +165,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
 
-<<<<<<< Updated upstream
-// Slice: oggettiCorrelati
-* section[oggettiCorrelati] ^sliceName = "oggettiCorrelati"
-* section[oggettiCorrelati].code = $loinc#77599-9 (exactly)
-* section[oggettiCorrelati].entry only Reference(ImagingStudy or DocumentReference or Media or Binary)
-=======
 
 * section[allegati] ^sliceName = "allegati"
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)
@@ -195,4 +173,3 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].entry only Reference(ProcedureTelemedicina)
 * section[prestazioni].code = $loinc#62387-6
->>>>>>> Stashed changes

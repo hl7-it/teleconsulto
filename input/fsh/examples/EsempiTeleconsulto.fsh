@@ -390,7 +390,7 @@ Usage: #example
 * code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo post-COVID per tosse persistente"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 Instance: Observation-anamnesi
@@ -402,7 +402,7 @@ Usage: #example
 * code = $loinc#11329-0
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Paziente con anamnesi positiva per bronchite cronica, non fumatore."
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -437,7 +437,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Durante la conversazione si rileva tosse secca intermittente."
 * id = "c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -455,7 +455,7 @@ Usage: #example
 * method.coding[0].display = "Low dose computed tomography of thorax"
 * valueString = "TC torace eseguita il 10/05/2025. Referto: negativa per lesioni polmonari evolutive."
 * id = "9dfdf0c9-a837-42d5-987c-6170c75cc476"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -468,7 +468,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Rispetto al controllo precedente, lieve miglioramento del quadro bronchiolitico."
 * id = "ecc5c95f-a1c0-483c-b48e-5fd84762c393"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -481,7 +481,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Referto di teleconsulto pneumologica: sintomi in miglioramento, non si evidenziano complicanze."
 * id = "a465cf01-05e6-4f38-8f6a-b5d6c4168c94"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -494,7 +494,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -507,7 +507,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Buona risposta al trattamento inalatorio. Monitoraggio consigliato."
 * id = "1611ed98-7577-48ab-9587-7ab4fc96e191"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -520,7 +520,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Valutare spirometria di controllo tra 3 mesi."
 * id = "2054e65c-2012-4286-aac7-ce2f23e8be31"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -533,7 +533,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo emogasanalisi a domicilio."
 * id = "1b401b53-f564-4730-bb13-45d5620596f0"
-* performer = Reference(PractitionerTelemedicinaExample)
+* performer = Reference(PractitionerRoleTelemedicinaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 

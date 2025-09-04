@@ -6,11 +6,6 @@ Parent: ServiceRequest
 Id: ServiceRequestTC
 Description: "Profilo della ServiceRequest utilizzata per la relazione finale di Teleconsulto"
 * ^status = #draft
-<<<<<<< Updated upstream
-* identifier ^short = "Identificativo della richiesta di teleconsulto."
-
-* identifier ^short = "Numero ricetta medica (NRE)"
-=======
 
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
 * identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
@@ -124,7 +119,6 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * note ^definition = "Note o commenti relative alla richiesta."
 * note ^comment = "Per i sistemi che non dispongono di annotazioni strutturate, possono semplicemente comunicare una singola annotazione senza autore o tempo.  Questo elemento potrebbe dover essere incluso nella narrativa a causa del potenziale di modifica delle informazioni.  *Le annotazioni NON DEVONO* essere usate per comunicare informazioni \"modificanti\" che potrebbero essere calcolate. (Questo è un DOVERE perché far rispettare il comportamento dell'utente è quasi impossibile)."
 
->>>>>>> Stashed changes
 
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "extension.value"
@@ -146,25 +140,9 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * code.coding[codiceCatalogoNazionalePrestazione].code ^short = "Codice valido per il sistema terminologico di riferimento"
 * code.coding[codiceCatalogoNazionalePrestazione].code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
 
-<<<<<<< Updated upstream
-* requester ^short = "Medico richiedente" 
-* requester only Reference(PractitionerTelemedicina)
-
-* performer ^short = "Medico consultato" 
-* performer only Reference(PractitionerTelemedicina)
-
-* authoredOn ^short = "Data di ricezione della richiesta di teleconsulto"
-
-// * code.coding[codiceCatalogoNazionalePrestazione] from VsCatalogoNazionalePrestazioni (preferred)
-// * code.coding[codiceCatalogoNazionalePrestazione].system ^short = "Identifica il sistema di terminologia"
-// * code.coding[codiceCatalogoNazionalePrestazione].system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice."
-// * code.coding[codiceCatalogoNazionalePrestazione].code ^short = "Codice valido per il sistema terminologico di riferimento"
-// * code.coding[codiceCatalogoNazionalePrestazione].code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
-=======
 
 
 Invariant: requisition-system
 Description: "il system deve seguire questa struttura: \"http://www.[nome prodotto o fornitore].it/identifiers/requisition\""
 * severity = #error
 * expression = "startsWith('http://www') and endsWith('.it/identifiers/requisition')"
->>>>>>> Stashed changes
