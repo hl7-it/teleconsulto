@@ -6,6 +6,7 @@ Title: "Tipologia di attività nel Piano di Telemonitoraggio"
 Description: "ValueSet contenente la tipologia di attività inserite nel piano di Telemonitoraggio."
 * ^status = #active
 * ^version = "1.0.0"
+* ^experimental = false
 * $sct#715191006 "Telehealth asthma monitoring (regime/therapy)"
 * $sct#715280009 "Telehealth hypertension monitoring (regime/therapy)"
 * $sct#473199000 "Telehealth monitoring for chronic disease (regime/therapy)"

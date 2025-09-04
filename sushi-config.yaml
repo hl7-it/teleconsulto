@@ -7,7 +7,7 @@ id: teleconsulto
 canonical: https://agenas.gov.it/fhir
 name: Teleconsulto
 title: Teleconsulto
-# description: Example Implementation Guide for getting started with SUSHI
+description: Teleconsulto
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
@@ -25,8 +25,12 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
+<<<<<<< Updated upstream
   hl7.fhir.it.terminology: current
 #   hl7.fhir.us.core: 3.1.0
+=======
+  hl7.fhir.it.terminology: current 
+>>>>>>> Stashed changes
 #   hl7.fhir.us.mcode:
 #     id: mcode
 #     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
@@ -78,10 +82,17 @@ dependencies:
 menu:
   Home: index.html
   Artifacts: artifacts.html
+<<<<<<< Updated upstream
   ModelMaps: relazioneCollaborativaTeleconsulto.html  
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
+=======
+  ModelMaps: RelazioneCollaborativaTeleconsulto.html  
+  Support:
+    FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
+    Downloads: downloads.html    
+>>>>>>> Stashed changes
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
@@ -158,12 +169,12 @@ groups:
     - StructureDefinition/BundleRelazioneCollaborativaTeleconsulto
     - StructureDefinition/CompositionRelazioneCollaborativaTeleconsulto 
     - StructureDefinition/ServiceRequestTC
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
+    - StructureDefinition/EncounterTeleconsulto
+  GroupB:
+    name: Profili Richiesta di Teleconsulto
+    description: Profili utilizzati nel contesto della Richiesta di Teleconsulto
+    resources:
+    - StructureDefinition/ServiceRequestRichiestaTC
 #
 #
 # The ImplementationGuide resource defines several other properties

@@ -22,4 +22,10 @@ Context: Address, Patient, Patient.identifier
 * extension[who].value[x] only CodeableConcept or Reference
 * extension[who].value[x] from $tipoCertificatore (extensible)
 * extension[rank].value[x] only decimal
-* url = "https://agenas.gov.it/fhir/StructureDefinition/recordCertification" (exactly)
+
+Extension: BirthPlaceIta
+Parent: $patient-birthPlace
+Id: birth-place-ita
+Title: "Address Birth Place"
+Description: "Definizione dell'indirizzo base per la descrizione del luogo di nascita."
+* value[x] only AddressItTelemedicina

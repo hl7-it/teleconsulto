@@ -4,7 +4,6 @@ Parent: MedicationStatement
 Id: MedicationStatementTelemedicina
 Title: "MedicationStatement Telemedicina"
 Description: "Profilo base della MedicationStatement condiviso in tutti i documenti di Telemedicina"
-* ^url = "https://agenas.gov.it/fhir/StructureDefinition/MedicationStatement"
 * ^status = #draft
 
 // Limit medication to CodeableConcept

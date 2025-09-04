@@ -1,4 +1,3 @@
-// Alias: $cs-asl = http://hl7.it/fhir/lab-report/CodeSystem/cs-asl
 
 ValueSet: VsMinisteroSaluteAsl
 Id: minsan-asl

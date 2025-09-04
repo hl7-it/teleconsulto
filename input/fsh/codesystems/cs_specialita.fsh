@@ -3,13 +3,10 @@ Id: csspecialityPractitionerRole
 Title: "CodeSystem per specialita PractitionerRole"
 Description: "Definisce il sistema di terminologie da usare per i codici delle specialità cliniche e delle discipline ospedaliere. (19A00915) (GU Serie Generale n.38 del 14-02-2019)"
 * ^name = "CodeSystem_per_specialita_PractitionerRole"
-* ^url = "https://agenas.gov.it/fhir/CodeSystem/csspecialityPractitionerRole"
 * ^version = "1.0.0"
-* ^status = #draft
-* ^experimental = true
-* ^publisher = "pnt.gov.it"
-* ^versionNeeded = false
-* ^content = #example
+* ^status = #active
+* ^caseSensitive = false
+* ^experimental = false
 * #01 "Allergologia" "Allergologia"
 * #02 "Day hospital" "Day hospital - Identifica reparti esclusivamente dedicati ad attività di day hospital multispecialistico"
 * #03 "Anatomia ed istologia patologica" "Anatomia ed istologia patologica"

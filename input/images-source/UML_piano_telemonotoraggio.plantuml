@@ -1,0 +1,63 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor<<LogicalModel>> #APPLICATION
+  BackgroundColor<<Profile>> #TECHNOLOGY
+}
+
+legend right
+| <#APPLICATION> Logical Model |
+| <#TECHNOLOGY> Profile |
+endlegend
+
+class "Piano di Telemonitoraggio\\Teleriabilitazione e Teleassistenza" <<LogicalModel>> [[StructureDefinition-PianoTelemonitoraggioTeleriabilitazioneTeleassistenza.html]]
+
+class "Bundle_Piano_TM" <<Profile>> [[StructureDefinition-BundlePianoTM.html]]
+"Piano di Telemonitoraggio\\Teleriabilitazione e Teleassistenza" <|. "Bundle_Piano_TM"
+
+class "Composition" <<Profile>> [[StructureDefinition-CompositionPianoTM.html]]
+class "PractitionerRole" <<Profile>> [[StructureDefinition-PractitionerRoleTelemedicina.html]]
+class "Organization" <<Profile>> [[StructureDefinition-OrganizationTelemedicina.html]]
+class "Observation" <<Profile>> [[StructureDefinition-ObservationTelemedicina.html]]
+class "CarePlan" <<Profile>> [[StructureDefinition-CarePlanPianoDiCuraTelemonitoraggio.html]]
+class "ServiceRequest" <<Profile>> [[StructureDefinition-ServiceRequestTelemedicina.html]]
+class "Practitioner" <<Profile>> [[StructureDefinition-PractitionerTelemedicina.html]]
+class "Patient" <<Profile>> [[StructureDefinition-PatientTelemedicina.html]]
+class "Device" <<Profile>> [[StructureDefinition-DeviceTelemedicina.html]]
+class "ActivityDefinition" <<Profile>> [[StructureDefinition-ActivityDefinitionPianoTM.html]]
+class "ObservationDefinition" <<Profile>> [[StructureDefinition-ObservationTelemedicina.html]]
+
+"Bundle_Piano_TM" -[#red]-> "Composition"
+"Bundle_Piano_TM" -[#red]-> "PractitionerRole"
+"Bundle_Piano_TM" -[#red]-> "Organization"
+"Bundle_Piano_TM" -[#red]-> "Observation"
+"Bundle_Piano_TM" -[#red]-> "CarePlan"
+"Bundle_Piano_TM" -[#red]-> "ServiceRequest"
+"Bundle_Piano_TM" -[#red]-> "Practitioner"
+"Bundle_Piano_TM" -[#red]-> "Patient"
+"Bundle_Piano_TM" -[#red]-> "Device"
+"Bundle_Piano_TM" -[#red]-> "ActivityDefinition"
+"Bundle_Piano_TM" -[#red]-> "ObservationDefinition"
+
+"Composition" --> "CarePlan"
+"Composition" --> "Observation"
+"Composition" --> "Practitioner"
+
+"PractitionerRole" --> "Organization"
+"PractitionerRole" --> "Practitioner"
+
+"CarePlan" --> "Patient"
+"CarePlan" --> "Practitioner"
+"CarePlan" --> "PractitionerRole"
+
+"ServiceRequest" --> "ObservationDefinition"
+"ServiceRequest" --> "CarePlan"
+
+"Patient" --> "Organization"
+
+"ObservationDefinition" --> "ActivityDefinition"
+@enduml

@@ -1,9 +1,9 @@
-Alias: $iso21090-ADXP-streetName = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName
-Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase
-Alias: $iso21090-ADXP-streetNameType = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType
-Alias: $iso21090-ADXP-houseNumber = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber
-Alias: $istat-dug = http://hl7.it/fhir/lab-report/CodeSystem/dug
-Alias: $iso21090-SC-coding = http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding
+Alias: $iso21090-ADXP-streetName = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName|5.2.0
+Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.2.0
+Alias: $iso21090-ADXP-streetNameType = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.2.0
+Alias: $iso21090-ADXP-houseNumber = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber|5.2.0
+Alias: $istat-dug = https://www.hl7.it/fhir/terminology/CodeSystem/dug
+Alias: $iso21090-SC-coding = http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.2.0
 
 Profile: AddressItTelemedicina
 Parent: Address
@@ -96,3 +96,22 @@ Description: "Denominazione Urbanistica Ufficiale."
 RuleSet: SetFmmandStatusRule ( fmm, status )
 * ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = {fmm}
 * ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status].valueCode = #{status}
+
+Extension: OfficialAddress
+Id: address-official
+Title: "IndirizzoUfficiale"
+Description: "Definizione dell'indirizzo inteso come indirizzo 'ufficiale' di quella persona. Il significato di indirizzo 'ufficiale' dipende dal Paese. Questa estensione consente di specificare se questo indirizzo è o non è l'indirizzo ufficiale, oppure di indicare che si tratta dell'indirizzo ufficiale di quel Paese."
+
+* ^context.type = #element
+* ^context.expression = "Address"
+* . ^short = "Official Address"
+* . ^definition = "This extension allows to specify if this address is or it is not the official address, or to indicate that this is the official address for that country (true assumed)."
+* value[x] 1..1
+* value[x] only boolean
+
+// Extension: BirthPlaceIta
+// Parent: $patient-birthPlace
+// Id: birth-place-ita
+// Title: "Address Birth Place"
+// Description: "Definizione dell'indirizzo base per la descrizione del luogo di nascita."
+// * value[x] only AddressItTelemedicina

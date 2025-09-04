@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor<<LogicalModel>> #APPLICATION
+  BackgroundColor<<Profile>> #TECHNOLOGY
+}
+
+legend right
+| <#APPLICATION> Logical Model |
+| <#TECHNOLOGY> Profile |
+endlegend
+
+class "Tesserino Dispositivi Telemonitoraggio" as TD_TM <<LogicalModel>> [[StructureDefinition-TesserinoDispositivi-TM.html]]
+
+class "Bundle_Tesserino_dispositivi" as B_TD <<Profile>>
+TD_TM <|. B_TD
+
+class "Composition" as C <<Profile>>
+class "Organization" as Org <<Profile>>
+class "Patient" as Pat <<Profile>>
+class "Device" as Dev <<Profile>>
+class "Condition" as Cond <<Profile>>
+class "DeviceUseStatement" as DUS <<Profile>>
+
+' Entry del bundle
+B_TD -[#red]-> C
+B_TD -[#red]-> Org
+B_TD -[#red]-> Pat
+B_TD -[#red]-> Dev
+B_TD -[#red]-> Cond
+B_TD -[#red]-> DUS
+
+' Collegamenti Composition
+C --> Pat
+C --> Org
+C --> DUS
+
+' Collegamenti interni
+DUS --> Pat
+DUS --> Dev
+DUS --> Cond
+@enduml

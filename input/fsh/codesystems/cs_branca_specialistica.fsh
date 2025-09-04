@@ -4,6 +4,8 @@ Title: "Branca Prestazione"
 Description: "CodeSystem contenente le branche."
 * ^status = #active
 * ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
 * #01 "Anestesia"
 * #02 "Cardiologia"
 * #03 "Chirurgia generale"

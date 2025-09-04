@@ -8,8 +8,9 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 
 // Slicing su entry secondo profili usati
 * entry ^slicing.discriminator.type = #type
-* entry ^slicing.discriminator.path = "resource.meta.profile"
+* entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
+* entry ^slicing.ordered = false
 
 * entry contains
   composition 1..1 and
@@ -20,15 +21,17 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
   organization 0..* and
   observation 0..* and
   allergyIntolerance 0..* and
-  condition 0..* and
-  diagnosticReport 0..* and
+  // condition 0..* and
+  // diagnosticReport 0..* and
   medicationRequest 0..* and
   medicationStatement 0..* and
-  imagingStudy 0..* and
+  // imagingStudy 0..* and
   familyMemberHistory 0..* and
   encounter 0..* and
-  procedure 0..* and
-  deviceUseStatement 0..*
+  documentReference 0..* and
+  procedure 0..* and 
+  appointment 0..1
+  //deviceUseStatement 0..*
 
 // Entry slice: composition
 * entry[composition].resource only CompositionRelazioneCollaborativaTeleconsulto
@@ -55,10 +58,10 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 * entry[allergyIntolerance].resource only AllergyIntoleranceTelemedicina
 
 // Entry slice: condition
-* entry[condition].resource only ConditionTelemedicina
+// * entry[condition].resource only ConditionTelemedicina
 
-// Entry slice: diagnosticReport
-* entry[diagnosticReport].resource only DiagnosticReportTelemedicina
+// // Entry slice: diagnosticReport
+// * entry[diagnosticReport].resource only DiagnosticReportTelemedicina
 
 // Entry slice: medicationRequest
 * entry[medicationRequest].resource only MedicationRequestTelemedicina
@@ -66,17 +69,18 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 // Entry slice: medicationStatement
 * entry[medicationStatement].resource only MedicationStatementTelemedicina
 
-// Entry slice: imagingStudy
-* entry[imagingStudy].resource only ImagingStudy
 
 // Entry slice: familyMemberHistory
 * entry[familyMemberHistory].resource only FamilyMemberHistory
 
 // Entry slice: encounter
-* entry[encounter].resource only EncounterTelemedicina
+* entry[encounter].resource only EncounterTeleconsulto
+
+// Entry slice: encounter
+* entry[documentReference].resource only DocumentReference
 
 // Entry slice: procedure
 * entry[procedure].resource only ProcedureTelemedicina
 
 // Entry slice: deviceUseStatement
-// * entry[deviceUseStatement].resource only DeviceUseStatementTelemedicina
+* entry[appointment].resource only AppointmentTelemedicina

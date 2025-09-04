@@ -4,7 +4,8 @@ Title: "Codici Assistenza per Stranieri"
 Description: "Codici identificativi per tipologie di assistenza a stranieri in temporaneo soggiorno, secondo classificazioni italiane ed europee."
 * ^status = #active
 * ^content = #complete
-* ^caseSensitive = true
+* ^caseSensitive = false
+* ^experimental = false
 * #EE "Assicurati extra-europei in temporaneo soggiorno"
 * #UE "Assicurati europei in temporaneo soggiorno"
 * #NA "Assistiti SASN con visita ambulatoriale"

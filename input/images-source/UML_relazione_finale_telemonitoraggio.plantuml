@@ -1,0 +1,70 @@
+@startuml
+left to right direction
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor<<LogicalModel>> #APPLICATION
+  BackgroundColor<<Profile>> #TECHNOLOGY
+}
+
+legend right
+| <#APPLICATION> Logical Model |
+| <#TECHNOLOGY> Profile |
+endlegend
+
+class "Relazione Finale\\Telemonitoraggio" as RF_TM <<LogicalModel>> [[StructureDefinition-RelazioneFinale-TM.html]]
+
+class "Bundle_Relazione_Finale_TM" as B_RFTM <<Profile>>
+RF_TM <|. B_RFTM
+
+class "Composition" as C <<Profile>>
+class "PractitionerRole" as PRole <<Profile>>
+class "Organization" as Org1 <<Profile>>
+class "Organization" as Org2 <<Profile>>
+class "Observation" as Obs <<Profile>>
+class "CarePlan" as CP <<Profile>>
+class "MedicationRequest" as MR <<Profile>>
+class "Practitioner" as Pract <<Profile>>
+class "Patient" as Pat <<Profile>>
+class "Encounter" as Enc <<Profile>>
+class "AllergyIntolerance" as Allergy <<Profile>>
+class "Procedure" as Proc <<Profile>>
+class "Device" as Dev <<Profile>>
+
+' Frecce rosse senza etichette
+B_RFTM -[#red]-> C
+B_RFTM -[#red]-> PRole
+B_RFTM -[#red]-> Org1
+B_RFTM -[#red]-> Org2
+B_RFTM -[#red]-> Obs
+B_RFTM -[#red]-> CP
+B_RFTM -[#red]-> MR
+B_RFTM -[#red]-> Pract
+B_RFTM -[#red]-> Pat
+B_RFTM -[#red]-> Enc
+B_RFTM -[#red]-> Allergy
+B_RFTM -[#red]-> Proc
+B_RFTM -[#red]-> Dev
+
+' Frecce nere senza etichette (inclusa Composition)
+C --> CP
+C --> Obs
+C --> Pract
+
+PRole --> Org1
+PRole --> Pract
+
+CP --> Pat
+CP --> Pract
+CP --> PRole
+
+MR --> CP
+MR --> Pract
+
+Pat --> Org2
+
+Proc --> Dev
+@enduml

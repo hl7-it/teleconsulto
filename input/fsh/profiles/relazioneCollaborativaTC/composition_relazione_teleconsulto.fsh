@@ -1,10 +1,48 @@
 Alias: $loinc = http://loinc.org
 
 Profile: CompositionRelazioneCollaborativaTeleconsulto
-Parent: CompositionTelemedicina
+Parent: Composition
 Id: CompositionRelazioneCollaborativaTeleconsulto
 Description: "Profilo della Composition utilizzata nel contesto della Relazione Collaborativa di Teleconsulto"
 * ^status = #draft
+* ^version = "1.0.0"
+* ^experimental = true
+* identifier ^short = "Identificatore indipendente dalla versione."
+* status ^short = "Stato di completezza della risorsa Composition. Lo stato della risorsa rappresenta anche lo stato del documento."
+* status ^definition = "Lo stato della Composition si sviluppa generalmente solo attraverso questo elenco: passa da preliminary a final e poi può passare a amended (ovvero modificato)."
+* type from vsTipologiaDocumentale (required)
+* type ^short = "Tipo di Composition."
+
+* subject only Reference(PatientTelemedicina)
+* encounter only Reference(EncounterTeleconsulto)
+* encounter ^short = "Contesto in cui è stato generato il documento."
+* date ^short = "Data di modifica della risorsa da parte del firmatario."
+
+* author only Reference(PractitionerRoleTelemedicina or OrganizationTelemedicina)
+* author ^short = "Autore della Composition (Medico Refertante)."
+
+* title ^short = "Titolo del documento"
+
+// * confidentiality ^short = "Codice di confidenzialità della Composition."
+* attester ^slicing.discriminator.type = #value
+* attester ^slicing.discriminator.path = "mode"
+* attester ^slicing.rules = #open
+* attester ^short = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
+* attester contains legalAuthenticator 1..1
+* attester[legalAuthenticator].mode = #legal (exactly)
+* attester[legalAuthenticator].time 1..
+* attester[legalAuthenticator].party 1..
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
+
+* relatesTo ^short = "Ulteriori documenti correlati"
+
+* event.code ^short = "Tipologia di accesso"
+ // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
+
+* section 1..
+* section.title ^short = "Titolo della sezione."
+* section.code ^short = "Codice della sezione."
+
 
 * status 1..1
 * status = #final (exactly)
@@ -16,28 +54,32 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 * date 1..1
 
-* subject ^short = "Soggetto del documento."
-* subject 1..1
-* subject only Reference(PatientTelemedicina)
+// * subject ^short = "Soggetto del documento."
+// * subject 1..1
+// * subject only Reference(PatientTelemedicina)
 
+<<<<<<< Updated upstream
 * event.code ^short = "Tipologia di accesso"
  // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
 
 // TODO: eliminare l'encounter
 * encounter 1..1
 * encounter only Reference(EncounterTelemedicina)
+=======
+// * encounter 1..1
+// * encounter only Reference(EncounterTeleconsulto)
+>>>>>>> Stashed changes
 
 // Slicing delle sezioni interne
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
-
+* section ^slicing.ordered = false
 * section contains
     // terapiaFarmacologica 0..1 and
     questitoDiagnostico 0..1 and
     InquadramentoClinicoIniziale 0..1 and
     precedentiEsamiEseguiti 0..1 and
-    prestazioni 0..1 and
     confrontoPrecedentiEsamiEseguiti 0..1 and
     referto 0..1 and
     diagnosi 0..1 and
@@ -45,7 +87,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     suggerimentiPerMedicoPrescrittore 0..1 and
     accertamentiControlliConsigliati 0..1 and
     terapiaFarmacologicaConsigliata 0..1 and
-    oggettiCorrelati 0..*
+    allegati 0..1 and
+    prestazioni 0..*
 
 // Slice: terapiaFarmacologica
 // * section[terapiaFarmacologica] ^sliceName = "terapiaFarmacologica"
@@ -57,9 +100,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[questitoDiagnostico].entry only Reference(ObservationTelemedicina)
 * section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
 
-
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
+* section[InquadramentoClinicoIniziale].code = $loinc#11329-0 (exactly)
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
@@ -67,7 +110,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     anamnesi 0..1 and
     allergie 0..* and
     terapiaFarmacologicaInAtto 0..* and
-    esameObbiettivo 0..1
+    esameObiettivo 0..1
 
 * section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
 * section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0 (exactly)
@@ -79,11 +122,11 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^sliceName = "terapiaFarmacologicaInAtto"
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0 (exactly)
-* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationRequestTelemedicina)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatementTelemedicina)
 
-* section[InquadramentoClinicoIniziale].section[esameObbiettivo] ^sliceName = "esameObbiettivo"
-* section[InquadramentoClinicoIniziale].section[esameObbiettivo].code = $loinc#29545-1 (exactly)
-* section[InquadramentoClinicoIniziale].section[esameObbiettivo].entry only Reference(ObservationTelemedicina)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1 (exactly)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelemedicina)
 
 // Slice: precedentiEsamiEseguiti
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
@@ -91,10 +134,16 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
 
 // Slice: prestazioni
+<<<<<<< Updated upstream
 // TODO: eliminare l'encounter
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].code = $loinc#62387-6 (exactly)
 * section[prestazioni].entry only Reference(EncounterTelemedicina)
+=======
+// * section[prestazioni] ^sliceName = "prestazioni"
+// * section[prestazioni].code = $loinc#62387-6 (exactly)
+// * section[prestazioni].entry only Reference(EncounterTeleconsulto)
+>>>>>>> Stashed changes
 
 // Slice: confrontoPrecedentiEsamiEseguiti
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
@@ -132,7 +181,18 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
 
+<<<<<<< Updated upstream
 // Slice: oggettiCorrelati
 * section[oggettiCorrelati] ^sliceName = "oggettiCorrelati"
 * section[oggettiCorrelati].code = $loinc#77599-9 (exactly)
 * section[oggettiCorrelati].entry only Reference(ImagingStudy or DocumentReference or Media or Binary)
+=======
+
+* section[allegati] ^sliceName = "allegati"
+* section[allegati].entry only Reference(DocumentReference or Binary or Media)
+* section[allegati].code = $loinc#77599-9  
+
+* section[prestazioni] ^sliceName = "prestazioni"
+* section[prestazioni].entry only Reference(ProcedureTelemedicina)
+* section[prestazioni].code = $loinc#62387-6
+>>>>>>> Stashed changes

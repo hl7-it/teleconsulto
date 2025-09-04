@@ -12,6 +12,7 @@ Description:  "Profilo base della Procedure condiviso in tutti i documenti di Te
 * partOf only Reference(Procedure or ObservationTelemedicina)
 * status ^definition = "Elemento di tipo code che contiene un codice che specifica lo stato della procedura. Campo required: http://hl7.org/fhir/event-status"
 * status ^comment = "Il codice \"unknown\" non deve essere utilizzato per comunicare altri stati.  Il codice \"unknown\" deve essere usato quando si applica uno degli stati, ma il sistema autore non conosce lo stato attuale della procedura.\n\nQuesto elemento è etichettato come modificatore perché lo stato contiene codici che contrassegnano la risorsa come non valida al momento."
+
 * code ^short = "Codice della prestazione eseguita"
 * code ^definition = "CodeableConcept che contiene i codici identificativi delle tipologie di interventi, come ad esempio i codici ICD9 supportati dallo standard FHIR"
 * code from VsCatalogoNazionalePrestazioni (required)
@@ -19,9 +20,11 @@ Description:  "Profilo base della Procedure condiviso in tutti i documenti di Te
 * subject only Reference(PatientTelemedicina)
 * subject ^short = "Paziente coinvolto nella procedira"
 * subject ^definition = "Su chi è stata eseguita la procedura."
+
 * performed[x] only Period
 * performed[x] ^short = "Quando è stata eseguita la procedura"
 * performed[x] ^definition = "Contiene la data di esecuzione dell'intervento"
+
 * recorder ^short = "Chi ha registrato la procedura"
 * recorder ^definition = "Persona che ha registrato la registrazione e si assume la responsabilità del suo contenuto."
 

@@ -2,7 +2,8 @@ CodeSystem: CodeSystem_ambitoTelemedicina
 Id: csAmbitoTelemedicina
 Title: "CodeSystem per gli ambiti della telemedicina"
 Description: "Definisce il sistema di terminologie da usare per i codici degli ambiti di telemedicina"
-
+* ^caseSensitive = false
+* ^experimental = false
 * #0	"Richiesta Teleconsulto"
 * #1	"Erogazione Teleconsulto"
 * #2	"Relazione collaborativa per il teleconsulto/teleconsulenza"

@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor<<LogicalModel>> #APPLICATION
+  BackgroundColor<<Profile>> #TECHNOLOGY
+}
+
+legend right
+| <#APPLICATION> Logical Model |
+| <#TECHNOLOGY> Profile |
+endlegend
+
+class "Report di Rilevazione Telemonitoraggio" as RR_TM <<LogicalModel>> [[StructureDefinition-ReportRilevazione-TM.html]]
+
+class "Bundle_Report_Rilevazione_TM" as B_RRTM <<Profile>>
+RR_TM <|. B_RRTM
+
+class "Composition" as C <<Profile>>
+class "Patient" as Pat <<Profile>>
+class "Observation" as Obs <<Profile>>
+class "CarePlan" as CP <<Profile>>
+
+' Frecce rosse (entry nel bundle) senza etichette
+B_RRTM -[#red]-> C
+B_RRTM -[#red]-> Pat
+B_RRTM -[#red]-> Obs
+B_RRTM -[#red]-> CP
+
+' Frecce nere senza etichette (relazioni interne)
+C --> Obs
+C --> CP
+CP --> Pat
+@enduml
