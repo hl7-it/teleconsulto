@@ -27,9 +27,6 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 * identifier ^slicing.discriminator.path = "$this.system"
 * identifier ^slicing.rules = #open
 * identifier ^short = "Identificativo del paziente."
-* identifier.value 1..  
-* identifier.value ^short = "ID del paziente (e.g. Codice Fiscale)."
-* identifier.value ^definition = "Identifictivo del paziente."
 * identifier.type from VstipoIdentificatore (extensible)
 * identifier contains
     codiceFiscale 0..1   and

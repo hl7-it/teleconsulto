@@ -31,6 +31,9 @@ Description: "Profilo dell'Encounter nel contesto del teleconsulto"
 * basedOn ^short = "Richiesta che ha avviato la visita."
 * basedOn ^definition = "La richiesta che questa visita soddisfa."
 
+* type ^short = "Disciplina"
+* type from ValueSet_specialita_PractitionerRole (required)
+
 * participant ^short = "Altre figura tecnica coinvolte."
 * participant ^definition = "BackboneElement contenente la lista dei coinvolti nella visita oltre al Patient."
 * participant ^comment = "In partecipat.individual può essere inserito il riferimento al Practitioner o al PractitionerRole che prende in carico la visita."

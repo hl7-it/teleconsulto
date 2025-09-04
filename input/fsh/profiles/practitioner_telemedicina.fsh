@@ -13,7 +13,7 @@ Description: "Profilo base del Practitioner condiviso in tutti i documenti di Te
 * identifier ^slicing.rules = #open
 * identifier ^short = "Identificativo dell'operatore sanitario"
 * identifier ^definition = "Un identificatore che si applica a questa persona in questo ruolo."
-* identifier contains codiceFiscale 0..1
+* identifier contains codiceFiscale 1..1
 * identifier[codiceFiscale] ^short = "Codice Fiscale"
 * identifier[codiceFiscale] ^definition = "Codice Fiscale"
 * identifier[codiceFiscale] ^patternIdentifier.system = "http://hl7.it/sid/codiceFiscale"

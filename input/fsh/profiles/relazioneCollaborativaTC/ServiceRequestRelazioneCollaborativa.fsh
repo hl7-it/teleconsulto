@@ -10,6 +10,7 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
 * identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
 
+* requisition 1..
 * requisition ^short = "Identificativo univoco della richiesta composita"
 * requisition ^definition = "Un identificativo condiviso comune a tutte le singole istanze della richiesta, generate contemporaneamente da un singolo autore: rappresenta l'identificativo composito o di gruppo.\n\nPer i casi di richieste di prescrizione rappresenterà l'NRE oppure il numero di ricetta cartacea."
 * requisition.type ^short = "Descrizione della tipologia di identificativo"

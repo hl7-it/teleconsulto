@@ -14,6 +14,7 @@ Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, amb
 // * identifier[unitaOperativa] ^sliceName = "unitaOperativa"
 // * identifier[unitaOperativa] ^short = "Codice dell'unità operativa"
 * identifier ^short = "Codice dell'unità operativa"
+* identifier 1..1
 
 
 * partOf only Reference(OrganizationT2)

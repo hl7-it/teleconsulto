@@ -12,6 +12,7 @@ Description: "Profilo base generico per Organization di tipo 2 (es. ospedale, di
 // * identifier[codicePresidio] ^sliceName = "codicePresidio"
 // * identifier[codicePresidio] ^short = "Codice del presidio"
 * identifier ^short = "Codice del presidio"
+* identifier 1..1
 
 
 * partOf only Reference(OrganizationT1)

@@ -12,11 +12,6 @@ Description: "Profilo base del PractitionerRole condiviso in tutti i documenti d
 * ^version = "0.1.0"
 * ^status = #active
 * ^jurisdiction = urn:iso:std:iso:3166#IT
-* id ^short = "ID logico della risorsa"
-* id ^definition = "ID logico della risorsa, come utilizzato nell'URL della risorsa. Una volta assegnato, questo valore non cambia mai."
-* id ^comment = "Il valore associato al campo deve rispettare il seguente formalismo:\r\nPOD.GUID\r\ndove POD= point of delivery identification"
-* identifier ^short = "Identificativo dell'operatore (e.g. Codice Fiscale, ID Regionale)"
-* identifier ^definition = "Identificatori aziendali specifici di un ruolo/località."
 * period ^short = "Il periodo durante il quale il professionista è autorizzato a svolgere questi ruoli"
 * period ^definition = "Il periodo in cui la persona è autorizzata ad agire come professionista in questi ruoli per l'organizzazione."
 * period ^comment = "Un Periodo specifica un intervallo di tempo; il contesto d'uso specificherà se si applica l'intero intervallo (ad esempio, \"il paziente è stato ricoverato in ospedale per questo intervallo di tempo\") o se si applica un valore dell'intervallo (ad esempio, \"la somministrazione al paziente è avvenuta tra questi due momenti\").\n\nPeriodo non è usato per una durata (una misura del tempo trascorso). Vedere [Duration](datatypes.html#Duration)."
