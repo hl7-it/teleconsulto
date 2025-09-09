@@ -1,9 +1,9 @@
 
 
 Profile: OrganizationT2
-Parent: OrganizationTelemedicina
+Parent: OrganizationTeleconsulto
 Id: OrganizationT2
-Description: "Profilo base generico per Organization di tipo 2 (es. ospedale, distretto)"
+Description: "Profilo base di Organization di tipo 2 (es. ospedale, distretto)"
 // * identifier ^slicing.discriminator.type = #value
 // * identifier ^slicing.discriminator.path = "system"
 // * identifier ^slicing.rules = #open

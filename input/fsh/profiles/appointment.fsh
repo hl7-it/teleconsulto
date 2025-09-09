@@ -1,9 +1,9 @@
 //Alias: $serviceRequest_tm = http://hl7.it/fhir/teleconsulto/StructureDefinition/ServiceRequestTV
 
-Profile: AppointmentTelemedicina
+Profile: AppointmentTeleconsulto
 Parent: Appointment
-Id: AppointmentTelemedicina
-Description: "Profilo base del Appointment condiviso in tutti i documenti di Telemedicina"
+Id: AppointmentTeleconsulto
+Description: "Profilo di Appointment utilizzato nel contesto del Teleconsulto"
 * ^status = #draft
 * ^date = "2023-10-18T12:01:35+02:00"
 * id ^short = "ID logico della risorsa"

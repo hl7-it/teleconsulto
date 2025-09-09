@@ -157,15 +157,15 @@ groups:
     resources:
     - StructureDefinition/BundleRelazioneCollaborativaTeleconsulto
     - StructureDefinition/CompositionRelazioneCollaborativaTeleconsulto 
-    - StructureDefinition/ServiceRequestTC
-    - StructureDefinition/EncounterTeleconsulto
+    - StructureDefinition/ServiceRequestRelazioneCollaborativaTeleconsulto
+#    - StructureDefinition/EncounterTeleconsulto
   GroupB:
     name: Profili Richiesta di Teleconsulto
     description: Profili utilizzati nel contesto della Richiesta di Teleconsulto
     resources:
     - StructureDefinition/BundleRichiestaTeleconsulto
     - StructureDefinition/CompositionRichiestaTeleconsulto
-    - StructureDefinition/ServiceRequestRichiestaTC
+    - StructureDefinition/ServiceRequestRichiestaTeleconsulto
 #
 #
 # The ImplementationGuide resource defines several other properties

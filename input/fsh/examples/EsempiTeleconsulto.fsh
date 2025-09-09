@@ -13,7 +13,7 @@ Usage: #example
 * type = #transaction
 
 * entry[0].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[0].resource = PatientTelemedicinaExample
+* entry[0].resource = PatientTeleconsultoExample
 * entry[0].request.method = #PUT
 * entry[0].request.url = "Patient?identifier=http://hl7.it/sid/codiceFiscale|RSSMRA80A01H501Z"
 
@@ -128,12 +128,12 @@ Usage: #example
 * entry[22].request.url = "ServiceRequest"
 
 * entry[23].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
-* entry[23].resource = AppointmentTelemedicinaExample
+* entry[23].resource = AppointmentTeleconsultoExample
 * entry[23].request.method = #POST
 * entry[23].request.url = "Appointment"
 
 * entry[24].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-* entry[24].resource = ProcedureTelemedicinaExample
+* entry[24].resource = ProcedureTeleconsultoExample
 * entry[24].request.method = #POST
 * entry[24].request.url = "Procedure"
 
@@ -154,7 +154,7 @@ Usage: #example
 * entry[0].resource = CompositionRelazioneCollaborativaTeleconsultoExample
 
 * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTelemedicinaExample
+* entry[1].resource = PatientTeleconsultoExample
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 * entry[2].resource = PractitionerRoleTelemedicinaExample
@@ -214,13 +214,13 @@ Usage: #example
 * entry[20].resource = ServiceRequestTelemedicinaExample
 
 * entry[21].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
-* entry[21].resource = AppointmentTelemedicinaExample
+* entry[21].resource = AppointmentTeleconsultoExample
 
 * entry[22].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-* entry[22].resource = ProcedureTelemedicinaExample
+* entry[22].resource = ProcedureTeleconsultoExample
 
-Instance: PatientTelemedicinaExample
-InstanceOf: PatientTelemedicina
+Instance: PatientTeleconsultoExample
+InstanceOf: PatientTeleconsulto
 Description: "Esempio di paziente nel contesto della televisita"
 Usage: #example
 * id = "2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
@@ -280,7 +280,7 @@ Usage: #example
 * class = CustomEncounterType#TC "Teleconsulto"
 //* subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * basedOn = Reference(ServiceRequestTelemedicinaExample)
-* appointment = Reference(AppointmentTelemedicinaExample)
+* appointment = Reference(AppointmentTeleconsultoExample)
 * period.start = "2025-06-16T09:00:00+02:00"
 * period.end = "2025-06-16T09:45:00+02:00"
 * identifier[+].system = "http://agenas.gov.it/sid/codiceNosologico"
@@ -289,7 +289,7 @@ Usage: #example
 * priority.coding[0].code = #R
 * priority.coding[0].display = "routine"
 * participant[0].individual = Reference(PractitionerTelemedicinaExample)
-* reasonReference[0] = Reference(ProcedureTelemedicinaExample)
+* reasonReference[0] = Reference(ProcedureTeleconsultoExample)
 * serviceProvider = Reference(AslRoma1)
 
 
@@ -382,7 +382,7 @@ Usage: #example
 
 
 Instance: Observation-quesito
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di quesito diagnostico nel contesto della teleconsulto"
 Usage: #example
 * id = "7cbbe77d-dcdb-409b-a215-6361ad7873d5"
@@ -394,7 +394,7 @@ Usage: #example
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 Instance: Observation-anamnesi
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di anamnesi nel contesto della teleconsulto"
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
@@ -407,7 +407,7 @@ Usage: #example
 
 
 Instance: AllergyIntolerance-allergia1
-InstanceOf: AllergyIntoleranceTelemedicina
+InstanceOf: AllergyIntoleranceTeleconsulto
 Description: "Esempio di allergyIntolerance nel contesto della teleconsulto"
 Usage: #example
 * id = "1360bd6a-3855-48d3-aa33-96a9d961bb94"
@@ -418,7 +418,7 @@ Usage: #example
 
 
 Instance: MedicationStatement-terapia-corrente
-InstanceOf: MedicationStatementTelemedicina
+InstanceOf: MedicationStatementTeleconsulto
 Description: "Esempio di medicationStatement nel contesto della teleconsulto"
 Usage: #example
 * status = #active
@@ -429,7 +429,7 @@ Usage: #example
 
 
 Instance: Observation-esame-obiettivo
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di esame obiettivo nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -442,7 +442,7 @@ Usage: #example
 
 
 Instance: Observation-esami-precedenti
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di prcedenti esami eseguiti nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -460,7 +460,7 @@ Usage: #example
 
 
 Instance: Observation-confronto-esami
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di confronto con precedenti esame eseguiti nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -473,7 +473,7 @@ Usage: #example
 
 
 Instance: Observation-referto-principale
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di referto nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -486,7 +486,7 @@ Usage: #example
 
 
 Instance: Observation-diagnosi-principale
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di esame diagnosi nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -499,7 +499,7 @@ Usage: #example
 
 
 Instance: Observation-conclusioni-generali
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di conclusioni generali nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -512,7 +512,7 @@ Usage: #example
 
 
 Instance: Observation-suggerimenti
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di suggerimenti nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -525,7 +525,7 @@ Usage: #example
 
 
 Instance: Observation-accertamenti-consigliati
-InstanceOf: ObservationTelemedicina
+InstanceOf: ObservationTeleconsulto
 Description: "Esempio di accertamenti consigliati nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -538,7 +538,7 @@ Usage: #example
 
 
 Instance: MedicationRequest-terapia-consigliata
-InstanceOf: MedicationRequestTelemedicina
+InstanceOf: MedicationRequestTeleconsulto
 Description: "Esempio di terapia consigliata nel contesto della teleconsulto"
 Usage: #example
 * status = #active
@@ -556,7 +556,7 @@ Description: "Esempio di allegsti nel contesto della teleconsulto"
 Usage: #example
 * status = #current
 * type = $loinc#55107-7 "Addendum Document"
-* subject = Reference(PatientTelemedicinaExample)
+* subject = Reference(PatientTeleconsultoExample)
 * content[0].attachment.title = "TC Torace 10/05/2025"
 * date = "2025-06-16T10:00:00+02:00"
 * id = "4f6c71e1-cc6e-4428-ae9b-0118c0a928cb"
@@ -564,16 +564,16 @@ Usage: #example
 * content[0].attachment.data = "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"
 
 
-Instance: ProcedureTelemedicinaExample
-InstanceOf: ProcedureTelemedicina
+Instance: ProcedureTeleconsultoExample
+InstanceOf: ProcedureTeleconsulto
 Title: "Esempio di Procedura per il Teleconsulto Cardiologica"
-Description: "Esempio di istanza ProcedureTelemedicina per una teleconsulto cardiologica."
+Description: "Esempio di istanza ProcedureTeleconsulto per una teleconsulto cardiologica."
 Usage: #example
 * id = "b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 * status = #completed
 * category = http://snomed.info/sct#409063005 "Counselling"
 //* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
-* subject = Reference(PatientTelemedicinaExample)
+* subject = Reference(PatientTeleconsultoExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
 * recorder = Reference(PractitionerTelemedicinaExample)
@@ -583,8 +583,8 @@ Usage: #example
 * note[+].text = "Teleconsulto eseguita tramite piattaforma XTelemed."
 
 
-Instance: AppointmentTelemedicinaExample
-InstanceOf: AppointmentTelemedicina
+Instance: AppointmentTeleconsultoExample
+InstanceOf: AppointmentTeleconsulto
 Title: "Appuntamento Teleconsulto Cardiologica"
 Description: "Esempio di appuntamento per teleconsulto cardiologica del paziente Mario Rossi"
 Usage: #example
@@ -605,7 +605,7 @@ Usage: #example
 
 
 Instance: ServiceRequestTelemedicinaExample
-InstanceOf: ServiceRequestTC
+InstanceOf: ServiceRequestRelazioneCollaborativaTeleconsulto
 Title: "Richiesta Teleconsulto Cardiologica - Mario Rossi"
 Description: "Esempio di ServiceRequest per una teleconsulto cardiologica, con NRE e branca di prestazione."
 Usage: #example
@@ -683,7 +683,7 @@ Usage: #example
 * entry[0].request.url = "Composition/composition-request-richiesta-1"
 
 * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTelemedicinaExample
+* entry[1].resource = PatientTeleconsultoExample
 * entry[1].request.method = #POST
 * entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
 
@@ -708,7 +708,7 @@ Usage: #example
 * entry[5].request.url = "ServiceRequest/service-request-richiesta-1"
 
 * entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-* entry[6].resource = ProcedureTelemedicinaExample
+* entry[6].resource = ProcedureTeleconsultoExample
 * entry[6].request.method = #PUT
 * entry[6].request.url = "Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 
@@ -733,7 +733,7 @@ Usage: #example
 * entry[0].resource = CompositionRichiestaTeleconsultoExample
 
 * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTelemedicinaExample
+* entry[1].resource = PatientTeleconsultoExample
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 * entry[2].resource = PractitionerRoleTelemedicinaExample
@@ -777,7 +777,7 @@ Usage: #example
 * section[prestazioni].entry[0] = Reference(Procedure/f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e)
 
 Instance: ServiceRequestRichiestaTeleconsultoExample
-InstanceOf: ServiceRequestRichiestaTC
+InstanceOf: ServiceRequestRichiestaTeleconsulto
 Title: "Richiesta Teleconsulto Cardiologica"
 Description: "Esempio di ServiceRequest per la richiesta di teleconsulto."
 Usage: #example
@@ -789,7 +789,7 @@ Usage: #example
 * requisition.value = "REQ-20250709-0001"
 * category = http://hl7.it/fhir/teleconsulto/CodeSystem/branca-prestazione#02 "Cardiologia"
 * priority = #routine
-* subject = Reference(PatientTelemedicinaExample)
+* subject = Reference(PatientTeleconsultoExample)
 * occurrenceDateTime = "2025-07-09T10:00:00+01:00"
 * authoredOn = "2025-07-01T09:15:00+01:00"
 * requester = Reference(PractitionerRoleTelemedicinaExample)
@@ -826,15 +826,15 @@ Usage: #example
 
 
 Instance: ProceduraRichiestaTeleconsultoExample
-InstanceOf: ProcedureTelemedicina
+InstanceOf: ProcedureTeleconsulto
 Title: "Esempio di procedura nel contesto del teleconsulto cardiologico"
-Description: "Esempio di istanza ProcedureTelemedicina per una teleconsulto cardiologica."
+Description: "Esempio di istanza ProcedureTeleconsulto per una teleconsulto cardiologica."
 Usage: #example
 * id = "f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
 * status = #completed
 * category = http://snomed.info/sct#409063005 "Counselling"
 //* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
-* subject = Reference(PatientTelemedicinaExample)
+* subject = Reference(PatientTeleconsultoExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
 * recorder = Reference(PractitionerTelemedicinaExample)

@@ -1,9 +1,9 @@
 // Profile for MedicationStatement in Telemedicina context
-Profile: MedicationStatementTelemedicina
+Profile: MedicationStatementTeleconsulto
 Parent: MedicationStatement
-Id: MedicationStatementTelemedicina
+Id: MedicationStatementTeleconsulto
 Title: "MedicationStatement Telemedicina"
-Description: "Profilo base della MedicationStatement condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo della MedicationStatement utilizzato nel contesto del Teleconsulto"
 * ^status = #draft
 
 // Limit medication to CodeableConcept
@@ -11,7 +11,7 @@ Description: "Profilo base della MedicationStatement condiviso in tutti i docume
 * medication[x] ^mustSupport = true
 
 // Subject must be Telemedicina patient
-* subject only Reference(PatientTelemedicina)
+* subject only Reference(PatientTeleconsulto)
 
 // Optional metadata
 * effective[x] 0..1

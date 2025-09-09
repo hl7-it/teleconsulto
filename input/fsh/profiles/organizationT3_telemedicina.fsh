@@ -2,9 +2,9 @@ Alias: $minsan-fls = https://terminology.agenas.gov.it/ValueSet/minsan-fls
 Alias: $uri-idAslRegione = https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione
 
 Profile: OrganizationT3
-Parent: OrganizationTelemedicina
+Parent: OrganizationTeleconsulto
 Id: OrganizationT3
-Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, ambulatorio)"
+Description: "Profilo di Organization di tipo 3 (es. Reparto, ambulatorio)"
 // * ^jurisdiction = urn:iso:std:iso:3166#IT
 // * identifier ^slicing.discriminator.type = #value
 // * identifier ^slicing.discriminator.path = "system"

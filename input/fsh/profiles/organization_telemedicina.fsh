@@ -1,8 +1,8 @@
 
-Profile: OrganizationTelemedicina
+Profile: OrganizationTeleconsulto
 Parent: Organization
-Id: OrganizationTelemedicina
-Description: "Profilo base della Organization condiviso in tutti i documenti di Telemedicina"
+Id: OrganizationTeleconsulto
+Description: "Profilo della Organization utilizzato nel contesto del Teleconsulto"
 * ^version = "0.1.0"
 * ^status = #draft
 * identifier ^short = "Identificativi di Organization"

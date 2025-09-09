@@ -6,10 +6,10 @@ Alias: $uri-idStp = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentific
 Alias: $anpr = http://hl7.it/sid/anpr
 Alias: $cf = http://hl7.it/sid/codiceFiscale
 
-Profile: PatientTelemedicina
+Profile: PatientTeleconsulto
 Parent: Patient
-Id: PatientTelemedicina
-Description: "Profilo base del Patient condiviso in tutti i documenti di Telemedicina"
+Id: PatientTeleconsulto
+Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true

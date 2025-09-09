@@ -1,9 +1,9 @@
 Alias: $extension_serviceRequest_codeCodingType = http://hl7.it/fhir/teleconsulto/StructureDefinition/extension_serviceRequest_codeCodingType
 Alias: $catalogoRegionalePrestazioni = https://terminology.agenas.gov.it/ValueSet/catalogoRegionalePrestazioni
 
-Profile: ServiceRequestTC
+Profile: ServiceRequestRelazioneCollaborativaTeleconsulto
 Parent: ServiceRequest
-Id: ServiceRequestTC
+Id: ServiceRequestRelazioneCollaborativaTeleconsulto
 Description: "Profilo della ServiceRequest utilizzata per la relazione finale di Teleconsulto"
 * ^status = #draft
 
@@ -84,7 +84,7 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * quantity[x] ^short = "Quantità prestazione."
 * quantity[x] ^definition = "Contiene la molteplicità della prestazione."
 
-* subject only Reference(PatientTelemedicina)
+* subject only Reference(PatientTeleconsulto)
 * subject ^short = "Reference a Patient"
 * subject ^definition = "Elemento di tipo Reference che contiene il riferimento alla risorsa Patient oggetto della richiesta."
 * subject ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la non disponibilità temporanea, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."

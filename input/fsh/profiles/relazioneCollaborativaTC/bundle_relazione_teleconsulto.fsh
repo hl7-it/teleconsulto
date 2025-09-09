@@ -1,7 +1,6 @@
 Profile: BundleRelazioneCollaborativaTeleconsulto
 Parent: Bundle
 Id: BundleRelazioneCollaborativaTeleconsulto
-Title: "Bundle Relazione Collaborativa Teleconsulto"
 Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto e le risorse correlate"
 * ^status = #draft
 * type = #document (exactly)
@@ -37,10 +36,10 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 * entry[composition].resource only CompositionRelazioneCollaborativaTeleconsulto
 
 // Entry slice: serviceRequest
-* entry[serviceRequest].resource only ServiceRequestTC
+* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
 
 // Entry slice: patient
-* entry[patient].resource only PatientTelemedicina
+* entry[patient].resource only PatientTeleconsulto
 
 // Entry slice: practitionerRole
 * entry[practitionerRole].resource only PractitionerRoleTelemedicina
@@ -49,13 +48,13 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 * entry[practitioner].resource only PractitionerTelemedicina
 
 // Entry slice: organization
-* entry[organization].resource only OrganizationTelemedicina
+* entry[organization].resource only OrganizationTeleconsulto
 
 // Entry slice: observation
-* entry[observation].resource only ObservationTelemedicina
+* entry[observation].resource only ObservationTeleconsulto
 
 // Entry slice: allergyIntolerance
-* entry[allergyIntolerance].resource only AllergyIntoleranceTelemedicina
+* entry[allergyIntolerance].resource only AllergyIntoleranceTeleconsulto
 
 // Entry slice: condition
 // * entry[condition].resource only ConditionTelemedicina
@@ -64,10 +63,10 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 // * entry[diagnosticReport].resource only DiagnosticReportTelemedicina
 
 // Entry slice: medicationRequest
-* entry[medicationRequest].resource only MedicationRequestTelemedicina
+* entry[medicationRequest].resource only MedicationRequestTeleconsulto
 
 // Entry slice: medicationStatement
-* entry[medicationStatement].resource only MedicationStatementTelemedicina
+* entry[medicationStatement].resource only MedicationStatementTeleconsulto
 
 
 // Entry slice: familyMemberHistory
@@ -80,7 +79,7 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 * entry[documentReference].resource only DocumentReference
 
 // Entry slice: procedure
-* entry[procedure].resource only ProcedureTelemedicina
+* entry[procedure].resource only ProcedureTeleconsulto
 
 // Entry slice: deviceUseStatement
-* entry[appointment].resource only AppointmentTelemedicina
+* entry[appointment].resource only AppointmentTeleconsulto

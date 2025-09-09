@@ -1,7 +1,7 @@
-Profile: MedicationRequestTelemedicina
+Profile: MedicationRequestTeleconsulto
 Parent: MedicationRequest
-Id: MedicationRequestTelemedicina
-Description: "Profilo base della MedicationRequest condiviso in tutti i documenti di Telemedicina" 
+Id: MedicationRequestTeleconsulto
+Description: "Profilo base della MedicationRequest utilizzato nel contesto del Teleconsulto" 
 * ^status = #draft
 * meta ^short = "Metadati della risorsa"
 * meta ^definition = "Metadati della risorsa"
@@ -14,7 +14,7 @@ Description: "Profilo base della MedicationRequest condiviso in tutti i document
 * medication[x] ^short = "Definizione farmaco"
 * medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
 * medication[x] ^binding.strength = #preferred
-* subject only Reference(PatientTelemedicina)
+* subject only Reference(PatientTeleconsulto)
 * subject ^short = "Soggetto per cui è ricchiesta la medication"
 * subject ^definition = "Soggetto per cui è ricchiesta la medication"
 * requester 1..1

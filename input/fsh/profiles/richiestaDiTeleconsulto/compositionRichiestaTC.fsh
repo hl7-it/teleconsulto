@@ -3,7 +3,7 @@ Alias: $loinc = http://loinc.org
 Profile: CompositionRichiestaTeleconsulto
 Parent: Composition
 Id: CompositionRichiestaTeleconsulto
-Description: "Profilo della Composition utilizzata nel contesto della Relazione Collaborativa di Teleconsulto"
+Description: "Profilo della Composition utilizzata nel contesto della Richiesta di Teleconsulto"
 * ^status = #draft
 * ^version = "1.0.0"
 * ^experimental = true
@@ -13,12 +13,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
-//* subject only Reference(PatientTelemedicina)
+//* subject only Reference(PatientTeleconsulto)
 //* encounter only Reference(EncounterTeleconsulto)
 // * encounter ^short = "Contesto in cui è stato generato il documento."
 * date ^short = "Data di modifica della risorsa da parte del firmatario."
 
-* author only Reference(PractitionerRoleTelemedicina or OrganizationTelemedicina)
+* author only Reference(PractitionerRoleTelemedicina or OrganizationTeleconsulto)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"
@@ -55,7 +55,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 // * subject ^short = "Soggetto del documento."
 // * subject 1..1
-// * subject only Reference(PatientTelemedicina)
+// * subject only Reference(PatientTeleconsulto)
 
 // * encounter 1..1
 // * encounter only Reference(EncounterTeleconsulto)
@@ -70,9 +70,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     prestazioni 0..*
 
 * section[richiestaTeleconsulto] ^sliceName = "richiestaTeleconsulto"
-* section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTC)
+* section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTeleconsulto)
 * section[richiestaTeleconsulto].code = $loinc#11488-4
 
 * section[prestazioni] ^sliceName = "prestazioni"
-* section[prestazioni].entry only Reference(ProcedureTelemedicina)
+* section[prestazioni].entry only Reference(ProcedureTeleconsulto)
 * section[prestazioni].code = $loinc#62387-6

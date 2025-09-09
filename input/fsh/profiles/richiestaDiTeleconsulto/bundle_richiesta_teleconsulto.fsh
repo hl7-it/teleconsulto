@@ -1,7 +1,6 @@
 Profile: BundleRichiestaTeleconsulto
 Parent: Bundle
 Id: BundleRichiestaTeleconsulto
-Title: "Bundle Richiesta di Teleconsulto"
 Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse correlate"
 * ^status = #draft
 * type = #document (exactly)
@@ -27,10 +26,10 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[composition].resource only CompositionRichiestaTeleconsulto
 
 // Entry slice: serviceRequest
-* entry[serviceRequest].resource only ServiceRequestTC
+* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
 
 // Entry slice: patient
-* entry[patient].resource only PatientTelemedicina
+* entry[patient].resource only PatientTeleconsulto
 
 // Entry slice: practitionerRole
 * entry[practitionerRole].resource only PractitionerRoleTelemedicina
@@ -39,10 +38,10 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[practitioner].resource only PractitionerTelemedicina
 
 // Entry slice: organization
-* entry[organization].resource only OrganizationTelemedicina
+* entry[organization].resource only OrganizationTeleconsulto
 
 // Entry slice: procedure
-* entry[procedure].resource only ProcedureTelemedicina
+* entry[procedure].resource only ProcedureTeleconsulto
 
 // // Entry slice: deviceUseStatement
-// * entry[appointment].resource only AppointmentTelemedicina
+// * entry[appointment].resource only AppointmentTeleconsulto

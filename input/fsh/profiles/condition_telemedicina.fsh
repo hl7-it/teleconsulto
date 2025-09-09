@@ -24,7 +24,7 @@
 // * code.coding[codificaICD9cm] ^definition = "Riferimento ad un codice definito nel sistema terminologico ICD9cm."
 // * code.coding[codificaICD9cm].system = "http://terminology.hl7.org/CodeSystem/icd9cm" (exactly)
 // * code.coding[codificaICD9cm].code ^definition = "Codice che identifica il quesito diagnostico valido all'interno della codifica ICD9cm"
-// * subject only Reference(PatientTelemedicina)
+// * subject only Reference(PatientTeleconsulto)
 // * subject ^short = "Soggetto della diagnosi"
 // * subject ^definition = "Indica il soggetto della diagnosi"
 // * encounter only Reference(EncounterTeleconsulto)

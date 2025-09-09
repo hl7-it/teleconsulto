@@ -1,8 +1,8 @@
-Profile: ObservationTelemedicina
+Profile: ObservationTeleconsulto
 Parent: Observation
-Id: ObservationTelemedicina
-Description: "Profilo base di Observation condiviso in tutti i documenti di Telemedicina"
-* ^url = "http://hl7.it/fhir/teleconsulto/StructureDefinition/ObservationTelemedicina"
+Id: ObservationTeleconsulto
+Description: "Profilo di Observation utilizzato nel contesto di Teleconsulto"
+* ^url = "http://hl7.it/fhir/teleconsulto/StructureDefinition/ObservationTeleconsulto"
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true

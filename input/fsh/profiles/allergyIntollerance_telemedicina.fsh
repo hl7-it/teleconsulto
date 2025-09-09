@@ -1,11 +1,11 @@
-Profile: AllergyIntoleranceTelemedicina
+Profile: AllergyIntoleranceTeleconsulto
 Parent: AllergyIntolerance
-Id: AllergyIntoleranceTelemedicina
+Id: AllergyIntoleranceTeleconsulto
 Title: "AllergyIntolerance telemedicina"
-Description: "Profilo base del AllergyIntolerance condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo di AllergyIntolerance cutilizzata nel contesto del Teleconsulto"
 * code 1..1
 * code ^short = "Codice dell'allergia o intolleranza"
 * code ^definition = "Codice dell'allergia o intolleranza"
 * criticality ^short = "Criticità"
-* patient only Reference(PatientTelemedicina)
+* patient only Reference(PatientTeleconsulto)
 * reaction.severity ^short = "Gravità della reazione"

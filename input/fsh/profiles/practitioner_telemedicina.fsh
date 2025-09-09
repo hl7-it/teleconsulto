@@ -1,12 +1,9 @@
 Profile: PractitionerTelemedicina
 Parent: Practitioner
 Id: PractitionerTelemedicina
-Description: "Profilo base del Practitioner condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo del Practitioner utilizzato nel contesto del Teleconsulto"
 * ^version = "0.1.0"
 * ^status = #active
-* id ^short = "ID logico della risorsa"
-* id ^definition = "ID logico della risorsa, come utilizzato nell'URL della risorsa. Una volta assegnato, questo valore non cambia mai."
-* id ^comment = "Il valore associato al campo deve rispettare il seguente formalismo:\r\nPOD.GUID\r\ndove POD= point of delivery identification"
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.description = "Slice based on the identifier pattern"
