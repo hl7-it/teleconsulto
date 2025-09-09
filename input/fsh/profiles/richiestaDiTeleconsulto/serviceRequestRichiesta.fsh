@@ -1,4 +1,4 @@
-Alias: $extension_serviceRequest_codeCodingType = https://agenas.gov.it/fhir/StructureDefinition/extension_serviceRequest_codeCodingType
+Alias: $extension_serviceRequest_codeCodingType = http://hl7.it/fhir/teleconsulto/StructureDefinition/extension_serviceRequest_codeCodingType
 Alias: $catalogoRegionalePrestazioni = https://terminology.agenas.gov.it/ValueSet/catalogoRegionalePrestazioni
 
 Profile: ServiceRequestRichiestaTC

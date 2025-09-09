@@ -387,7 +387,7 @@ Description: "Esempio di quesito diagnostico nel contesto della teleconsulto"
 Usage: #example
 * id = "7cbbe77d-dcdb-409b-a215-6361ad7873d5"
 * status = #final
-* code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
+* code = http://hl7.it/fhir/teleconsulto/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo post-COVID per tosse persistente"
 * performer = Reference(PractitionerRoleTelemedicinaExample)
@@ -490,7 +490,7 @@ InstanceOf: ObservationTelemedicina
 Description: "Esempio di esame diagnosi nel contesto della teleconsulto"
 Usage: #example
 * status = #final
-* code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
+* code = http://hl7.it/fhir/teleconsulto/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"
@@ -572,7 +572,7 @@ Usage: #example
 * id = "b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 * status = #completed
 * category = http://snomed.info/sct#409063005 "Counselling"
-//* code = https://agenas.gov.it/fhir/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
+//* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
 * subject = Reference(PatientTelemedicinaExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
@@ -614,7 +614,7 @@ Usage: #example
 * intent = #order
 * identifier.value = "AAZ123456789"
 * requisition.value = "REQ-20250709-0001"
-* category = https://agenas.gov.it/fhir/CodeSystem/branca-prestazione#02 "Cardiologia"
+* category = http://hl7.it/fhir/teleconsulto/CodeSystem/branca-prestazione#02 "Cardiologia"
 * priority = #routine
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * subject.display = "Mario Rossi"
@@ -787,7 +787,7 @@ Usage: #example
 * intent = #order
 * identifier.value = "AAZ123456789"
 * requisition.value = "REQ-20250709-0001"
-* category = https://agenas.gov.it/fhir/CodeSystem/branca-prestazione#02 "Cardiologia"
+* category = http://hl7.it/fhir/teleconsulto/CodeSystem/branca-prestazione#02 "Cardiologia"
 * priority = #routine
 * subject = Reference(PatientTelemedicinaExample)
 * occurrenceDateTime = "2025-07-09T10:00:00+01:00"
@@ -833,7 +833,7 @@ Usage: #example
 * id = "f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
 * status = #completed
 * category = http://snomed.info/sct#409063005 "Counselling"
-//* code = https://agenas.gov.it/fhir/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
+//* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
 * subject = Reference(PatientTelemedicinaExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"

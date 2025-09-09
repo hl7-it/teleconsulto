@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: teleconsulto
-canonical: https://agenas.gov.it/fhir
+canonical: http://hl7.it/fhir/teleconsulto 
 name: Teleconsulto
 title: Teleconsulto
 description: Teleconsulto

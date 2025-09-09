@@ -4,7 +4,7 @@ Profile: TimingTelemedicina
 Parent: $Timing
 Id: TimingTelemedicina
 Description: "Descrizione dei campi da valorizzare in Timing"
-* ^url = "https://agenas.gov.it/fhir/StructureDefinition/TimingTelemedicina"
+* ^url = "http://hl7.it/fhir/teleconsulto/StructureDefinition/TimingTelemedicina"
 * ^status = #draft
 * repeat.count ^short = "Numero di cicli"
 * repeat.duration ^short = "Durata del ciclo"

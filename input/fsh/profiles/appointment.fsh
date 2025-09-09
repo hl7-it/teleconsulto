@@ -1,4 +1,4 @@
-//Alias: $serviceRequest_tm = https://agenas.gov.it/fhir/StructureDefinition/ServiceRequestTV
+//Alias: $serviceRequest_tm = http://hl7.it/fhir/teleconsulto/StructureDefinition/ServiceRequestTV
 
 Profile: AppointmentTelemedicina
 Parent: Appointment

@@ -45,15 +45,15 @@ There are multiple different potential matches for the url 'http://terminology.h
 There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.0.0, 3.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode' to 'http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode|3.0.0'
 There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.0.0, 3.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason' to 'http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason|3.0.0'
 There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActEncounterCode'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.0.0, 3.0.0. Suggested fix: change the canonical reference from 'http://terminology.hl7.org/ValueSet/v3-ActEncounterCode' to 'http://terminology.hl7.org/ValueSet/v3-ActEncounterCode|3.0.0'
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/lab-report/CodeSystem/minsan-hsp
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/lab-report/CodeSystem/cs-mds-idStruttureInterne
-Found multiple matching profiles for Organization/asl-roma-1 among choices: https://agenas.gov.it/fhir/StructureDefinition/OrganizationT1|0.1.0, https://agenas.gov.it/fhir/StructureDefinition/OrganizationTelemedicina|0.1.0
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/teleconsulto/lab-report/CodeSystem/minsan-hsp
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://hl7.it/fhir/teleconsulto/lab-report/CodeSystem/cs-mds-idStruttureInterne
+Found multiple matching profiles for Organization/asl-roma-1 among choices: http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationT1|0.1.0, http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationTelemedicina|0.1.0
 No definition could be found for URL value 'http://hl7.it/sid/fls'
 No definition could be found for URL value 'http://hl7.it/sid/partitaIva'
-This element does not match any known slice defined in the profile https://agenas.gov.it/fhir/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile https://agenas.gov.it/fhir/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile https://agenas.gov.it/fhir/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
-This element does not match any known slice defined in the profile https://agenas.gov.it/fhir/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationT1|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 No definition could be found for URL value 'http://hl7.it/sid/fls'
 No definition could be found for URL value 'http://hl7.it/sid/partitaIva'
@@ -64,10 +64,10 @@ The Implementation Guide contains no explicitly linked examples for this profile
 he Implementation Guide contains no examples for this extension
 The Implementation Guide contains no examples for this extension
 
-Found multiple matching profiles for Organization/e446e848-2bd4-423a-b2f8-5d25687e2f4b among choices: https://agenas.gov.it/fhir/StructureDefinition/OrganizationT1|0.1.0, https://agenas.gov.it/fhir/StructureDefinition/OrganizationTelemedicina|0.1.0
+Found multiple matching profiles for Organization/e446e848-2bd4-423a-b2f8-5d25687e2f4b among choices: http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationT1|0.1.0, http://hl7.it/fhir/teleconsulto/StructureDefinition/OrganizationTelemedicina|0.1.0
 
 For the complex type CodeableConcept, consider using a pattern rather than a fixed value to avoid over-constraining the instance
-None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set (codes = https://agenas.gov.it/fhir/CodeSystem/csspecialityPractitionerRole#01)
+None of the codings provided are in the value set 'Practice Setting Code Value Set' (http://hl7.org/fhir/ValueSet/c80-practice-codes|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.it/fhir/teleconsulto/CodeSystem/csspecialityPractitionerRole#01)
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 The extension http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.2.0 is deprecated with the note Replaced by [[[http://hl7.org/fhir/StructureDefinition/iso21090-codedString]]]
 The value set expansion is too large, and only a subset has been displayed

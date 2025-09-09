@@ -1,12 +1,12 @@
 // Alias: $extension-DiagnosticReport.composition = http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.composition
-// Alias: $extension-DiagnosticReport-suggestedServices = https://agenas.gov.it/fhir/StructureDefinition/extension-DiagnosticReport-suggestedServices
+// Alias: $extension-DiagnosticReport-suggestedServices = http://hl7.it/fhir/teleconsulto/StructureDefinition/extension-DiagnosticReport-suggestedServices
 // Alias: $diagnosiICD9CM = https://terminology.agenas.gov.it/ValueSet/diagnosiICD9CM
 
 // Profile: DiagnosticReportTelemedicina
 // Parent: DiagnosticReport
 // Id: DiagnosticReportTelemedicina
 // Description: "Profilo base della DiagnosticReport condiviso in tutti i documenti di Telemedicina"
-// * ^url = "https://agenas.gov.it/fhir/StructureDefinition/DiagnosticReportTelemedicina"
+// * ^url = "http://hl7.it/fhir/teleconsulto/StructureDefinition/DiagnosticReportTelemedicina"
 // * ^version = "1.0.0"
 // * ^status = #draft
 // * id MS

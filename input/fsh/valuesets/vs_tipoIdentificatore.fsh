@@ -10,7 +10,7 @@ Description: "Value set che descrivie i diversi tipi di identificatori. Include 
 * ^date = "2019-11-01T09:29:23+11:00"
 * ^publisher = "HL7 Italia"
 * ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://hl7.it/fhir"
+* ^contact.telecom.value = "http://hl7.it/fhir/teleconsulto"
 * $v2-0203#DL "Patente di Guida"
 * $v2-0203#PPN "Numero Passaporto"
 * $v2-0203#BRN "Breed Registry Number"
