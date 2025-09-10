@@ -6,7 +6,7 @@ Alias: $mimeType = urn:ietf:bcp:13
 Alias: $istat-DUG-CS = 	https://www.hl7.it/fhir/terminology/CodeSystem/dug
 
 Instance: TeleconsultoCardiologicoTransaction
-InstanceOf: Bundle
+InstanceOf: BundleRelazioneCollaborativaTeleconsultoTransaction
 Title: "Teleconsulto Cardiologico - Transaction"
 Description: "Bundle di tipo transaction con risorse amministrative in PUT e cliniche in POST"
 Usage: #example
@@ -44,7 +44,7 @@ Usage: #example
 
 * entry[6].fullUrl = "http://example/Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2"
 * entry[6].resource = EncounterTelemedicinaExample
-* entry[6].request.method = #POST
+* entry[6].request.method = #PUT
 * entry[6].request.url = "Encounter"
 
 * entry[7].fullUrl = "http://example/Composition/aa011502-6ad2-430b-a439-01dddc36fd4e"
@@ -129,7 +129,7 @@ Usage: #example
 
 * entry[23].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 * entry[23].resource = AppointmentTeleconsultoExample
-* entry[23].request.method = #POST
+* entry[23].request.method = #PUT
 * entry[23].request.url = "Appointment"
 
 * entry[24].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
@@ -362,6 +362,9 @@ Usage: #example
 * id = "2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
 * name.given = "John"
 * name.family = "Doe"
+* identifier
+  * system = "http://hl7.it/sid/codiceFiscale"
+  * value = "RSSMRA71E01F205E" 
 
 
 Instance: PractitionerRoleTelemedicinaExample
@@ -671,51 +674,51 @@ Usage: #example
 * identifier.value = "UO12345"
 
 
-Instance: RichiestaTeleconsultoCardiologicoTransaction
-InstanceOf: Bundle
-Title: "Esempio di Richiesta Teleconsulto Cardiologico - Transaction"
-Description: "Esempio FHIR di teleconsulto tra MMG e cardiologo - come transaction"
-Usage: #example
-* type = #transaction
-* entry[0].fullUrl = "http://example/Composition/composition-request-richiesta-1"
-* entry[0].resource = CompositionRichiestaTeleconsultoExample
-* entry[0].request.method = #PUT
-* entry[0].request.url = "Composition/composition-request-richiesta-1"
+// Instance: RichiestaTeleconsultoCardiologicoTransaction
+// InstanceOf: Bundle
+// Title: "Esempio di Richiesta Teleconsulto Cardiologico - Transaction"
+// Description: "Esempio FHIR di teleconsulto tra MMG e cardiologo - come transaction"
+// Usage: #example
+// * type = #transaction
+// * entry[0].fullUrl = "http://example/Composition/composition-request-richiesta-1"
+// * entry[0].resource = CompositionRichiestaTeleconsultoExample
+// * entry[0].request.method = #PUT
+// * entry[0].request.url = "Composition/composition-request-richiesta-1"
 
-* entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTeleconsultoExample
-* entry[1].request.method = #POST
-* entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
+// * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
+// * entry[1].resource = PatientTeleconsultoExample
+// * entry[1].request.method = #POST
+// * entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
 
-* entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-* entry[2].resource = PractitionerRoleTelemedicinaExample
-* entry[2].request.method = #POST
-* entry[2].request.url = "PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
+// * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
+// * entry[2].resource = PractitionerRoleTelemedicinaExample
+// * entry[2].request.method = #POST
+// * entry[2].request.url = "PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 
-* entry[3].fullUrl = "http://example/Organization/asl-roma-1"
-* entry[3].resource = AslRoma1
-* entry[3].request.method = #POST
-* entry[3].request.url = "Organization/asl-roma-1"
+// * entry[3].fullUrl = "http://example/Organization/asl-roma-1"
+// * entry[3].resource = AslRoma1
+// * entry[3].request.method = #POST
+// * entry[3].request.url = "Organization/asl-roma-1"
 
-* entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-* entry[4].resource = PractitionerTelemedicinaExample
-* entry[4].request.method = #POST
-* entry[4].request.url = "Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
+// * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
+// * entry[4].resource = PractitionerTelemedicinaExample
+// * entry[4].request.method = #POST
+// * entry[4].request.url = "Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
 
-* entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
-* entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
-* entry[5].request.method = #PUT
-* entry[5].request.url = "ServiceRequest/service-request-richiesta-1"
+// * entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
+// * entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
+// * entry[5].request.method = #PUT
+// * entry[5].request.url = "ServiceRequest/service-request-richiesta-1"
 
-* entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-* entry[6].resource = ProcedureTeleconsultoExample
-* entry[6].request.method = #PUT
-* entry[6].request.url = "Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
+// * entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
+// * entry[6].resource = ProcedureTeleconsultoExample
+// * entry[6].request.method = #PUT
+// * entry[6].request.url = "Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 
-* entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-* entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
-* entry[7].request.method = #PUT
-* entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
+// * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
+// * entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
+// * entry[7].request.method = #PUT
+// * entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
 
 Instance: RichiestaTeleconsultoCardiologico
@@ -752,6 +755,59 @@ Usage: #example
 
 * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 * entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
+
+
+//Richiesta di teleconsulto transacrion
+Instance: RichiestaTeleconsultoCardiologicoTransaction
+InstanceOf: BundleRichiestaTeleconsultoTransaction
+Title: "Esempio di Richiesta di Teleconsulto Cardiologico"
+Description: "Esempio FHIR di teleconsulto tra MMG e cardiologo"
+Usage: #example
+* type = #transaction
+* identifier.system = "urn:ietf:rfc:39861"
+* identifier.value = "urn:uuid:bfcf00e2-e2bb-4a7d-adaa-3de9d419d27e"
+* timestamp = "2025-07-15T10:00:00+01:00"
+
+// Manteniamo le stesse risorse dell'esempio originale
+* entry[0].fullUrl = "http://example/Composition/composition-request-richiesta-1"
+* entry[0].resource = CompositionRichiestaTeleconsultoExample
+* entry[0].request.method = #POST
+* entry[0].request.url = "Composition"
+
+* entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
+* entry[1].resource = PatientTeleconsultoExample
+* entry[1].request.method = #PUT
+* entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
+
+* entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
+* entry[2].resource = PractitionerRoleTelemedicinaExample
+* entry[2].request.method = #PUT
+* entry[2].request.url = "PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
+
+* entry[3].fullUrl = "http://example/Organization/asl-roma-1"
+* entry[3].resource = AslRoma1
+* entry[3].request.method = #PUT
+* entry[3].request.url = "Organization/asl-roma-1"
+
+* entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
+* entry[4].resource = PractitionerTelemedicinaExample
+* entry[4].request.method = #PUT
+* entry[4].request.url = "Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
+
+* entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
+* entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
+* entry[5].request.method = #POST
+* entry[5].request.url = "ServiceRequest"
+
+* entry[6].fullUrl = "http://example/Procedure/f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
+* entry[6].resource = ProceduraRichiestaTeleconsultoExample
+* entry[6].request.method = #POST
+* entry[6].request.url = "Procedure"
+
+* entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
+* entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
+* entry[7].request.method = #PUT
+* entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
 
 Instance: CompositionRichiestaTeleconsultoExample
@@ -823,6 +879,9 @@ Usage: #example
 * id = "d37c3d0a-96d9-4de5-873c-68b6c1c64db2"
 * name.given = "John"
 * name.family = "Cena"
+* identifier
+  * system = "http://hl7.it/sid/codiceFiscale"
+  * value = "RSSMRA71E01F205E" 
 
 
 Instance: ProceduraRichiestaTeleconsultoExample

@@ -13,12 +13,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
-//* subject only Reference(PatientTeleconsulto)
-//* encounter only Reference(EncounterTeleconsulto)
-// * encounter ^short = "Contesto in cui è stato generato il documento."
-* date ^short = "Data di modifica della risorsa da parte del firmatario."
+* date ^short = "Data di modifica del documento."
 
-* author only Reference(PractitionerRoleTelemedicina or OrganizationTeleconsulto)
+* author only Reference(PractitionerRoleTelemedicina or OrganizationT1)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"

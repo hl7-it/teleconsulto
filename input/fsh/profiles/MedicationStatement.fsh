@@ -8,7 +8,10 @@ Description: "Profilo della MedicationStatement utilizzato nel contesto del Tele
 
 // Limit medication to CodeableConcept
 * medication[x] only CodeableConcept
-* medication[x] ^mustSupport = true
+* medication[x] ^short = "Definizione farmaco"
+* medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
+* medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
+* medication[x] ^binding.strength = #preferred
 
 // Subject must be Telemedicina patient
 * subject only Reference(PatientTeleconsulto)

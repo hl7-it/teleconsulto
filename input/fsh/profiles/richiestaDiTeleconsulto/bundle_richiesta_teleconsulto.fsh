@@ -38,7 +38,7 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[practitioner].resource only PractitionerTelemedicina
 
 // Entry slice: organization
-* entry[organization].resource only OrganizationTeleconsulto
+* entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3 
 
 // Entry slice: procedure
 * entry[procedure].resource only ProcedureTeleconsulto

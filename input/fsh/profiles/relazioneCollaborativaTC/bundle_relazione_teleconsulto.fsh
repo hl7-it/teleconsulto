@@ -48,7 +48,7 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 * entry[practitioner].resource only PractitionerTelemedicina
 
 // Entry slice: organization
-* entry[organization].resource only OrganizationTeleconsulto
+* entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3  
 
 // Entry slice: observation
 * entry[observation].resource only ObservationTeleconsulto

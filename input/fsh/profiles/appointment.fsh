@@ -6,8 +6,6 @@ Id: AppointmentTeleconsulto
 Description: "Profilo di Appointment utilizzato nel contesto del Teleconsulto"
 * ^status = #draft
 * ^date = "2023-10-18T12:01:35+02:00"
-* id ^short = "ID logico della risorsa"
-* id ^definition = "ID logico della risorsa, come utilizzato nell'URL della risorsa. Una volta assegnato, questo valore non cambia mai."
 * identifier ^short = "Codice CUP della prenotazione"
 * identifier ^definition = "Elemento di tipo identifier contenente gli identificativi univoci della risorsa."
 * status ^definition = "Elemento di tipo code che contiene lo stato complessivo dell'Appuntamento. Ciascuno dei partecipanti ha un proprio stato di partecipazione che indica il suo coinvolgimento nel processo, tuttavia questo stato indica lo stato condiviso."

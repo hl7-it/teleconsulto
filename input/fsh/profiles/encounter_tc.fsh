@@ -11,10 +11,7 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 // * identifier ^slicing.rules = #open
 // * identifier contains codiceNosologico 0..*
 // * identifier[codiceNosologico].system = "http://agenas.gov.it/sid/codiceNosologico" (exactly)
-* identifier ^short = "Identificativo dell'invonto (es. codice nosologico)."
-
-* status ^short = "Stato attuale dell'incontro."
-* status ^definition = "Descrizione attributo: Stato attuale dell'incontro. Possibili valori: planned | arrived | triaged | in-progress | onleave | finished | cancelled"
+* identifier ^short = "Identificativo dell'incontro."
 
 * class ^short = "Classificazione dell'incontro con il paziente."
 * class ^definition = "Concetti che rappresentano la classificazione dell'incontro con il paziente, come ad esempio ambulatorio (paziente esterno), ricovero, emergenza, assistenza sanitaria a domicilio o altri, a causa delle variazioni locali."
@@ -34,14 +31,11 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * type ^short = "Disciplina"
 * type from ValueSet_specialita_PractitionerRole (required)
 
-* participant ^short = "Altre figura tecnica coinvolte."
-* participant ^definition = "BackboneElement contenente la lista dei coinvolti nella visita oltre al Patient."
-* participant ^comment = "In partecipat.individual può essere inserito il riferimento al Practitioner o al PractitionerRole che prende in carico la visita."
+* participant ^short = "Professionisti coinvolti nel teleconsulto."
 * participant.individual only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina)
 
 * appointment only Reference(AppointmentTeleconsulto)
-* appointment ^short = "L'appuntamento da cui è partita l'incontro."
-* appointment ^definition = "L'appuntamento da cui è partita l'incontro"
+* appointment ^short = "L'appuntamento da cui è scaturito l'incontro."
 
 * period ^short = "Data di inizio e di fine dell'incontro."
 * period ^comment = "Se non è (ancora) nota, la fine del Periodo può essere omessa."
@@ -52,4 +46,4 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 
 * serviceProvider ^short = "Organizzazione che eroga il il servizio."
 * serviceProvider ^definition = "Elemento reference che contiene il riferimento alla struttura che eroga la visita, intesa come poliambulatorio"
-* serviceProvider only Reference(OrganizationTeleconsulto)
+* serviceProvider only Reference(OrganizationT1)

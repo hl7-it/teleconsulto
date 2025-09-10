@@ -1,7 +1,7 @@
 
 
 Profile: OrganizationT2
-Parent: OrganizationTeleconsulto
+Parent: Organization
 Id: OrganizationT2
 Description: "Profilo base di Organization di tipo 2 (es. ospedale, distretto)"
 // * identifier ^slicing.discriminator.type = #value

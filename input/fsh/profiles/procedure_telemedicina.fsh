@@ -15,7 +15,7 @@ Description:  "Profilo della Procedure utilizzata nel contesto del Teleconsulto"
 
 * code ^short = "Codice della prestazione eseguita"
 * code ^definition = "CodeableConcept che contiene i codici identificativi delle tipologie di interventi, come ad esempio i codici ICD9 supportati dallo standard FHIR"
-* code from VsCatalogoNazionalePrestazioni (required)
+* code from VsCatalogoNazionalePrestazioni (preferred)
 
 * subject only Reference(PatientTeleconsulto)
 * subject ^short = "Paziente coinvolto nella procedira"
@@ -31,7 +31,7 @@ Description:  "Profilo della Procedure utilizzata nel contesto del Teleconsulto"
 // TODO: Capire se modificare per indicare il medico consultato
 * performer ^short = "Le persone che hanno eseguito la procedura"
 * performer ^definition = "Elemento ripetibile contenente i riferimenti a chi prende parte alla procedura di intervento e alle tipologie di performance offerte durante la procedure."
-* performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationTeleconsulto or Patient)
+* performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationT1 or Patient)
 
 * outcome ^short = "Parametri rilevanti al fine di caratterizzare la procedura"
 * outcome ^definition = "Elemento utilizzato per gestire la relazione del professionista generata al termine dell'erogazione"
