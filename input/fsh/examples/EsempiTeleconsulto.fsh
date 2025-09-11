@@ -296,7 +296,7 @@ Usage: #example
 Instance: CompositionRelazioneCollaborativaTeleconsultoExample
 InstanceOf: CompositionRelazioneCollaborativaTeleconsulto
 Title: "Esempio completo di relazione collaborativa di teleconsulto"
-Description: "Referto teleconsulto con tutte le sezioni richieste dal profilo"
+Description: "Esempio completo di relazione collaborativa di teleconsulto"
 Usage: #example
 * status = #final
 * id = "aa011502-6ad2-430b-a439-01dddc36fd4e"
@@ -813,7 +813,7 @@ Usage: #example
 Instance: CompositionRichiestaTeleconsultoExample
 InstanceOf: CompositionRichiestaTeleconsulto
 Title: "Esempio completo di richiesta di teleconsulto"
-Description: "Referto teleconsulto con tutte le sezioni richieste dal profilo"
+Description: "Esempio di Richiesta di Teleconsulto Cardiologico"
 Usage: #example
 * status = #final
 * id = "composition-request-richiesta-1"
