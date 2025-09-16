@@ -24,8 +24,8 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[composition].resource only CompositionRichiestaTeleconsulto
 * entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
 * entry[patient].resource only PatientTeleconsulto
-* entry[practitionerRole].resource only PractitionerRoleTelemedicina
-* entry[practitioner].resource only PractitionerTelemedicina
+* entry[practitionerRole].resource only PractitionerRoleTeleconsulto
+* entry[practitioner].resource only PractitionerTeleconsulto
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3 
 * entry[procedure].resource only ProcedureTeleconsulto
 

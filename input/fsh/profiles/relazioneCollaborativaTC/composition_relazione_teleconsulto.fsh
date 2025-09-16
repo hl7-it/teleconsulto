@@ -18,7 +18,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * encounter ^short = "Contesto in cui è stato generato il documento."
 * date ^short = "Data di modifica della risorsa da parte del firmatario."
 
-* author only Reference(PractitionerRoleTelemedicina or OrganizationT1)
+* author only Reference(PractitionerRoleTeleconsulto or OrganizationT1)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"
@@ -32,7 +32,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * attester[legalAuthenticator].mode = #legal (exactly)
 * attester[legalAuthenticator].time 1..
 * attester[legalAuthenticator].party 1..
-* attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleconsulto)
 
 * relatesTo ^short = "Ulteriori documenti correlati"
 

@@ -32,10 +32,10 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[patient].resource only PatientTeleconsulto
 
 // Entry slice: practitionerRole
-* entry[practitionerRole].resource only PractitionerRoleTelemedicina
+* entry[practitionerRole].resource only PractitionerRoleTeleconsulto
 
 // Entry slice: practitioner
-* entry[practitioner].resource only PractitionerTelemedicina
+* entry[practitioner].resource only PractitionerTeleconsulto
 
 // Entry slice: organization
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3 

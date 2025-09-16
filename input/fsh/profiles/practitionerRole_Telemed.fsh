@@ -4,10 +4,10 @@ Alias: $Organization_T2 = http://hl7.it/fhir/teleconsulto/StructureDefinition/Or
 Alias: $Organization_T3 = http://hl7.it/fhir/teleconsulto/StructureDefinition/Organization_T3
 Alias: $specialityPractitionerRole = https://terminology.agenas.gov.it/ValueSet/specialityPractitionerRole
 
-Profile: PractitionerRoleTelemedicina
+Profile: PractitionerRoleTeleconsulto
 Parent: PractitionerRole
-Id: PractitionerRoleTelemedicina
-Title: "PractitionerRoleTelemedicina"
+Id: PractitionerRoleTeleconsulto
+Title: "PractitionerRoleTeleconsulto"
 Description: "Profilo del PractitionerRole utilizzato nel contesto del Teleconsulto"
 * ^version = "0.1.0"
 * ^status = #active
@@ -15,7 +15,7 @@ Description: "Profilo del PractitionerRole utilizzato nel contesto del Teleconsu
 * period ^short = "Il periodo durante il quale il professionista è autorizzato a svolgere questi ruoli"
 * period ^definition = "Il periodo in cui la persona è autorizzata ad agire come professionista in questi ruoli per l'organizzazione."
 * period ^comment = "Un Periodo specifica un intervallo di tempo; il contesto d'uso specificherà se si applica l'intero intervallo (ad esempio, \"il paziente è stato ricoverato in ospedale per questo intervallo di tempo\") o se si applica un valore dell'intervallo (ad esempio, \"la somministrazione al paziente è avvenuta tra questi due momenti\").\n\nPeriodo non è usato per una durata (una misura del tempo trascorso). Vedere [Duration](datatypes.html#Duration)."
-* practitioner only Reference(PractitionerTelemedicina)
+* practitioner only Reference(PractitionerTeleconsulto)
 * practitioner ^short = "Dettagli dell'operatore"
 * practitioner ^definition = "Il professionista è in grado di fornire i servizi definiti per l'organizzazione."
 * practitioner ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite il recupero dell'URL o, se applicabile al tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."

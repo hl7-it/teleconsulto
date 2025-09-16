@@ -32,7 +32,7 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * type from ValueSet_specialita_PractitionerRole (required)
 
 * participant ^short = "Professionisti coinvolti nel teleconsulto."
-* participant.individual only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina)
+* participant.individual only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 
 * appointment only Reference(AppointmentTeleconsulto)
 * appointment ^short = "L'appuntamento da cui è scaturito l'incontro."

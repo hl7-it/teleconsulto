@@ -9,11 +9,13 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 
 * extension contains OscuramentoDati named oscuramentoDati 0..1
 * extension[oscuramentoDati] ^short = "Campo che identifica la volontà del paziente nell'oscurare i propri dati."
+//* extension[oscuramentoDati] only boolean
 
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
 * identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
 
-* requisition ^short = "Identificativo univoco della richiesta composita"
+* requisition 1..
+* requisition ^short = "Codice Identificativo della richiesta"
 * requisition ^definition = "Un identificativo condiviso comune a tutte le singole istanze della richiesta, generate contemporaneamente da un singolo autore: rappresenta l'identificativo composito o di gruppo.\n\nPer i casi di richieste di prescrizione rappresenterà l'NRE oppure il numero di ricetta cartacea."
 * requisition.type ^short = "Descrizione della tipologia di identificativo"
 * requisition.type ^definition = "Codice che specifica come l'identificativo può essere usato."
@@ -60,11 +62,11 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * authoredOn ^short = "Data compilazione della ricetta da parte del medico."
 * authoredOn ^definition = "Nei casi di prescrizione, corrisponde alla data di compilazione della prescrizione."
 
-* requester only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina)
+* requester only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 * requester ^short = "Medico richiedente il teleconsulto."
 * requester ^definition = "Elemento di tipo Reference che contiene il riferimento alla asl e medico richiedente."
 
-* performer only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina)
+* performer only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 * performer ^short = "Medici consultati."
 * performer ^definition = "Elemento di tipo Reference che contiene il riferimento alle risorse Organization, Practitioner, PractitionerRole e HealthCareService."
 * performer ^comment = "*La reference ad HealthcareService fornirà indicazioni sulla tipologia di servizio di telemedicina da erogare\n\n*La reference ad Organization fornirà indicazioni sull'asl che erogherà la richiesta\n\n*La reference al Practitioner e PractitioneRole fornirà indicazioni sul medico/operatore erogatore ed il rispettivo ruolo"
@@ -76,6 +78,8 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * note ^short = "Uleriori note e indicazioni della prscrizione"
 * note ^definition = "Note o commenti relative alla richiesta."
 * note ^comment = "Per i sistemi che non dispongono di annotazioni strutturate, possono semplicemente comunicare una singola annotazione senza autore o tempo.  Questo elemento potrebbe dover essere incluso nella narrativa a causa del potenziale di modifica delle informazioni.  *Le annotazioni NON DEVONO* essere usate per comunicare informazioni \"modificanti\" che potrebbero essere calcolate. (Questo è un DOVERE perché far rispettare il comportamento dell'utente è quasi impossibile)."
+
+* insurance ^short = "Istituzione competente del soggetto assicurato da istituzioni estere."
 
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "extension.value"

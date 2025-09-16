@@ -100,11 +100,11 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * authoredOn ^short = "Data di invio della richiesta."
 * authoredOn ^definition = "Nei casi di prescrizione, corrisponde alla data di compilazione della prescrizione."
 
-* requester only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina)
+* requester only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 * requester ^short = "Medico richiedente."
 * requester ^definition = "Elemento di tipo Reference che contiene il riferimento alla asl e medico richiedente."
 
-* performer only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina)
+* performer only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 * performer ^short = "Esecutori della richiesta."
 * performer ^definition = "Elemento di tipo Reference che contiene il riferimento alle risorse Organization, Practitioner, PractitionerRole e HealthCareService."
 * performer ^comment = "*La reference ad HealthcareService fornirà indicazioni sulla tipologia di servizio di telemedicina da erogare\n\n*La reference ad Organization fornirà indicazioni sull'asl che erogherà la richiesta\n\n*La reference al Practitioner e PractitioneRole fornirà indicazioni sul medico/operatore erogatore ed il rispettivo ruolo"

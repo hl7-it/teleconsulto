@@ -18,7 +18,7 @@ Usage: #example
 * entry[0].request.url = "Patient?identifier=http://hl7.it/sid/codiceFiscale|RSSMRA80A01H501Z"
 
 * entry[1].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-* entry[1].resource = PractitionerTelemedicinaExample
+* entry[1].resource = PractitionerTeleconsultoExample
 * entry[1].request.method = #PUT
 * entry[1].request.url = "Practitioner?identifier=http://hl7.it/sid/codiceFiscale|DOEMRA80A01H501Z"
 
@@ -38,7 +38,7 @@ Usage: #example
 * entry[4].request.url = "Organization?identifier=http://hl7.it/sid/hsp|UO12345"
 
 * entry[5].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-* entry[5].resource = PractitionerRoleTelemedicinaExample
+* entry[5].resource = PractitionerRoleTeleconsultoExample
 * entry[5].request.method = #PUT
 * entry[5].request.url = "PractitionerRole?practitioner.identifier=http://hl7.it/sid/codiceFiscale|DOEMRA80A01H501Z"
 
@@ -157,13 +157,13 @@ Usage: #example
 * entry[1].resource = PatientTeleconsultoExample
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-* entry[2].resource = PractitionerRoleTelemedicinaExample
+* entry[2].resource = PractitionerRoleTeleconsultoExample
 
 * entry[3].fullUrl = "http://example/Organization/asl-roma-1"
 * entry[3].resource = AslRoma1
 
 * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-* entry[4].resource = PractitionerTelemedicinaExample
+* entry[4].resource = PractitionerTeleconsultoExample
 
 * entry[5].fullUrl = "http://example/Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2"
 * entry[5].resource = EncounterTelemedicinaExample
@@ -288,7 +288,7 @@ Usage: #example
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActPriority"
 * priority.coding[0].code = #R
 * priority.coding[0].display = "routine"
-* participant[0].individual = Reference(PractitionerTelemedicinaExample)
+* participant[0].individual = Reference(PractitionerTeleconsultoExample)
 * reasonReference[0] = Reference(ProcedureTeleconsultoExample)
 * serviceProvider = Reference(AslRoma1)
 
@@ -355,8 +355,8 @@ Usage: #example
 * section[prestazioni].title = "Prestazioni"
 * section[prestazioni].entry[0] = Reference(Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f)
 
-Instance: PractitionerTelemedicinaExample
-InstanceOf: PractitionerTelemedicina
+Instance: PractitionerTeleconsultoExample
+InstanceOf: PractitionerTeleconsulto
 Description: "Esempio di practitioner nel contesto della teleconsulto"
 Usage: #example
 * id = "2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
@@ -367,12 +367,12 @@ Usage: #example
   * value = "RSSMRA71E01F205E" 
 
 
-Instance: PractitionerRoleTelemedicinaExample
-InstanceOf: PractitionerRoleTelemedicina
+Instance: PractitionerRoleTeleconsultoExample
+InstanceOf: PractitionerRoleTeleconsulto
 Description: "Esempio di practitionerRole nel contesto della teleconsulto"
 Usage: #example
 * organization = Reference(AslRoma1)
-* practitioner = Reference(PractitionerTelemedicinaExample)
+* practitioner = Reference(PractitionerTeleconsultoExample)
 * specialty = csspecialityPractitionerRole#01 "Allergologia"
 * id = "e446e848-2bd4-423a-b2f8-5d25687e2f42"
 
@@ -393,7 +393,7 @@ Usage: #example
 * code = http://hl7.it/fhir/teleconsulto/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo post-COVID per tosse persistente"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 Instance: Observation-anamnesi
@@ -405,7 +405,7 @@ Usage: #example
 * code = $loinc#11329-0
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Paziente con anamnesi positiva per bronchite cronica, non fumatore."
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -440,7 +440,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Durante la conversazione si rileva tosse secca intermittente."
 * id = "c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -458,7 +458,7 @@ Usage: #example
 * method.coding[0].display = "Low dose computed tomography of thorax"
 * valueString = "TC torace eseguita il 10/05/2025. Referto: negativa per lesioni polmonari evolutive."
 * id = "9dfdf0c9-a837-42d5-987c-6170c75cc476"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -471,7 +471,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Rispetto al controllo precedente, lieve miglioramento del quadro bronchiolitico."
 * id = "ecc5c95f-a1c0-483c-b48e-5fd84762c393"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -484,7 +484,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Referto di teleconsulto pneumologica: sintomi in miglioramento, non si evidenziano complicanze."
 * id = "a465cf01-05e6-4f38-8f6a-b5d6c4168c94"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -497,7 +497,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -510,7 +510,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Buona risposta al trattamento inalatorio. Monitoraggio consigliato."
 * id = "1611ed98-7577-48ab-9587-7ab4fc96e191"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -523,7 +523,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Valutare spirometria di controllo tra 3 mesi."
 * id = "2054e65c-2012-4286-aac7-ce2f23e8be31"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -536,7 +536,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo emogasanalisi a domicilio."
 * id = "1b401b53-f564-4730-bb13-45d5620596f0"
-* performer = Reference(PractitionerRoleTelemedicinaExample)
+* performer = Reference(PractitionerRoleTeleconsultoExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 
@@ -549,7 +549,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * medicationCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/aifa-atc#C01BD01 "Amiodarone" 
 * authoredOn = "2025-06-16"
-* requester = Reference(PractitionerTelemedicinaExample)
+* requester = Reference(PractitionerTeleconsultoExample)
 * id = "9282eb8d-b153-451a-bd0d-437efd13b45f"
 
 
@@ -579,8 +579,8 @@ Usage: #example
 * subject = Reference(PatientTeleconsultoExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
-* recorder = Reference(PractitionerTelemedicinaExample)
-* performer[+].actor = Reference(PractitionerTelemedicinaExample)
+* recorder = Reference(PractitionerTeleconsultoExample)
+* performer[+].actor = Reference(PractitionerTeleconsultoExample)
 * performer[=].function = http://snomed.info/sct#17561000 "Cardiologist"
 * outcome.text = "Il paziente ha riportato miglioramenti. Non si segnalano criticità. Terapia invariata."
 * note[+].text = "Teleconsulto eseguita tramite piattaforma XTelemed."
@@ -603,7 +603,7 @@ Usage: #example
 * reasonCode.text = "Teleconsulto cardiologica per controllo post-operatorio"
 * participant[0].actor = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * participant[0].status = #accepted
-* participant[1].actor = Reference(PractitionerRoleTelemedicinaExample)
+* participant[1].actor = Reference(PractitionerRoleTeleconsultoExample)
 * participant[1].status = #accepted
 
 
@@ -625,7 +625,7 @@ Usage: #example
 * encounter.display = "Teleconsulto 09/07/2025"
 * occurrenceDateTime = "2025-07-09T10:00:00+01:00"
 * authoredOn = "2025-07-01T09:15:00+01:00"
-* requester = Reference(PractitionerRoleTelemedicinaExample)
+* requester = Reference(PractitionerRoleTeleconsultoExample)
 //* performer = Reference(Organization/ASLRoma1)
 * reasonCode = http://snomed.info/sct#2153008 "Cardiac catheterization education"
 * note[+].text = "Prestazione da eseguire in modalità remota tramite piattaforma XTelemed"
@@ -691,7 +691,7 @@ Usage: #example
 // * entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
 
 // * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-// * entry[2].resource = PractitionerRoleTelemedicinaExample
+// * entry[2].resource = PractitionerRoleTeleconsultoExample
 // * entry[2].request.method = #POST
 // * entry[2].request.url = "PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 
@@ -701,7 +701,7 @@ Usage: #example
 // * entry[3].request.url = "Organization/asl-roma-1"
 
 // * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-// * entry[4].resource = PractitionerTelemedicinaExample
+// * entry[4].resource = PractitionerTeleconsultoExample
 // * entry[4].request.method = #POST
 // * entry[4].request.url = "Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
 
@@ -716,7 +716,7 @@ Usage: #example
 // * entry[6].request.url = "Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 
 // * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-// * entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
+// * entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
 // * entry[7].request.method = #PUT
 // * entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
@@ -739,13 +739,13 @@ Usage: #example
 * entry[1].resource = PatientTeleconsultoExample
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-* entry[2].resource = PractitionerRoleTelemedicinaExample
+* entry[2].resource = PractitionerRoleTeleconsultoExample
 
 * entry[3].fullUrl = "http://example/Organization/asl-roma-1"
 * entry[3].resource = AslRoma1
 
 * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-* entry[4].resource = PractitionerTelemedicinaExample
+* entry[4].resource = PractitionerTeleconsultoExample
 
 * entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
 * entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
@@ -754,7 +754,7 @@ Usage: #example
 * entry[6].resource = ProceduraRichiestaTeleconsultoExample
 
 * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-* entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
+* entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
 
 
 //Richiesta di teleconsulto transacrion
@@ -780,7 +780,7 @@ Usage: #example
 * entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-* entry[2].resource = PractitionerRoleTelemedicinaExample
+* entry[2].resource = PractitionerRoleTeleconsultoExample
 * entry[2].request.method = #PUT
 * entry[2].request.url = "PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 
@@ -790,7 +790,7 @@ Usage: #example
 * entry[3].request.url = "Organization/asl-roma-1"
 
 * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-* entry[4].resource = PractitionerTelemedicinaExample
+* entry[4].resource = PractitionerTeleconsultoExample
 * entry[4].request.method = #PUT
 * entry[4].request.url = "Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
 
@@ -805,7 +805,7 @@ Usage: #example
 * entry[6].request.url = "Procedure"
 
 * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-* entry[7].resource = PractitionerRoleTelemedicinaConsulenteExample
+* entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
 * entry[7].request.method = #PUT
 * entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
@@ -848,14 +848,14 @@ Usage: #example
 * subject = Reference(PatientTeleconsultoExample)
 * occurrenceDateTime = "2025-07-09T10:00:00+01:00"
 * authoredOn = "2025-07-01T09:15:00+01:00"
-* requester = Reference(PractitionerRoleTelemedicinaExample)
-* performer = Reference(PractitionerRoleTelemedicinaConsulenteExample)
+* requester = Reference(PractitionerRoleTeleconsultoExample)
+* performer = Reference(PractitionerRoleTeleconsultoConsulenteExample)
 * reasonCode = CodeSystem_DiagnosiICD9CM#402.00 "CARDIOPATIA IPERTENSIVA MALIGNA SENZA INSUFFICIENZA CARDIACA"
 * note[+].text = "Teleconsulto da eseguire in modalità remota tramite piattaforma XTelemed"
 
 
-// Instance: PractitionerTelemedicinaExample
-// InstanceOf: PractitionerTelemedicina
+// Instance: PractitionerTeleconsultoExample
+// InstanceOf: PractitionerTeleconsulto
 // Description: "Esempio di practitioner nel contesto della teleconsulto"
 // Usage: #example
 // * id = "2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
@@ -863,17 +863,17 @@ Usage: #example
 // * name.family = "Doe"
 
 
-Instance: PractitionerRoleTelemedicinaConsulenteExample
-InstanceOf: PractitionerRoleTelemedicina
+Instance: PractitionerRoleTeleconsultoConsulenteExample
+InstanceOf: PractitionerRoleTeleconsulto
 Description: "Esempio di practitionerRole nel contesto della teleconsulto"
 Usage: #example
 * organization = Reference(AslRoma1)
-* practitioner = Reference(PractitionerTelemedicinaConulenteExample)
+* practitioner = Reference(PractitionerTeleconsultoConulenteExample)
 * specialty = csspecialityPractitionerRole#01 "Allergologia"
 * id = "9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
-Instance: PractitionerTelemedicinaConulenteExample
-InstanceOf: PractitionerTelemedicina
+Instance: PractitionerTeleconsultoConulenteExample
+InstanceOf: PractitionerTeleconsulto
 Description: "Esempio di practitioner nel contesto della teleconsulto"
 Usage: #example
 * id = "d37c3d0a-96d9-4de5-873c-68b6c1c64db2"
@@ -896,8 +896,8 @@ Usage: #example
 * subject = Reference(PatientTeleconsultoExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
-* recorder = Reference(PractitionerTelemedicinaExample)
-* performer[+].actor = Reference(PractitionerTelemedicinaExample)
+* recorder = Reference(PractitionerTeleconsultoExample)
+* performer[+].actor = Reference(PractitionerTeleconsultoExample)
 * performer[=].function = http://snomed.info/sct#17561000 "Cardiologist"
 * outcome.text = "Il paziente ha riportato miglioramenti. Non si segnalano criticità. Terapia invariata."
 * note[+].text = "Teleconsulto eseguita tramite piattaforma XTelemed."

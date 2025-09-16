@@ -15,7 +15,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 
 * date ^short = "Data di modifica del documento."
 
-* author only Reference(PractitionerRoleTelemedicina or OrganizationT1)
+* author only Reference(PractitionerRoleTeleconsulto or OrganizationT1)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"
@@ -29,7 +29,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * attester[legalAuthenticator].mode = #legal (exactly)
 * attester[legalAuthenticator].time 1..
 * attester[legalAuthenticator].party 1..
-* attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleconsulto)
 
 * relatesTo ^short = "Ulteriori documenti correlati"
 
@@ -64,7 +64,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section ^slicing.ordered = false
 * section contains
     richiestaTeleconsulto 1..1 and
-    prestazioni 0..*
+    prestazioni 0..* and
+    disgnosi 0..1
 
 * section[richiestaTeleconsulto] ^sliceName = "richiestaTeleconsulto"
 * section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTeleconsulto)
@@ -73,3 +74,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].entry only Reference(ProcedureTeleconsulto)
 * section[prestazioni].code = $loinc#62387-6
+
+* section[disgnosi] ^sliceName = "disgnosi"
+* section[disgnosi].entry only Reference(ObservationTeleconsulto)
+* section[disgnosi].code = $loinc#29548-5
+

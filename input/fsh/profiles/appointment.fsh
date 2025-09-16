@@ -23,6 +23,7 @@ Description: "Profilo di Appointment utilizzato nel contesto del Teleconsulto"
 * created ^definition = "Elemento di tipo dateTime che contiene la data di presa in carico della consulenza"
 * created ^comment = "Questa proprietà è necessaria per molti casi d'uso in cui l'età di un appuntamento viene considerata nell'elaborazione dei flussi di lavoro per la programmazione e la fatturazione degli appuntamenti."
 //* basedOn only Reference(ServiceRequestTV)
+* priority ^short = "Richiesta disponibilità immediata"
 * basedOn ^short = "La richiesta di servizio per la quale viene assegnato questo appuntamento valuta"
 * basedOn ^definition = "La richiesta di servizio per la quale è stato assegnato l'appuntamento (ad es. richiesta di referto o di procedura in arrivo)."
 * basedOn ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."

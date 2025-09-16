@@ -11,5 +11,5 @@ Description: "Profilo di Observation utilizzato nel contesto di Teleconsulto"
 * effective[x] ^short = "Data di rilevazione del parametro"
 
 * performer ^short = "Medico consultato"
-* performer only Reference(PractitionerRoleTelemedicina) 
+* performer only Reference(PractitionerRoleTeleconsulto) 
 * performer 1..1

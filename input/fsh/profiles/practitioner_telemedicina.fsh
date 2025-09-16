@@ -1,6 +1,6 @@
-Profile: PractitionerTelemedicina
+Profile: PractitionerTeleconsulto
 Parent: Practitioner
-Id: PractitionerTelemedicina
+Id: PractitionerTeleconsulto
 Description: "Profilo del Practitioner utilizzato nel contesto del Teleconsulto"
 * ^version = "0.1.0"
 * ^status = #active

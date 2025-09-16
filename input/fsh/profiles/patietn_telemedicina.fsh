@@ -15,8 +15,9 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * ^experimental = true
 * ^date = "2024-04-29T16:08:42+02:00"
 
-* extension contains BirthPlaceIta named luogoNascita 0..1
+* extension contains BirthPlaceIta named luogoNascita 0..1 and ItSocietaNavigazione named societaNavigazione 0..1 
 * extension[luogoNascita] ^short = "Luogo di nascita." 
+* extension[societaNavigazione] ^short = "Spcietà di Navigazione." 
 
 * identifier  
 * identifier 1..
@@ -110,8 +111,8 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
     mmgPlsRole 0..* and
     mmgPls 0..* and
     aziendaAssistenza 0..* 
-* generalPractitioner[mmgPlsRole] only Reference(PractitionerRoleTelemedicina)
-* generalPractitioner[mmgPls] only Reference(PractitionerTelemedicina)
+* generalPractitioner[mmgPlsRole] only Reference(PractitionerRoleTeleconsulto)
+* generalPractitioner[mmgPls] only Reference(PractitionerTeleconsulto)
 * generalPractitioner[aziendaAssistenza] only Reference(OrganizationT1)
 
 

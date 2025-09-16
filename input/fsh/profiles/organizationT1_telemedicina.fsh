@@ -32,8 +32,6 @@ Description: "Profilo di Organization di tipo 1 (es. ASL, AO, IRCCS)"
 * identifier ^slicing.discriminator[1].path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier pattern"
-* identifier.system 1..1  
-* identifier.value 1..1  
 * identifier contains 
 	asl 0..1 
 	and aslRegione 0..1
