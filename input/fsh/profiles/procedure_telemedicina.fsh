@@ -43,5 +43,8 @@ Description:  "Profilo della Procedure utilizzata nel contesto del Teleconsulto"
 //* usedReference only Reference(DeviceTelemedicinaTesserino)
 
 * category ^short = "procedura operativa eseguita"
+* category MS
+* category.coding.display MS
+* category.coding.code MS
 
 * note ^short = "Note"

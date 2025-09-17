@@ -54,6 +54,7 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 // * category ^slicing.discriminator.type = #value
 // * category ^slicing.discriminator.path = "coding.system"
 // * category ^slicing.rules = #open
+* category 1..
 * category ^short = "Classificazione del servizio."
 * category ^definition = "Un codice che classifica il servizio"
 * category from specialita-mediche (preferred)

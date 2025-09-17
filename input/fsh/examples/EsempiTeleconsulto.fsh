@@ -231,6 +231,7 @@ Usage: #example
 * extension[luogoNascita].valueAddress.city = "Milano"
 * extension[luogoNascita].valueAddress.postalCode = "20100"
 * extension[luogoNascita].valueAddress.country = "IT"
+* extension[luogoNascita].valueAddress.state = "Italia"
 
 * identifier
   * system = "http://hl7.it/sid/codiceFiscale"
@@ -251,6 +252,7 @@ Usage: #example
 * address.postalCode = "20100"
 * address.line = "Via della Libertà, 52"
 * address.use = #home
+* address.state = "Italia"
 * address.extension[residenza].valueBoolean = true
 * address.extension[certificazioneIndirizzo].extension[who].valueCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/it-tipoEntita#gov
 * address.line.extension[dugCode].valueCodeableConcept  = $istat-DUG-CS#67 "via"

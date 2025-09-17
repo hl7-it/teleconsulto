@@ -14,7 +14,7 @@ Description: "Profilo di Organization di tipo 3 (es. Reparto, ambulatorio)"
 // * identifier[unitaOperativa] ^sliceName = "unitaOperativa"
 // * identifier[unitaOperativa] ^short = "Codice dell'unità operativa"
 * identifier ^short = "Codice dell'unità operativa"
-* identifier 1..1
+* identifier 1..
 
 
 * partOf only Reference(OrganizationT2)

@@ -28,6 +28,7 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * basedOn ^short = "Richiesta che ha avviato la visita."
 * basedOn ^definition = "La richiesta che questa visita soddisfa."
 
+* type MS
 * type ^short = "Disciplina"
 * type from ValueSet_specialita_PractitionerRole (required)
 

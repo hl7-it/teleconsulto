@@ -28,6 +28,7 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * intent ^definition = "Indica l'intento della richiesta, ovvero se si tratta di una proposta, un piano, un ordine originale o un ordine riflesso.\n\nPer i casi d'uso gestiti dell'ambito di questa IG deve essere valorizzato fisso ad order."
 * intent ^comment = "Questo elemento è etichettato come modificatore perché l'intento altera quando e come la risorsa è effettivamente applicabile."
 
+* category 1..
 * category ^short = "Branca medico consulente."
 * category ^definition = "Un codice che classifica il servizio"
 * category from specialita-mediche (preferred)

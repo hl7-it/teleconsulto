@@ -23,6 +23,7 @@ Description: "Descrizione di Address con parti addizionali specifiche per gli in
 * extension[certificazioneIndirizzo] ^short = "Certificazione Indirizzo"
 * extension[certificazioneIndirizzo] ^definition = "Indica che i dati di questo indirizzo sono stati certificati da una specifica entità"
 * line ^short = "Nome completo strada (e.g. Via Corta 1, interno 2)"
+* line MS
 * line.extension contains
     $iso21090-ADXP-streetName named odonimo 0..1 and
     ExtDug named dugCode 0..1 and
@@ -58,6 +59,7 @@ Description: "Descrizione di Address con parti addizionali specifiche per gli in
     $iso21090-SC-coding named codiceProvincia 0..1
 * district.extension[codiceProvincia] ^sliceName = "codiceProvincia"
 * district.extension[codiceProvincia] ^short = "Codice Provincia"
+* state 1..
 * state ^short = "Sotto-unità dello stato (Regione)."
 * state ^definition = "Sotto-unità dello stato con limitata sovranità in uno stato oragnizzato federalmente.\r\nNel contesto italiano indica la \"Regione\""
 * state ^alias[0] = "Regione"
