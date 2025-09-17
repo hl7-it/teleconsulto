@@ -397,7 +397,7 @@ Usage: #example
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 Instance: Observation-anamnesi
-InstanceOf: ObservationTeleconsulto
+InstanceOf: ObservationTelevisitaNarrative
 Description: "Esempio di anamnesi nel contesto della teleconsulto"
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
@@ -432,7 +432,7 @@ Usage: #example
 
 
 Instance: Observation-esame-obiettivo
-InstanceOf: ObservationTeleconsulto
+InstanceOf: ObservationTelevisitaNarrative
 Description: "Esempio di esame obiettivo nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -502,7 +502,7 @@ Usage: #example
 
 
 Instance: Observation-conclusioni-generali
-InstanceOf: ObservationTeleconsulto
+InstanceOf: ObservationTelevisitaNarrative
 Description: "Esempio di conclusioni generali nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -515,7 +515,7 @@ Usage: #example
 
 
 Instance: Observation-suggerimenti
-InstanceOf: ObservationTeleconsulto
+InstanceOf: ObservationTelevisitaNarrative
 Description: "Esempio di suggerimenti nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -528,7 +528,7 @@ Usage: #example
 
 
 Instance: Observation-accertamenti-consigliati
-InstanceOf: ObservationTeleconsulto
+InstanceOf: ObservationTelevisitaNarrative
 Description: "Esempio di accertamenti consigliati nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -902,3 +902,47 @@ Usage: #example
 * outcome.text = "Il paziente ha riportato miglioramenti. Non si segnalano criticità. Terapia invariata."
 * note[+].text = "Teleconsulto eseguita tramite piattaforma XTelemed."
 //* code = CodesystemCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
+
+
+Instance: cov-esenzione-e01
+InstanceOf: CoverageTeleconsulto
+Description: "Esempio di esenzione."
+Usage: #example
+* status = #active
+// Tipo di copertura: programma/beneficio pubblico
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* type.coding[0].code = #PUBLICPOL
+* type.coding[0].display = "public healthcare"
+
+// Identificativo esenzione (facoltativo, locale)
+* identifier[0].system = "http://example.org/ssn/esenzione-id"
+* identifier[0].value = "E01-2025-000123"
+
+// Beneficiario / Titolare / Iscritto
+* beneficiary = Reference(PatientTeleconsultoExample)
+* policyHolder = Reference(PatientTeleconsultoExample)
+* subscriber = Reference(PatientTeleconsultoExample)
+
+// Periodo di validità esenzione
+* period.start = "2025-01-01"
+* period.end = "2025-12-31"
+
+// Codice esenzione come "class" del piano (E01)
+* class[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-class"
+* class[0].type.coding[0].code = #plan
+* class[0].value = "E01"
+* class[0].name = "Esenzione ticket per reddito"
+
+// Rappresentazione esplicita del ticket = 0 con eccezione E01
+// * costToBeneficiary[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+// * costToBeneficiary[0].type.coding[0].code = #copay
+// * costToBeneficiary[0].valueMoney.value = 0
+// * costToBeneficiary[0].valueMoney.currency = #EUR
+// * costToBeneficiary[0].exception[0].type.coding[0].system = "http://example.org/fhir/CodeSystem/it-esenzione-codes"
+// * costToBeneficiary[0].exception[0].type.coding[0].code = #E01
+// * costToBeneficiary[0].exception[0].type.coding[0].display = "Esenzione per reddito"
+// * costToBeneficiary[0].exception[0].period.start = "2025-01-01"
+// * costToBeneficiary[0].exception[0].period.end = "2025-12-31"
+
+// Ente pagatore
+* payor[0] = Reference(AslRoma1)

@@ -105,7 +105,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 * section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
 * section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0 (exactly)
-* section[InquadramentoClinicoIniziale].section[anamnesi].entry only Reference(ObservationTeleconsulto)
+* section[InquadramentoClinicoIniziale].section[anamnesi].entry only Reference(ObservationTelevisitaNarrative)
 
 * section[InquadramentoClinicoIniziale].section[allergie] ^sliceName = "allergie"
 * section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2 (exactly)
@@ -117,7 +117,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 * section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
 * section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1 (exactly)
-* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTeleconsulto)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelevisitaNarrative)
 
 // Slice: precedentiEsamiEseguiti
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
@@ -147,18 +147,18 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 
 // Slice: conclusioni
 * section[conclusioni] ^sliceName = "conclusioni"
-* section[conclusioni].entry only Reference(ObservationTeleconsulto)
+* section[conclusioni].entry only Reference(ObservationTelevisitaNarrative)
 * section[conclusioni].code = $loinc#55110-1 (exactly)
 
 // Slice: suggerimentiPerMedicoPrescrittore
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
 * section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0 (exactly)
-* section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTeleconsulto)
+* section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTelevisitaNarrative)
 
 // Slice: accertamentiControlliConsigliati
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
 * section[accertamentiControlliConsigliati].code = $loinc#80615-8 (exactly)
-* section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleconsulto)
+* section[accertamentiControlliConsigliati].entry only Reference(ObservationTelevisitaNarrative)
 
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
@@ -173,3 +173,10 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[prestazioni] ^sliceName = "prestazioni"
 * section[prestazioni].entry only Reference(ProcedureTeleconsulto)
 * section[prestazioni].code = $loinc#62387-6
+
+
+// Invariante valutato su Composition.section
+Invariant: sec-obs-code-match
+Severity: #error
+Description: "Ogni ObservationNarrative in section.entry deve condividere il code con section.code."
+Expression: "entry.reference.resolve().ofType(Observation).empty() or entry.reference.resolve().ofType(Observation).where(code.coding.where(code.exists()).code.intersect(%context.code.coding.where(code.exists()).code).empty()).empty()"
