@@ -752,8 +752,8 @@ Usage: #example
 * entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
 * entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
 
-* entry[6].fullUrl = "http://example/Procedure/f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
-* entry[6].resource = ProceduraRichiestaTeleconsultoExample
+* entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
+* entry[6].resource = ProcedureTeleconsultoExample
 
 * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 * entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
@@ -801,8 +801,8 @@ Usage: #example
 * entry[5].request.method = #POST
 * entry[5].request.url = "ServiceRequest"
 
-* entry[6].fullUrl = "http://example/Procedure/f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
-* entry[6].resource = ProceduraRichiestaTeleconsultoExample
+* entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
+* entry[6].resource = ProcedureTeleconsultoExample
 * entry[6].request.method = #POST
 * entry[6].request.url = "Procedure"
 
@@ -832,7 +832,7 @@ Usage: #example
 
 * section[prestazioni].code = $loinc#62387-6 
 * section[prestazioni].title = "Prestazioni"
-* section[prestazioni].entry[0] = Reference(Procedure/f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e)
+* section[prestazioni].entry[0] = Reference(Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f)
 
 Instance: ServiceRequestRichiestaTeleconsultoExample
 InstanceOf: ServiceRequestRichiestaTeleconsulto
@@ -886,24 +886,24 @@ Usage: #example
   * value = "RSSMRA71E01F205E" 
 
 
-Instance: ProceduraRichiestaTeleconsultoExample
-InstanceOf: ProcedureTeleconsulto
-Title: "Esempio di procedura nel contesto del teleconsulto cardiologico"
-Description: "Esempio di istanza ProcedureTeleconsulto per una teleconsulto cardiologica."
-Usage: #example
-* id = "f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
-* status = #completed
-* category = http://snomed.info/sct#409063005 "Counselling"
-//* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
-* subject = Reference(PatientTeleconsultoExample)
-* performedPeriod.start = "2025-07-08T10:00:00+01:00"
-* performedPeriod.end = "2025-07-08T10:30:00+01:00"
-* recorder = Reference(PractitionerTeleconsultoExample)
-* performer[+].actor = Reference(PractitionerTeleconsultoExample)
-* performer[=].function = http://snomed.info/sct#17561000 "Cardiologist"
-* outcome.text = "Il paziente ha riportato miglioramenti. Non si segnalano criticità. Terapia invariata."
-* note[+].text = "Teleconsulto eseguita tramite piattaforma XTelemed."
-//* code = CodesystemCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
+// Instance: ProceduraRichiestaTeleconsultoExample
+// InstanceOf: ProcedureTeleconsulto
+// Title: "Esempio di procedura nel contesto del teleconsulto cardiologico"
+// Description: "Esempio di istanza ProcedureTeleconsulto per una teleconsulto cardiologica."
+// Usage: #example
+// * id = "f65a8d9b-901e-4a8f-a2ff-746aad6b0d1e"
+// * status = #completed
+// * category = http://snomed.info/sct#409063005 "Counselling"
+// //* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
+// * subject = Reference(PatientTeleconsultoExample)
+// * performedPeriod.start = "2025-07-08T10:00:00+01:00"
+// * performedPeriod.end = "2025-07-08T10:30:00+01:00"
+// * recorder = Reference(PractitionerTeleconsultoExample)
+// * performer[+].actor = Reference(PractitionerTeleconsultoExample)
+// * performer[=].function = http://snomed.info/sct#17561000 "Cardiologist"
+// * outcome.text = "Il paziente ha riportato miglioramenti. Non si segnalano criticità. Terapia invariata."
+// * note[+].text = "Teleconsulto eseguita tramite piattaforma XTelemed."
+// //* code = CodesystemCatalogoNazionalePrestazioni#89.01.3 "VISITA CARDIOLOGICA DI CONTROLLO. Incluso eventuale ECG."
 
 
 Instance: cov-esenzione-e01
