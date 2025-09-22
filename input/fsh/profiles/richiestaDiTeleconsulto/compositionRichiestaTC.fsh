@@ -36,7 +36,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 //* event.code ^short = "Tipologia di accesso"
  // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
 
-* section 1..
 * section.title ^short = "Titolo della sezione."
 * section.code ^short = "Codice della sezione."
 
@@ -65,7 +64,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section contains
     richiestaTeleconsulto 1..1 and
     prestazioni 0..* and
-    disgnosi 0..1
+    diagnosi 1..1
 
 * section[richiestaTeleconsulto] ^sliceName = "richiestaTeleconsulto"
 * section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTeleconsulto)
@@ -75,7 +74,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section[prestazioni].entry only Reference(ProcedureTeleconsulto)
 * section[prestazioni].code = $loinc#62387-6
 
-* section[disgnosi] ^sliceName = "disgnosi"
-* section[disgnosi].entry only Reference(ObservationTeleconsulto)
-* section[disgnosi].code = $loinc#29548-5
+* section[diagnosi] ^sliceName = "disgnosi"
+* section[diagnosi].entry only Reference(ObservationTeleconsulto)
+* section[diagnosi].code = $loinc#29548-5
 

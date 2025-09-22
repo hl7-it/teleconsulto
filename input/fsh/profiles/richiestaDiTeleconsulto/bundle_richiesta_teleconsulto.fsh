@@ -13,13 +13,12 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 
 * entry contains
   composition 1..1 and
-  serviceRequest 1..1 and
+  serviceRequest 1..* and
   patient 1..1 and
   practitionerRole 0..* and
   practitioner 0..* and
   organization 0..* and
-  procedure 0..* //and 
-  // appointment 0..1
+  appointment 1..*
   //deviceUseStatement 0..*
 
 // Entry slice: composition
@@ -40,8 +39,5 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 // Entry slice: organization
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3 
 
-// Entry slice: procedure
-* entry[procedure].resource only ProcedureTeleconsulto
-
-// // Entry slice: deviceUseStatement
-// * entry[appointment].resource only AppointmentTeleconsulto
+// Entry slice: deviceUseStatement
+* entry[appointment].resource only AppointmentTeleconsulto

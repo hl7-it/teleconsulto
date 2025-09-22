@@ -10,9 +10,8 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * extension contains OscuramentoDati named oscuramentoDati 0..1
 * extension[oscuramentoDati] ^short = "Campo che identifica la volontà del paziente nell'oscurare i propri dati."
 //* extension[oscuramentoDati] only boolean
-
-* identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
-* identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
+* identifier 1..
+* identifier ^short = "Identifiicativi della richiesta inviata."
 
 * requisition 1..
 * requisition ^short = "Codice Identificativo della richiesta"
@@ -33,9 +32,8 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * category ^definition = "Un codice che classifica il servizio"
 * category from specialita-mediche (preferred)
 
+* priority 1..
 * priority ^short = "priorità della richiesta"
-* priority ^definition = "Indica la priorità della richiesta."
-* priority ^comment = "Si noti che le stringhe FHIR NON devono superare la dimensione di 1MB."
 
 * code ^short = "Cosa viene richiesto/ordinato."
 * code ^definition = "Indica cosa è stato richiesto, ovvero il codice della prestazione quando prevista"
@@ -63,10 +61,12 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * authoredOn ^short = "Data compilazione della ricetta da parte del medico."
 * authoredOn ^definition = "Nei casi di prescrizione, corrisponde alla data di compilazione della prescrizione."
 
+* requester 1..
 * requester only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 * requester ^short = "Medico richiedente il teleconsulto."
 * requester ^definition = "Elemento di tipo Reference che contiene il riferimento alla asl e medico richiedente."
 
+* performer 1..
 * performer only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 * performer ^short = "Medici consultati."
 * performer ^definition = "Elemento di tipo Reference che contiene il riferimento alle risorse Organization, Practitioner, PractitionerRole e HealthCareService."

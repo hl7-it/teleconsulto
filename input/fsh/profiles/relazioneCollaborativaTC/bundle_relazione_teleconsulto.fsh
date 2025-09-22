@@ -15,9 +15,9 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
   composition 1..1 and
   serviceRequest 1..1 and
   patient 1..1 and
-  practitionerRole 0..* and
-  practitioner 0..* and
-  organization 0..* and
+  practitionerRole 1..* and
+  practitioner 1..* and
+  organization 1..* and
   observation 0..* and
   allergyIntolerance 0..* and
   // condition 0..* and
@@ -26,10 +26,10 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
   medicationStatement 0..* and
   // imagingStudy 0..* and
   familyMemberHistory 0..* and
-  encounter 0..* and
+  encounter 1..1 and
   documentReference 0..* and
   procedure 0..* and 
-  appointment 0..1
+  appointment 1..1
   //deviceUseStatement 0..*
 
 // Entry slice: composition

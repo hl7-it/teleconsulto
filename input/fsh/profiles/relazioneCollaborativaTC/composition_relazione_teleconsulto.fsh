@@ -39,7 +39,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * event.code ^short = "Tipologia di accesso"
  // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
 
-* section 1..
+
 * section.title ^short = "Titolo della sezione."
 * section.code ^short = "Codice della sezione."
 
@@ -68,12 +68,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section ^slicing.ordered = false
 * section contains
     // terapiaFarmacologica 0..1 and
-    questitoDiagnostico 0..1 and
+    questitoDiagnostico 1..1 and
     InquadramentoClinicoIniziale 0..1 and
     precedentiEsamiEseguiti 0..1 and
     confrontoPrecedentiEsamiEseguiti 0..1 and
-    referto 0..1 and
-    diagnosi 0..1 and
+    referto 1..1 and
+    diagnosi 1..1 and
     conclusioni 0..1 and
     suggerimentiPerMedicoPrescrittore 0..1 and
     accertamentiControlliConsigliati 0..1 and
