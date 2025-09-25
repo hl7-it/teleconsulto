@@ -19,7 +19,7 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
   practitionerRole 1..* and
   practitioner 1..* and
   organization 0..* and
-  procedure 0..* and  //and
+//  procedure 0..* and  //and
   appointment 1..*
 
 * entry[composition].resource only CompositionRichiestaTeleconsulto

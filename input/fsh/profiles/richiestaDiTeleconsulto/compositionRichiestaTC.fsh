@@ -15,7 +15,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 
 * date ^short = "Data di modifica del documento."
 
-* author only Reference(PractitionerRoleTeleconsulto or OrganizationT1)
+* author only Reference(PractitionerRoleTeleconsulto)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"
@@ -63,18 +63,18 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section ^slicing.ordered = false
 * section contains
     richiestaTeleconsulto 1..1 and
-    prestazioni 0..* and
+    // prestazioni 0..* and
     diagnosi 1..1
 
 * section[richiestaTeleconsulto] ^sliceName = "richiestaTeleconsulto"
 * section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTeleconsulto)
 * section[richiestaTeleconsulto].code = $loinc#11488-4
 
-* section[prestazioni] ^sliceName = "prestazioni"
-* section[prestazioni].entry only Reference(ProcedureTeleconsulto)
-* section[prestazioni].code = $loinc#62387-6
+// * section[prestazioni] ^sliceName = "prestazioni"
+// * section[prestazioni].entry only Reference(ProcedureTeleconsulto)
+// * section[prestazioni].code = $loinc#62387-6
 
-* section[diagnosi] ^sliceName = "disgnosi"
+* section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].entry only Reference(ObservationTeleconsulto)
 * section[diagnosi].code = $loinc#29548-5
 

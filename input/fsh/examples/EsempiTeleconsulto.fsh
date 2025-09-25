@@ -281,8 +281,8 @@ Usage: #example
 * status = #finished
 * class = CustomEncounterType#TC "Teleconsulto"
 //* subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* basedOn = Reference(ServiceRequestTelemedicinaExample)
-* appointment = Reference(AppointmentTeleconsultoExample)
+* basedOn = Reference(ServiceRequest/d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc)
+* appointment = Reference(Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908)
 * period.start = "2025-06-16T09:00:00+02:00"
 * period.end = "2025-06-16T09:45:00+02:00"
 * identifier[+].system = "http://agenas.gov.it/sid/codiceNosologico"
@@ -304,7 +304,7 @@ Usage: #example
 * id = "aa011502-6ad2-430b-a439-01dddc36fd4e"
 * title = "Relazione Collaborativa di Teleconsulto"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* encounter = Reference(EncounterTelemedicinaExample)
+* encounter = Reference(Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2)
 * date = "2025-06-16T10:30:00+02:00"
 * author = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
 * attester[legalAuthenticator].mode = #legal
@@ -373,10 +373,10 @@ Instance: PractitionerRoleTeleconsultoExample
 InstanceOf: PractitionerRoleTeleconsulto
 Description: "Esempio di practitionerRole nel contesto della teleconsulto"
 Usage: #example
-* organization = Reference(AslRoma1)
-* practitioner = Reference(PractitionerTeleconsultoExample)
-* specialty = csspecialityPractitionerRole#01 "Allergologia"
 * id = "e446e848-2bd4-423a-b2f8-5d25687e2f42"
+* organization = Reference(AslRoma1)
+* practitioner = Reference(Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d)
+* specialty = csspecialityPractitionerRole#01 "Allergologia"
 
 // Instance: AslRoma1
 // InstanceOf: OrganizationT1
@@ -599,7 +599,7 @@ Usage: #example
 * created = "2025-07-01T09:00:00+01:00"
 * start = "2025-07-09T10:00:00+01:00"
 * end = "2025-07-09T10:30:00+01:00"
-* basedOn = Reference(ServiceRequestTelemedicinaExample)
+* basedOn = Reference(ServiceRequest/d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc)
 * serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#8 "Counselling"
 * reasonCode = http://snomed.info/sct#3143004 "Visual field examination and evaluation, intermediate"
 * reasonCode.text = "Teleconsulto cardiologica per controllo post-operatorio"
@@ -623,13 +623,13 @@ Usage: #example
 * priority = #routine
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * subject.display = "Mario Rossi"
-* encounter = Reference(EncounterTelemedicinaExample)
+* encounter = Reference(Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2)
 * encounter.display = "Teleconsulto 09/07/2025"
 * occurrenceDateTime = "2025-07-09T10:00:00+01:00"
 * authoredOn = "2025-07-01T09:15:00+01:00"
-* requester = Reference(PractitionerRoleTeleconsultoExample)
-//* performer = Reference(Organization/ASLRoma1)
-* reasonCode = http://snomed.info/sct#2153008 "Cardiac catheterization education"
+* requester = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
+* performer = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
+//* reasonCode = $sct#2153008 "Cardiac catheterization education"
 * note[+].text = "Prestazione da eseguire in modalità remota tramite piattaforma XTelemed"
 
 
@@ -722,6 +722,7 @@ Usage: #example
 // * entry[7].request.method = #PUT
 // * entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
+// RICHIESTA DI TELECONSULTO
 
 Instance: RichiestaTeleconsultoCardiologico
 InstanceOf: BundleRichiestaTeleconsulto
@@ -730,10 +731,9 @@ Description: "Esempio FHIR di teleconsulto tra MMG e cardiologo"
 Usage: #example
 * type = #document
 * timestamp = "2025-07-15T10:00:00+01:00"
-* type = #document
 * identifier.system = "urn:ietf:rfc:39861"
 * identifier.value = "urn:uuid:bfcf00e2-e2bb-4a7d-adaa-3de9d419d27e"
-* timestamp = "2023-02-25T14:30:00+01:00"
+
 * entry[0].fullUrl = "http://example/Composition/composition-request-richiesta-1"
 * entry[0].resource = CompositionRichiestaTeleconsultoExample
 
@@ -752,11 +752,17 @@ Usage: #example
 * entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
 * entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
 
-* entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-* entry[6].resource = ProcedureTeleconsultoExample
+* entry[6].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
+* entry[6].resource = PractitionerRoleTeleconsultoConsulenteExample
 
-* entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-* entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
+* entry[7].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
+* entry[7].resource = AppointmentTeleconsultoExample
+
+* entry[8].fullUrl = "http://example/Observation/1729dcef-ac19-434b-82e7-b6e6e51e74b3"
+* entry[8].resource = Observation-diagnosi-principale
+
+
+
 
 
 //Richiesta di teleconsulto transacrion
@@ -801,15 +807,15 @@ Usage: #example
 * entry[5].request.method = #POST
 * entry[5].request.url = "ServiceRequest"
 
-* entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-* entry[6].resource = ProcedureTeleconsultoExample
-* entry[6].request.method = #POST
-* entry[6].request.url = "Procedure"
+* entry[6].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
+* entry[6].resource = PractitionerRoleTeleconsultoConsulenteExample
+* entry[6].request.method = #PUT
+* entry[6].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
-* entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-* entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
+* entry[7].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
+* entry[7].resource = AppointmentTeleconsultoExample
 * entry[7].request.method = #PUT
-* entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
+* entry[7].request.url = "Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 
 
 Instance: CompositionRichiestaTeleconsultoExample
@@ -830,9 +836,13 @@ Usage: #example
 * section[richiestaTeleconsulto].title = "richiestaTeleconsulto"
 * section[richiestaTeleconsulto].entry[0] = Reference(ServiceRequest/service-request-richiesta-1)
 
-* section[prestazioni].code = $loinc#62387-6 
-* section[prestazioni].title = "Prestazioni"
-* section[prestazioni].entry[0] = Reference(Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f)
+// * section[prestazioni].code = $loinc#62387-6 
+// * section[prestazioni].title = "Prestazioni"
+// * section[prestazioni].entry[0] = Reference(Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f)
+
+* section[diagnosi].code = $loinc#29548-5
+* section[diagnosi].title = "Diagnosi"
+* section[diagnosi].entry[0] = Reference(Observation/1729dcef-ac19-434b-82e7-b6e6e51e74b3)
 
 Instance: ServiceRequestRichiestaTeleconsultoExample
 InstanceOf: ServiceRequestRichiestaTeleconsulto
@@ -870,7 +880,7 @@ InstanceOf: PractitionerRoleTeleconsulto
 Description: "Esempio di practitionerRole nel contesto della teleconsulto"
 Usage: #example
 * organization = Reference(AslRoma1)
-* practitioner = Reference(PractitionerTeleconsultoConulenteExample)
+* practitioner = Reference(Practitioner/d37c3d0a-96d9-4de5-873c-68b6c1c64db2)
 * specialty = csspecialityPractitionerRole#01 "Allergologia"
 * id = "9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 

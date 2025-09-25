@@ -30,5 +30,10 @@ Le frecce nere rappresentano le **relazioni tra risorse** e indicano l'attributo
 Queste connessioni descrivono come le risorse all’interno del Bundle si riferiscono tra loro, contribuendo alla **coerenza e navigabilità del documento** FHIR.
 
 ---
+### Relazione di Teleconsulto
 
 ![](Modello_logico_TC.png)
+
+### Richiesta di Teleconsulto
+
+![](Modello_logico_TC _richiesta.png)
