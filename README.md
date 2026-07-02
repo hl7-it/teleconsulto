@@ -1,6 +1,6 @@
 # teleconsulto
 
-HL7 Italy - HL7 FHIR R4 Televisita Implementation Guide.
+HL7 Italy - HL7 FHIR R4 Teleconsulto Implementation Guide.
 
 [www.hl7.it/fhir/teleconsulto_ballot](https://www.hl7.it/fhir/teleconsulto_ballot/)
 
