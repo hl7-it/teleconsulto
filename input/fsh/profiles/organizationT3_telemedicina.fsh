@@ -1,6 +1,3 @@
-Alias: $minsan-fls = https://terminology.agenas.gov.it/ValueSet/minsan-fls
-Alias: $uri-idAslRegione = https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione
-
 Profile: OrganizationT3
 Parent: Organization
 Id: OrganizationT3

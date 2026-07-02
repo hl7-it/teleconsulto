@@ -1,7 +1,3 @@
-Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
-//Alias: $coverage-exceptionStatus = http://hl7.it/fhir/StructureDefinition/coverage-exceptionStatus
-//Alias: $minsan-esenzioni = http://hl7.it/fhir/ValueSet/minsan-esenzioni
-
 Profile: CoverageTeleconsulto
 Parent: Coverage
 Id: CoverageTeleconsulto

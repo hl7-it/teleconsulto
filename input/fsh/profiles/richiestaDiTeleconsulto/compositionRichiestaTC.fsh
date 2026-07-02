@@ -1,5 +1,3 @@
-Alias: $loinc = http://loinc.org
-
 Profile: CompositionRichiestaTeleconsulto
 Parent: Composition
 Id: CompositionRichiestaTeleconsulto

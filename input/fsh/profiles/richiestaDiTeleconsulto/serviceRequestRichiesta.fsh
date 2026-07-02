@@ -1,14 +1,12 @@
-Alias: $extension_serviceRequest_codeCodingType = http://hl7.it/fhir/teleconsulto/StructureDefinition/extension_serviceRequest_codeCodingType
-Alias: $catalogoRegionalePrestazioni = https://terminology.agenas.gov.it/ValueSet/catalogoRegionalePrestazioni
-
 Profile: ServiceRequestRichiestaTeleconsulto
 Parent: ServiceRequest
 Id: ServiceRequestRichiestaTeleconsulto
 Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleconsulto"
 * ^status = #draft
 
-* extension contains OscuramentoDati named oscuramentoDati 0..1
+* extension contains OscuramentoDati named oscuramentoDati 0..1 and medicoTitolare named medicoTitolare 0..1
 * extension[oscuramentoDati] ^short = "Campo che identifica la volontà del paziente nell'oscurare i propri dati."
+* extension[medicoTitolare] ^short = "Campo che identifica il medico titolare."
 //* extension[oscuramentoDati] only boolean
 * identifier 1..
 * identifier ^short = "Identifiicativi della richiesta inviata."
@@ -81,6 +79,8 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * note ^comment = "Per i sistemi che non dispongono di annotazioni strutturate, possono semplicemente comunicare una singola annotazione senza autore o tempo.  Questo elemento potrebbe dover essere incluso nella narrativa a causa del potenziale di modifica delle informazioni.  *Le annotazioni NON DEVONO* essere usate per comunicare informazioni \"modificanti\" che potrebbero essere calcolate. (Questo è un DOVERE perché far rispettare il comportamento dell'utente è quasi impossibile)."
 
 * insurance ^short = "Istituzione competente del soggetto assicurato da istituzioni estere."
+* insurance only Reference(CoverageTeleconsulto)
+
 
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "extension.value"

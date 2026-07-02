@@ -1,10 +1,3 @@
-Alias: $iso21090-ADXP-streetName = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName|5.2.0
-Alias: $iso21090-ADXP-streetNameBase = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.2.0
-Alias: $iso21090-ADXP-streetNameType = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.2.0
-Alias: $iso21090-ADXP-houseNumber = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber|5.2.0
-Alias: $istat-dug = https://www.hl7.it/fhir/terminology/CodeSystem/dug
-Alias: $iso21090-SC-coding = http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.2.0
-
 Profile: AddressItTelemedicina
 Parent: Address
 Id: AddressItTelemedicina

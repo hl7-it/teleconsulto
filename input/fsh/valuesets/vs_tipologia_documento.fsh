@@ -1,4 +1,3 @@
-Alias: $loinc = http://loinc.org
 ValueSet: VsTipologiaDocumentale
 Id: vsTipologiaDocumentale
 Title: "VS - Tipologia documentale"

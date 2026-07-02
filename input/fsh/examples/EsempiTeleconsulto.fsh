@@ -1,10 +1,3 @@
-Alias: $sct = http://snomed.info/sct
-Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
-Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
-Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-Alias: $mimeType = urn:ietf:bcp:13
-Alias: $istat-DUG-CS = 	https://www.hl7.it/fhir/terminology/CodeSystem/dug
-
 Instance: TeleconsultoCardiologicoTransaction
 InstanceOf: BundleRelazioneCollaborativaTeleconsultoTransaction
 Title: "Teleconsulto Cardiologico - Transaction"
@@ -13,7 +6,7 @@ Usage: #example
 * type = #transaction
 
 * entry[0].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[0].resource = PatientTeleconsultoExample
+* entry[0].resource = PatientTeleassistenzaExample
 * entry[0].request.method = #PUT
 * entry[0].request.url = "Patient?identifier=http://hl7.it/sid/codiceFiscale|RSSMRA80A01H501Z"
 
@@ -154,7 +147,7 @@ Usage: #example
 * entry[0].resource = CompositionRelazioneCollaborativaTeleconsultoExample
 
 * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTeleconsultoExample
+* entry[1].resource = PatientTeleassistenzaExample
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 * entry[2].resource = PractitionerRoleTeleconsultoExample
@@ -219,7 +212,14 @@ Usage: #example
 * entry[22].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 * entry[22].resource = ProcedureTeleconsultoExample
 
-Instance: PatientTeleconsultoExample
+// * entry[23].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
+// * entry[23].resource = PractitionerTeleconsultoExample
+
+// * entry[24].fullUrl = "http://example/ServiceRequest/d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc"
+// * entry[24].resource = ServiceRequestTelemedicinaExample
+
+
+Instance: PatientTeleassistenzaExample
 InstanceOf: PatientTeleconsulto
 Description: "Esempio di paziente nel contesto della televisita"
 Usage: #example
@@ -561,7 +561,7 @@ Description: "Esempio di allegsti nel contesto della teleconsulto"
 Usage: #example
 * status = #current
 * type = $loinc#55107-7 "Addendum Document"
-* subject = Reference(PatientTeleconsultoExample)
+* subject = Reference(PatientTeleassistenzaExample)
 * content[0].attachment.title = "TC Torace 10/05/2025"
 * date = "2025-06-16T10:00:00+02:00"
 * id = "4f6c71e1-cc6e-4428-ae9b-0118c0a928cb"
@@ -578,7 +578,7 @@ Usage: #example
 * status = #completed
 * category = http://snomed.info/sct#409063005 "Counselling"
 //* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
-* subject = Reference(PatientTeleconsultoExample)
+* subject = Reference(PatientTeleassistenzaExample)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
 * recorder = Reference(PractitionerTeleconsultoExample)
@@ -605,7 +605,7 @@ Usage: #example
 * reasonCode.text = "Teleconsulto cardiologica per controllo post-operatorio"
 * participant[0].actor = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * participant[0].status = #accepted
-* participant[1].actor = Reference(PractitionerRoleTeleconsultoExample)
+* participant[1].actor = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
 * participant[1].status = #accepted
 
 
@@ -676,52 +676,6 @@ Usage: #example
 * identifier.value = "UO12345"
 
 
-// Instance: RichiestaTeleconsultoCardiologicoTransaction
-// InstanceOf: Bundle
-// Title: "Esempio di Richiesta Teleconsulto Cardiologico - Transaction"
-// Description: "Esempio FHIR di teleconsulto tra MMG e cardiologo - come transaction"
-// Usage: #example
-// * type = #transaction
-// * entry[0].fullUrl = "http://example/Composition/composition-request-richiesta-1"
-// * entry[0].resource = CompositionRichiestaTeleconsultoExample
-// * entry[0].request.method = #PUT
-// * entry[0].request.url = "Composition/composition-request-richiesta-1"
-
-// * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-// * entry[1].resource = PatientTeleconsultoExample
-// * entry[1].request.method = #POST
-// * entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-
-// * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-// * entry[2].resource = PractitionerRoleTeleconsultoExample
-// * entry[2].request.method = #POST
-// * entry[2].request.url = "PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-
-// * entry[3].fullUrl = "http://example/Organization/asl-roma-1"
-// * entry[3].resource = AslRoma1
-// * entry[3].request.method = #POST
-// * entry[3].request.url = "Organization/asl-roma-1"
-
-// * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-// * entry[4].resource = PractitionerTeleconsultoExample
-// * entry[4].request.method = #POST
-// * entry[4].request.url = "Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-
-// * entry[5].fullUrl = "http://example/ServiceRequest/service-request-richiesta-1"
-// * entry[5].resource = ServiceRequestRichiestaTeleconsultoExample
-// * entry[5].request.method = #PUT
-// * entry[5].request.url = "ServiceRequest/service-request-richiesta-1"
-
-// * entry[6].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-// * entry[6].resource = ProcedureTeleconsultoExample
-// * entry[6].request.method = #PUT
-// * entry[6].request.url = "Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-
-// * entry[7].fullUrl = "http://example/PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-// * entry[7].resource = PractitionerRoleTeleconsultoConsulenteExample
-// * entry[7].request.method = #PUT
-// * entry[7].request.url = "PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
-
 // RICHIESTA DI TELECONSULTO
 
 Instance: RichiestaTeleconsultoCardiologico
@@ -738,7 +692,7 @@ Usage: #example
 * entry[0].resource = CompositionRichiestaTeleconsultoExample
 
 * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTeleconsultoExample
+* entry[1].resource = PatientTeleassistenzaExample
 
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 * entry[2].resource = PractitionerRoleTeleconsultoExample
@@ -761,7 +715,8 @@ Usage: #example
 * entry[8].fullUrl = "http://example/Observation/1729dcef-ac19-434b-82e7-b6e6e51e74b3"
 * entry[8].resource = Observation-diagnosi-principale
 
-
+// * entry[9].fullUrl = "http://example/Practitioner/d37c3d0a-96d9-4de5-873c-68b6c1c64db2"
+// * entry[9].resource = PractitionerTeleconsultoExample
 
 
 
@@ -783,7 +738,7 @@ Usage: #example
 * entry[0].request.url = "Composition"
 
 * entry[1].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* entry[1].resource = PatientTeleconsultoExample
+* entry[1].resource = PatientTeleassistenzaExample
 * entry[1].request.method = #PUT
 * entry[1].request.url = "Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
 
@@ -857,11 +812,11 @@ Usage: #example
 * requisition.value = "REQ-20250709-0001"
 * category = http://hl7.it/fhir/teleconsulto/CodeSystem/branca-prestazione#02 "Cardiologia"
 * priority = #routine
-* subject = Reference(PatientTeleconsultoExample)
+* subject = Reference(PatientTeleassistenzaExample)
 * occurrenceDateTime = "2025-07-09T10:00:00+01:00"
 * authoredOn = "2025-07-01T09:15:00+01:00"
-* requester = Reference(PractitionerRoleTeleconsultoExample)
-* performer = Reference(PractitionerRoleTeleconsultoConsulenteExample)
+* requester = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
+* performer = Reference(PractitionerRole/9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5)
 * reasonCode = CodeSystem_DiagnosiICD9CM#402.00 "CARDIOPATIA IPERTENSIVA MALIGNA SENZA INSUFFICIENZA CARDIACA"
 * note[+].text = "Teleconsulto da eseguire in modalità remota tramite piattaforma XTelemed"
 
@@ -879,8 +834,8 @@ Instance: PractitionerRoleTeleconsultoConsulenteExample
 InstanceOf: PractitionerRoleTeleconsulto
 Description: "Esempio di practitionerRole nel contesto della teleconsulto"
 Usage: #example
-* organization = Reference(AslRoma1)
-* practitioner = Reference(Practitioner/d37c3d0a-96d9-4de5-873c-68b6c1c64db2)
+* organization = Reference(Organization/asl-roma-1)
+* practitioner = Reference(Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d)
 * specialty = csspecialityPractitionerRole#01 "Allergologia"
 * id = "9f1a2b87-7d4c-4a65-8fc7-e8b56f7312f5"
 
@@ -905,7 +860,7 @@ Usage: #example
 // * status = #completed
 // * category = http://snomed.info/sct#409063005 "Counselling"
 // //* code = http://hl7.it/fhir/teleconsulto/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
-// * subject = Reference(PatientTeleconsultoExample)
+// * subject = Reference(PatientTeleassistenzaExample)
 // * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 // * performedPeriod.end = "2025-07-08T10:30:00+01:00"
 // * recorder = Reference(PractitionerTeleconsultoExample)
@@ -931,9 +886,9 @@ Usage: #example
 * identifier[0].value = "E01-2025-000123"
 
 // Beneficiario / Titolare / Iscritto
-* beneficiary = Reference(PatientTeleconsultoExample)
-* policyHolder = Reference(PatientTeleconsultoExample)
-* subscriber = Reference(PatientTeleconsultoExample)
+* beneficiary = Reference(PatientTeleassistenzaExample)
+* policyHolder = Reference(PatientTeleassistenzaExample)
+* subscriber = Reference(PatientTeleassistenzaExample)
 
 // Periodo di validità esenzione
 * period.start = "2025-01-01"
@@ -957,4 +912,4 @@ Usage: #example
 // * costToBeneficiary[0].exception[0].period.end = "2025-12-31"
 
 // Ente pagatore
-* payor[0] = Reference(AslRoma1)
+* payor[0] = Reference(Organization/asl-roma-1)

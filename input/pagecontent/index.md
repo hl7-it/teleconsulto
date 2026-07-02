@@ -1,7 +1,3 @@
-<p style="color:blue; font-weight: bold; font-size: 14px;">Avvertenza</p>
-
-La presente guida è *attualmente* in versione **CI-Build** (Continuous Integration Build), che indica una versione in fase di sviluppo continuo, sottoposta a integrazioni e test regolari. Durante questa fase, il contenuto è soggetto a modifiche frequenti e aggiornamenti periodici, al fine di garantire l'accuratezza e la coerenza del materiale. Successivamente, avrà inizio la fase di **ballottaggio**, che segnerà l'avvio della preparazione per la versione finale della guida.
-
 L'Implementation Guide di Telemedicina nasce con l'obiettivo di favorire la standardizzazione dei dati scambiati tra i vari sistemi sanitari e la Piattaforma di Telemedicina. Questa guida si avvale del framework FHIR (Fast Healthcare Interoperability Resources), che garantisce un'interoperabilità strutturata e facilita l'integrazione delle informazioni sanitarie. 
 
 Secondo le normative nazionali, i servizi minimi di Telemedicina includono: 

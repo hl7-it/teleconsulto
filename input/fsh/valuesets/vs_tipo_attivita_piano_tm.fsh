@@ -1,5 +1,3 @@
-Alias: $sct = http://snomed.info/sct
-
 ValueSet: TipologiaAttivitaPianoDiTelemonitoraggio
 Id: TipologiaAttivitaPianoDiTelemonitoraggio
 Title: "Tipologia di attività nel Piano di Telemonitoraggio"

@@ -1,5 +1,3 @@
-Alias: $Timing = http://hl7.org/fhir/StructureDefinition/Timing
-
 Profile: TimingTelemedicina
 Parent: $Timing
 Id: TimingTelemedicina

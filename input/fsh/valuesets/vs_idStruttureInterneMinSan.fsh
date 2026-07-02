@@ -1,5 +1,3 @@
-Alias: $cs-mds-idStruttureInterne = https://www.hl7.it/fhir/terminology/CodeSystem/cs-mds-idStruttureInterne
-
 ValueSet: VsMinisteroSaluteIdStruttureInterne
 Id: minsan-idStruttureInterne
 Title: "MDS - ID Strutture Interne di Ricovero"

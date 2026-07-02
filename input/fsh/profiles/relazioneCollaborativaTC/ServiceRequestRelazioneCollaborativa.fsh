@@ -1,6 +1,3 @@
-Alias: $extension_serviceRequest_codeCodingType = http://hl7.it/fhir/teleconsulto/StructureDefinition/extension_serviceRequest_codeCodingType
-Alias: $catalogoRegionalePrestazioni = https://terminology.agenas.gov.it/ValueSet/catalogoRegionalePrestazioni
-
 Profile: ServiceRequestRelazioneCollaborativaTeleconsulto
 Parent: ServiceRequest
 Id: ServiceRequestRelazioneCollaborativaTeleconsulto

@@ -1,11 +1,3 @@
-Alias: $patient-birthPlace = http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.2.0
-Alias: $Address = http://hl7.it/fhir/teleconsulto/StructureDefinition/Address
-Alias: $uri-idRegionali = https://www.hl7.it/fhir/terminology/ValueSet/vs-anagrafi-regionali
-Alias: $uri-idEni = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentificatore 
-Alias: $uri-idStp = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentificatore
-Alias: $anpr = http://hl7.it/sid/anpr
-Alias: $cf = http://hl7.it/sid/codiceFiscale
-
 Profile: PatientTeleconsulto
 Parent: Patient
 Id: PatientTeleconsulto

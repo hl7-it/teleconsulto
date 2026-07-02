@@ -1,5 +1,3 @@
-Alias: $minsan-esenzioni = http://terminology.hl7.it/CodeSystem/minsan-esenzioni
-
 ValueSet: VsMinisteroSaluteEsenzioni
 Id: minsan-esenzioni
 Title: "Ministero della Salute - Esenzioni"

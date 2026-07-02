@@ -1,6 +1,3 @@
-Alias: $uri-idAslRegione = https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione
-Alias: $minsan-idStruttureInterne-vs = https://www.hl7.it/fhir/terminology/ValueSet/minsan-idStruttureInterne
-
 Profile: OrganizationT1
 Parent: Organization
 Id: OrganizationT1

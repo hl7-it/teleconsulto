@@ -1,5 +1,3 @@
-Alias: $minsan-hsp = https://www.hl7.it/fhir/terminology/CodeSystem/minsan-hsp
-
 ValueSet: VsMinisteroSaluteIdStrutture
 Id: minsan-idStrutture
 Title: "MDS - ID Strutture Ricovero"
