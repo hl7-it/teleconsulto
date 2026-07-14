@@ -34,7 +34,6 @@ Queste connessioni descrivono come le risorse all’interno del Bundle si riferi
 
 <img src="Modello_logico_TC.png" width="1100"/>
 
-
 ---
 ### Richiesta di Teleconsulto
 
