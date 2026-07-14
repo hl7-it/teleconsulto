@@ -8,11 +8,11 @@ Description: "Extension per esprimere la volontà dell'assistito di oscurare i d
 * value[x] only boolean
 
 
-Extension: MedicoTitolare
-Id: medicoTitolare
-Title: "Extension Medico Titolare"
-Description: "Extension per identificare i dati del medico titolare."
+Extension: MedicoSostituto
+Id: medicoSostituto
+Title: "Extension Medico Sostituto"
+Description: "Extension per identificare i dati del medico sostituto."
 * ^status = #active
 * ^context[+].type = #element
 * ^context[=].expression = "ServiceRequest"
-* value[x] only Reference
+* value[x] only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)

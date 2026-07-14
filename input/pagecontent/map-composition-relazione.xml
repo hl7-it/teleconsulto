@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
+    </p>
+
+
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> CompositionRichiestaTC">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data firma relazione</td>
+            <td>Data di firma della relazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto</td>
+            <td>Composition.attester[legalAuthenticator].time</td>
+          </tr>
+          <tr>
+            <td>Codici identificazione oggetti correlati</td>
+            <td>Codici per identificare eventuali oggetti associati al referto (es. ID PACS, Accession number, Studio DICOM).</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto</td>
+            <td>Composition.section[allegati].entry</td>
+          </tr>
+          <tr>
+            <td>Tipologia Accesso</td>
+            <td>Tipologia di accesso (programmata / ad accesso diretto)</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto</td>
+            <td>Composition.event.code</td>
+          </tr>
+          <tr>
+            <td>Codice quesito diagnostico</td>
+            <td>Codice ICD9-CM del quesito diagnostico</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[questitoDiagnostico].entry.resolve().code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione quesito diagnostico</td>
+            <td>Descrizione del quesito diagnostico</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[questitoDiagnostico].entry.resolve().code.text</td>
+          </tr>
+          <tr>
+            <td>Anamnesi</td>
+            <td>Descrizione testuale dell'anamnesi (quadro clinico)</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsultoNarrative</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[anamnesi].entry.resolve().value[x]</td>
+          </tr>
+          <tr>
+            <td>Allergie</td>
+            <td>Eventuali allergie e fonti dichiarate</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / AllergyIntolerance telemedicina</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[allergie].entry.resolve().note.text</td>
+          </tr>
+          <tr>
+            <td>Precedenti esami eseguiti</td>
+            <td>Codice, descrizione, metodica e data di eventuali esami precedenti eseguiti dal paziente e ritenuti rilevanti al fine della formulazione diagnostica</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[precedentiEsamiEseguiti].entry.resolve()</td>
+          </tr>
+          <tr>
+            <td>Codice AIC/ATC farmaco</td>
+            <td>Codice AIC/ATC del farmaco o dei farmaci assunti nella terapia in atto</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / MedicationStatement telemedicina</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().medicationCodeableConcept.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione terapia farmacologica</td>
+            <td>Descrizione terapia farmacologica</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / MedicationStatement telemedicina</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().medicationCodeableConcept.note</td>
+          </tr>
+          <tr>
+            <td>Esame obiettivo</td>
+            <td>Esame obiettivo</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsultoNarrative</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[esameObiettivo].entry.resolve().value[x]</td>
+          </tr>
+          <tr>
+            <td>Codice prestazione eseguita</td>
+            <td>Codice della prestazione eseguita</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ProcedureTeleconsulto</td>
+            <td>Composition.section[prestazioni].entry.resolve().code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione prestazione eseguita</td>
+            <td>Descrizione della prestazione eseguita</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ProcedureTeleconsulto</td>
+            <td>Composition.section[prestazioni].entry.resolve().code.text</td>
+          </tr>
+          <tr>
+            <td>Data e ora di inizio erogazione</td>
+            <td>Data e ora di inizio erogazione della prestazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ProcedureTeleconsulto</td>
+            <td>Composition.section[prestazioni].entry.resolve().performedPeriod.start</td>
+          </tr>
+          <tr>
+            <td>Data e ora di fine erogazione</td>
+            <td>Data e ora di fine erogazione della prestazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ProcedureTeleconsulto</td>
+            <td>Composition.section[prestazioni].entry.resolve().performedPeriod.end</td>
+          </tr>
+          <tr>
+            <td>Modalità esecuzione procedura operativa</td>
+            <td>Descrizione modalità di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura.</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ProcedureTeleconsulto</td>
+            <td>Composition.section[prestazioni].entry.resolve().extension:ModalitaEsecuzionePrestazione</td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td>Note</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ProcedureTeleconsulto</td>
+            <td>Composition.section[prestazioni].entry.resolve().note.text</td>
+          </tr>
+          <tr>
+            <td>Confronto con precedenti esami eseguiti</td>
+            <td>Confronto con precedenti esami eseguiti. Permette di riportare un confronto tra quanto emerso nel corso di precedenti esami eseguiti e quanto rilevato nel corso della/e procedura/e oggetto del referto.</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsultoNarrative</td>
+            <td>Composition.section[confrontoPrecedentiEsamiEseguiti].entry.resolve().value[x]</td>
+          </tr>
+          <tr>
+            <td>Refertazione</td>
+            <td>Referto della/e prestazione/i, oggetto principale del referto</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsultoNarrative</td>
+            <td>Composition.section[referto].entry.resolve().value[x]</td>
+          </tr>
+          <tr>
+            <td>Codice diagnosi</td>
+            <td>Codice diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[diagnosi].entry.resolve().code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione diagnosi</td>
+            <td>Descrizione diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[diagnosi].entry.resolve().code.text</td>
+          </tr>
+          <tr>
+            <td>Conclusioni</td>
+            <td>Conclusioni</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsultoNarrative</td>
+            <td>Composition.section[conclusioni].entry.resolve().value[x]</td>
+          </tr>
+          <tr>
+            <td>Suggerimenti per il medico prescrittore</td>
+            <td>Suggerimenti per il medico prescrittore</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsultoNarrative</td>
+            <td>Composition.section[suggerimentiPerMedicoPrescrittore].entry.resolve().value[x]</td>
+          </tr>
+          <tr>
+            <td>Codice accertamento consigliato</td>
+            <td>Codice accertamento/i o prestazione/i consigliata/e da eseguire a seguito della prestazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione accertamento consigliato</td>
+            <td>Descrizione accertamento/i o prestazione/i consigliata/e da eseguire a seguito della prestazione</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / ObservationTeleconsulto</td>
+            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().code.text</td>
+          </tr>
+          <tr>
+            <td>Codice AIC/ATC farmaco</td>
+            <td>Codice AIC/ATC del farmaco o dei farmaci consigliato per la terapia farmacologica</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / MedicationRequestTeleconsulto</td>
+            <td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().medicationCodeableConcept.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione terapia farmacologica consigliata</td>
+            <td>Descrizione della terapia farmacologica consigliata</td>
+            <td>CompositionRelazioneCollaborativaTeleconsulto / MedicationRequestTeleconsulto</td>
+            <td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().medicationCodeableConcept.text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

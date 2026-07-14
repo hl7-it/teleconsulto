@@ -7,6 +7,7 @@ Alias: $loinc                   = http://loinc.org
 Alias: $sct                     = http://snomed.info/sct
 Alias: $v2-0203                 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $icd-9-cm                = http://hl7.org/fhir/sid/icd-9-cm
+Alias: $uri                               = urn:ietf:rfc:3986
 Alias: $mimeType                = urn:ietf:bcp:13
 
 // --- Estensioni FHIR core ---
@@ -54,3 +55,6 @@ Alias: $Organization_T1                      = http://hl7.it/fhir/teleconsulto/S
 Alias: $Organization_T2                      = http://hl7.it/fhir/teleconsulto/StructureDefinition/Organization_T2
 Alias: $Organization_T3                      = http://hl7.it/fhir/teleconsulto/StructureDefinition/Organization_T3
 Alias: $extension_serviceRequest_codeCodingType = http://hl7.it/fhir/teleconsulto/StructureDefinition/extension_serviceRequest_codeCodingType
+
+// --- Teleconsulto - CodeSystem ---
+Alias: $csRaggioErogazione = http://hl7.it/fhir/teleconsulto/CodeSystem/csRaggioErogazione

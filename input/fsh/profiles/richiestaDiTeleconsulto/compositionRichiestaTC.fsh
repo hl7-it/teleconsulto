@@ -11,14 +11,16 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
-* date ^short = "Data di modifica del documento."
+* date 1..1
+* date ^short = "Data del documento."
 
-* author only Reference(PractitionerRoleTeleconsulto)
-* author ^short = "Autore della Composition (Medico Refertante)."
+* author only Reference(PractitionerRoleTeleconsulto or PractitionerTeleconsulto)
+* author ^short = "Autore della Composition (Medico Richiedente)."
 
 * title ^short = "Titolo del documento"
+* title 1..1
+* title = "Richiesta di Teleconsulto" (exactly)
 
-// * confidentiality ^short = "Codice di confidenzialità della Composition."
 * attester ^slicing.discriminator.type = #value
 * attester ^slicing.discriminator.path = "mode"
 * attester ^slicing.rules = #open
@@ -31,8 +33,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 
 * relatesTo ^short = "Ulteriori documenti correlati"
 
-//* event.code ^short = "Tipologia di accesso"
- // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
+* event ^short = "Tipologia di accesso: indica la modalità di attivazione del teleconsulto estemporanea/programmata"
+* event.code from vs-tipologia-accesso-TC (preferred) 
 
 * section.title ^short = "Titolo della sezione."
 * section.code ^short = "Codice della sezione."
@@ -42,18 +44,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 
 * type = http://loinc.org#85208-7 (exactly)
 
-* title 1..1
-* title = "Richiesta di Teleconsulto" (exactly)
-
-* date 1..1
-
-// * subject ^short = "Soggetto del documento."
-// * subject 1..1
-// * subject only Reference(PatientTeleconsulto)
-
-// * encounter 1..1
-// * encounter only Reference(EncounterTeleconsulto)
-
 // Slicing delle sezioni interne
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
@@ -61,18 +51,14 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section ^slicing.ordered = false
 * section contains
     richiestaTeleconsulto 1..1 and
-    // prestazioni 0..* and
     diagnosi 1..1
 
 * section[richiestaTeleconsulto] ^sliceName = "richiestaTeleconsulto"
 * section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTeleconsulto)
 * section[richiestaTeleconsulto].code = $loinc#11488-4
 
-// * section[prestazioni] ^sliceName = "prestazioni"
-// * section[prestazioni].entry only Reference(ProcedureTeleconsulto)
-// * section[prestazioni].code = $loinc#62387-6
-
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].entry only Reference(ObservationTeleconsulto)
+* section[diagnosi].entry ^short = "Diagnosi o sospetto diagnostico che ha portato alla richiesta di teleconsulto"
 * section[diagnosi].code = $loinc#29548-5
 

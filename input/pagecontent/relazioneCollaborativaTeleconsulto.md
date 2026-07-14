@@ -32,8 +32,10 @@ Queste connessioni descrivono come le risorse all’interno del Bundle si riferi
 ---
 ### Relazione di Teleconsulto
 
-![](Modello_logico_TC.png)
+<img src="Modello_logico_TC.png" width="1100"/>
 
+
+---
 ### Richiesta di Teleconsulto
 
-![](Modello_logico_TC _richiesta.png)
+<img src="Modello_logico_TC _richiesta.png" width="1100"/>

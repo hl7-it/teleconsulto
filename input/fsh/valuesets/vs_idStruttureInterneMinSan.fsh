@@ -1,7 +1,7 @@
 ValueSet: VsMinisteroSaluteIdStruttureInterne
 Id: minsan-idStruttureInterne
-Title: "MDS - ID Strutture Interne di Ricovero"
-Description: "MDS - Identificativi Strutture Interne di Ricovero"
+Title: "Ministero della Salute - ID Strutture Interne di Ricovero"
+Description: "Ministero della Salute - Identificativi Strutture Interne di Ricovero"
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false

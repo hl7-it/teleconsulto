@@ -1,7 +1,7 @@
 CodeSystem: BrancaPrestazione
 Id: branca-prestazione
-Title: "Branca Prestazione"
-Description: "CodeSystem contenente le branche."
+Title: "CodeSystem per la branca della prestazione"
+Description: "Definisce il sistema di terminologie da usare per indicare la branca della prestazione."
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false

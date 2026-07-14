@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" class="model-map-block">
+    <div class="model-map-block">
+        <div class="callout-wrapper">
+            <div class="callout-box">
+                <p>
+                    Le informazioni rappresentate all'interno delle risorse FHIR descritte nella presente guida derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina". Tali elementi costituiscono il riferimento principale per l'identificazione, la strutturazione e la rappresentazione delle informazioni cliniche e amministrative associate ai servizi di telemedicina.
+                    La definizione dei profili FHIR e delle relative modalità di scambio è stata effettuata a partire da tali requisiti informativi.
+                </p>
+            </div>
+        </div>
+        <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Informazioni Allegato 1 Telemedicina - Profili FHIR</p>
+        <p>
+         Questa pagina illustra la mappatura tra gli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e i profili FHIR utilizzati nella presente Implementation Guide per la rappresentazione del referto di televisita.</p>
+        <p>Per ciascun elemento informativo vengono riportati:</p>
+        <ul>
+            <li>l'elemento informativo previsto dal D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina";</li>
+            <li>la risorsa, il profilo o il datatype FHIR utilizzato nella presente guida;</li>
+            <li>il collegamento ai dettagli della mappatura e alle relative regole di implementazione.</li>
+        </ul>
+        <p style="font-size:1.2em;font-weight:bold;margin-top:3.5rem;">Richiesta di Teleconsulto</p>
+        <p style="font-size:1.0em;font-weight:bold;margin-top:1.5rem;">Profili core della guida della Richiesta di Teleconsulto</p>
+    </div>
+    <div class="table-wrapper">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>FHIR Profile / Type in this IG</th>
+                    <th>Dettagli</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-BundleRichiestaTeleconsulto.html">
+                            <code>BundleRichiestaTeleconsulto</code>
+                        </a>,
+                        <a href="StructureDefinition-CompositionRichiestaTeleconsulto.html">
+                            <code>CompositionRichiestaTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-composition-richiesta.html">Composition Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-ServiceRequestRichiestaTeleconsulto.html">
+                            <code>ServiceRequestRichiestaTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-servicerequest-richiesta.html">ServiceRequest Mapping</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="font-size:1.0em;font-weight:bold;margin-top:1.5rem;">Modelli correlati presenti nella guida del Teleconsulto</p>
+    <div class="table-wrapper">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>FHIR Profile / Type in this IG</th>
+                    <th>Dettagli</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-PatientTeleconsulto.html">
+                            <code>PatientTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-patient-richiesta.html">Patient Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-PractitionerRoleTeleconsulto.html">
+                            <code>PractitionerRoleTeleconsulto</code>
+                        </a>,
+                        <a href="StructureDefinition-PractitionerTeleconsulto.html">
+                            <code>PractitionerTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-practitioner-richiesta.html">Practitioner Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-AppointmentTeleconsulto.html">
+                            <code>AppointmentTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-appointment-richiesta.html">Appointment Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-CoverageTeleconsulto.html">
+                            <code>CoverageTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-coverage-richiesta.html">Coverage Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-OrganizationT1.html">
+                            <code>OrganizationT1</code>
+                        </a>,
+                        <a href="StructureDefinition-OrganizationT2.html">
+                            <code>OrganizationT2</code>
+                        </a>,
+                        <a href="StructureDefinition-OrganizationT3.html">
+                            <code>OrganizationT3</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-organization-richiesta.html">Organization Mapping</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div></div>
+    <div>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:3.5rem;">Relazione Collaborativa di Teleconsulto</p>
+        <p style="font-size:1.0em;font-weight:bold;margin-top:1.5rem;">Profili core della guida della Relazione Collaborativa di Teleconsulto</p>
+    </div>
+    <div class="table-wrapper">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>FHIR Profile / Type in this IG</th>
+                    <th>Dettagli</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-BundleRelazioneCollaborativaTeleconsulto.html">
+                            <code>BundleRelazioneCollaborativaTeleconsulto</code>
+                        </a>,
+                        <a href="StructureDefinition-CompositionRelazioneCollaborativaTeleconsulto.html">
+                            <code>CompositionRelazioneCollaborativaTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-composition-relazione.html">Composition Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-ServiceRequestRelazioneCollaborativaTeleconsulto.html">
+                            <code>ServiceRequestRelazioneCollaborativaTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-serviceRequest-relazione.html">ServiceRequest Mapping</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="font-size:1.0em;font-weight:bold;margin-top:1.5rem;">Modelli correlati presenti nella guida del Teleconsulto</p>
+    <div class="table-wrapper">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>FHIR Profile / Type in this IG</th>
+                    <th>Dettagli</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-PatientTeleconsulto.html">
+                            <code>PatientTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-patient-relazione.html">Patient Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-PractitionerRoleTeleconsulto.html">
+                            <code>PractitionerRoleTeleconsulto</code>
+                        </a>,
+                        <a href="StructureDefinition-PractitionerTeleconsulto.html">
+                            <code>PractitionerTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-practitioner-relazione.html">Practitioner Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-EncounterTeleconsulto.html">
+                            <code>EncounterTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-encounter-relazione.html">Encounter Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-AppointmentTeleconsulto.html">
+                            <code>AppointmentTeleconsulto</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-appointment-relazione.html">Appointment Mapping</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="StructureDefinition-OrganizationT1.html">
+                            <code>OrganizationT1</code>
+                        </a>,
+                        <a href="StructureDefinition-OrganizationT2.html">
+                            <code>OrganizationT2</code>
+                        </a>,
+                        <a href="StructureDefinition-OrganizationT3.html">
+                            <code>OrganizationT3</code>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="pill" href="map-organization-relazione.html">Organization Mapping</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:3rem;"></div>
+</div>

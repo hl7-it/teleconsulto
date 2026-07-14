@@ -3,19 +3,19 @@ Parent: Encounter
 Id: EncounterTeleconsulto
 Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * ^status = #draft
-/*
-    OSSERVAZIONE: ci sono sltri tipi di indentifier? non penso che abbia troppo senso restringere il system
-*/
-// * identifier ^slicing.discriminator.type = #value
-// * identifier ^slicing.discriminator.path = "system"
-// * identifier ^slicing.rules = #open
-// * identifier contains codiceNosologico 0..*
-// * identifier[codiceNosologico].system = "http://agenas.gov.it/sid/codiceNosologico" (exactly)
-* identifier ^short = "Identificativo dell'incontro."
 
-* class ^short = "Classificazione dell'incontro con il paziente."
-* class ^definition = "Concetti che rappresentano la classificazione dell'incontro con il paziente, come ad esempio ambulatorio (paziente esterno), ricovero, emergenza, assistenza sanitaria a domicilio o altri, a causa delle variazioni locali."
-* class ^comment = "Classificazione della risorsa. Nel caso della televisita, utilizza\n\n* VR: La vista avvine ein modalità tele"
+* identifier ^short = "Identificativo dell'incontro."
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier contains codiceNosologico 1..1
+* identifier[codiceNosologico] ^short = "Codice nosologico dell'incontro."
+* identifier[codiceNosologico] ^definition = "Identificativo univoco dell'incontro di telemedicina nel sistema informativo della struttura erogante (numero di accettazione, codice nosologico)."
+* identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico" (exactly)
+
+
+* class ^short = "Provenienza del paziente (PS, reparto, ...)"
+* class ^definition = "Classificazione dell'incontro con il paziente., come ad esempio ambulatorio (paziente esterno), ricovero, emergenza, assistenza sanitaria a domicilio o altri, a causa delle variazioni locali."
 * class from VSActEncounterCodeExtended
 
 * priority ^short = "Priorità della richiesta."
@@ -25,14 +25,15 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * subject only Reference(PatientTeleconsulto)
 
 * basedOn only Reference(ServiceRequestRelazioneCollaborativaTeleconsulto) 
-* basedOn ^short = "Richiesta che ha avviato la visita."
-* basedOn ^definition = "La richiesta che questa visita soddisfa."
+* basedOn ^short = "Richiesta che ha avviato il teleconsulto."
+* basedOn ^definition = "La richiesta che questa prestazione soddisfa."
 
 * type MS
 * type ^short = "Disciplina"
+* type ^definition = "Disciplina specialistica ambulatoriale."
 * type from ValueSet_specialita_PractitionerRole (required)
 
-* participant ^short = "Professionisti coinvolti nel teleconsulto."
+* participant ^short = "Altri professionisti coinvolti nel teleconsulto."
 * participant.individual only Reference(PractitionerTeleconsulto or PractitionerRoleTeleconsulto)
 
 * appointment only Reference(AppointmentTeleconsulto)
@@ -42,7 +43,6 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * period ^comment = "Se non è (ancora) nota, la fine del Periodo può essere omessa."
 
 * reasonReference ^short = "Motivo scatenante l'incontro."
-//* reasonReference only Reference(ConditionTelemedicina or ProcedureTeleconsulto)
 * reasonReference only Reference(ProcedureTeleconsulto)
 
 * serviceProvider ^short = "Organizzazione che eroga il il servizio."

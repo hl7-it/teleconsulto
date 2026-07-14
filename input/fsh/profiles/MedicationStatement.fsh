@@ -19,4 +19,5 @@ Description: "Profilo della MedicationStatement utilizzato nel contesto del Tele
 // Optional metadata
 * effective[x] 0..1
 * note 0..1
+* note ^short = "Descrizione terapia farmacologica"
 * dosage 0..*

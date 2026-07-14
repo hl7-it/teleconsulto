@@ -1,6 +1,6 @@
 CodeSystem: CodeSystem_DiagnosiICD9CM
 Id: diagnosi-icd9cm
-Title: "Codesystem diagnosi ICD-9-CM"
+Title: "Codesystem ICD-9-CM"
 Description: "Definisce il sistema di terminologie da usare per le diagnosi secondo ICD-9-CM."
 * ^version = "1.0.0"
 * ^status = #active

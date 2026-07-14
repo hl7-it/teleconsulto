@@ -78,11 +78,15 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Artifacts: artifacts.html
-  ModelMaps: relazioneCollaborativaTeleconsulto.html  
+  Functional:
+    Scenario: scenario.html
+    ModelMaps: relazioneCollaborativaTeleconsulto.html  
+  Implementation:
+    Mapping to Profiles: modelmap.html  
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
+  Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
@@ -157,6 +161,7 @@ groups:
     description: Profili utilizzati nel contesto della Relazione collaborativa di Teleconsulto
     resources:
     - StructureDefinition/BundleRelazioneCollaborativaTeleconsulto
+    - StructureDefinition/BundleRelazioneCollaborativaTeleconsultoTransaction
     - StructureDefinition/CompositionRelazioneCollaborativaTeleconsulto 
     - StructureDefinition/ServiceRequestRelazioneCollaborativaTeleconsulto
 #    - StructureDefinition/EncounterTeleconsulto
@@ -165,6 +170,7 @@ groups:
     description: Profili utilizzati nel contesto della Richiesta di Teleconsulto
     resources:
     - StructureDefinition/BundleRichiestaTeleconsulto
+    - StructureDefinition/BundleRichiestaTeleconsultoTransaction
     - StructureDefinition/CompositionRichiestaTeleconsulto
     - StructureDefinition/ServiceRequestRichiestaTeleconsulto
 #

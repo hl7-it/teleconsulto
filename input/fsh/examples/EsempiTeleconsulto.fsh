@@ -399,7 +399,7 @@ Usage: #example
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
 Instance: Observation-anamnesi
-InstanceOf: ObservationTelevisitaNarrative
+InstanceOf: ObservationTeleconsultoNarrative
 Description: "Esempio di anamnesi nel contesto della teleconsulto"
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
@@ -434,7 +434,7 @@ Usage: #example
 
 
 Instance: Observation-esame-obiettivo
-InstanceOf: ObservationTelevisitaNarrative
+InstanceOf: ObservationTeleconsultoNarrative
 Description: "Esempio di esame obiettivo nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -504,7 +504,7 @@ Usage: #example
 
 
 Instance: Observation-conclusioni-generali
-InstanceOf: ObservationTelevisitaNarrative
+InstanceOf: ObservationTeleconsultoNarrative
 Description: "Esempio di conclusioni generali nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -517,7 +517,7 @@ Usage: #example
 
 
 Instance: Observation-suggerimenti
-InstanceOf: ObservationTelevisitaNarrative
+InstanceOf: ObservationTeleconsultoNarrative
 Description: "Esempio di suggerimenti nel contesto della teleconsulto"
 Usage: #example
 * status = #final
@@ -530,7 +530,7 @@ Usage: #example
 
 
 Instance: Observation-accertamenti-consigliati
-InstanceOf: ObservationTelevisitaNarrative
+InstanceOf: ObservationTeleconsultoNarrative
 Description: "Esempio di accertamenti consigliati nel contesto della teleconsulto"
 Usage: #example
 * status = #final

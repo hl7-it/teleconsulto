@@ -7,6 +7,9 @@ Id: BundleRelazioneCollaborativaTeleconsultoTransaction
 Description: "Bundle FHIR transaction per la Relazione Collaborativa di Teleconsulto"
 * ^status = #draft
 * type = #transaction (exactly)
+* type ^short = "Tipo del Bundle: transaction."
+* type ^definition = "Il Bundle è di tipo transaction: ogni entry contiene un elemento request con method e url per l'operazione da eseguire sul server FHIR."
+
 
 // Slicing su entry come nel profilo document originale
 * entry ^slicing.discriminator.type = #type

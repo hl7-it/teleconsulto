@@ -3,25 +3,24 @@ Parent: MedicationRequest
 Id: MedicationRequestTeleconsulto
 Description: "Profilo base della MedicationRequest utilizzato nel contesto del Teleconsulto" 
 * ^status = #draft
-* meta ^short = "Metadati della risorsa"
-* meta ^definition = "Metadati della risorsa"
-* identifier ^short = "Identificativo business della risorsa"
-* identifier ^definition = "Identificativo business della risorsa"
-* status ^definition = "Codice che desctive lo stato della request"
+* status ^definition = "Codice che descrive lo stato della request"
 * intent = #proposal
 * intent ^definition = "Scopo della request"
+
 * medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
-* medication[x] ^short = "Definizione farmaco"
+* medication[x] ^short = "Definizione del farmaco richiesto"
 * medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
 * medication[x] ^binding.strength = #preferred
+
 * subject only Reference(PatientTeleconsulto)
-* subject ^short = "Soggetto per cui è ricchiesta la medication"
-* subject ^definition = "Soggetto per cui è ricchiesta la medication"
+* subject ^short = "Soggetto per cui è richiesto il farmaco"
+
 * requester 1..1
-* instantiatesCanonical ^short = "Crea un'istanza del protocollo o della definizione FHIR"
-* instantiatesCanonical ^definition = "L'URL che punta a un protocollo, una linea guida, un set di ordini o un'altra definizione a cui aderisce in tutto o in parte questa MedicationRequest."
-* dosageInstruction ^short = "Instuzioni di dosaggio e somministrazione"
-* dosageInstruction ^definition = "Instuzioni di dosaggio e somministrazione"
+* requester ^short = "Professionista sanitario che ha richiesto il farmaco"
+* requester ^definition = "Professionista sanitario che ha richiesto il farmaco"
+
+* dosageInstruction ^short = "Istruzioni di dosaggio e somministrazione"
+* dosageInstruction ^definition = "Istruzioni di dosaggio e somministrazione"
 * dosageInstruction.timing ^short = "Tempistiche di somministrazione del farmaco"
 * dosageInstruction.timing ^definition = "Tempistiche di somministrazione del farmaco"
 * dosageInstruction.timing.repeat.bounds[x] only Period

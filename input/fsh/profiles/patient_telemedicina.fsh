@@ -9,7 +9,8 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 
 * extension contains BirthPlaceIta named luogoNascita 0..1 and ItSocietaNavigazione named societaNavigazione 0..1 
 * extension[luogoNascita] ^short = "Luogo di nascita." 
-* extension[societaNavigazione] ^short = "Spcietà di Navigazione." 
+* extension[societaNavigazione] ^short = "Società di Navigazione." 
+* extension[societaNavigazione] ^definition = "Società di navigazione da compilarsi in maniera obbligatoria solo per assistiti SASN." 
 
 * identifier  
 * identifier 1..
@@ -70,7 +71,7 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * name 1..
 * name obeys it-pat-1
 
-* telecom ^short = "recapiti paziente."
+* telecom ^short = "Recapiti del paziente."
 
 * name ^short = "Nome dell'assistito."
 * name ^definition = "Un nome associato al paziente."
@@ -78,6 +79,7 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * name ^requirements = "Need to be able to track the patient by multiple names. Examples are your official name and a partner name. The Alphabetic representation of the name SHALL be always provided"
 
 * gender 1..
+* gender ^short = "Genere dell'assistito."
 * gender ^definition = "Genere amministrativo."
 * gender ^comment = "Il genere potrebbe non corrispondere al sesso biologico determinato dalla genetica o dall'identificazione preferita dall'individuo. Si noti che sia per gli esseri umani che, in particolare, per gli animali, esistono altre possibilità legittime oltre a quella di maschio e femmina, anche se la stragrande maggioranza dei sistemi e dei contesti supporta solo maschio e femmina.  I sistemi che forniscono supporto decisionale o applicano le regole aziendali dovrebbero idealmente farlo sulla base di osservazioni che riguardano il sesso specifico o l'aspetto del genere di interesse (anatomico, cromosomico, sociale, ecc.) Tuttavia, poiché queste osservazioni sono registrate di rado, la prassi comune è quella di assegnare il genere amministrativo.  In questi casi, l'applicazione delle regole deve tenere conto della variazione tra gli aspetti amministrativi e quelli biologici, cromosomici e di altro genere.  Ad esempio, un avviso relativo a un'isterectomia su un uomo dovrebbe essere gestito come un avvertimento o un errore escludibile, e non come un errore \"duro\".  Per ulteriori informazioni sulla comunicazione del sesso e del genere del paziente, consultare la sezione Genere e sesso del paziente."
 
@@ -106,8 +108,11 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
     mmgPls 0..* and
     aziendaAssistenza 0..* 
 * generalPractitioner[mmgPlsRole] only Reference(PractitionerRoleTeleconsulto)
+* generalPractitioner[mmgPlsRole] ^short = "Medico di medicina generale o del pediatra di libera scelta."
 * generalPractitioner[mmgPls] only Reference(PractitionerTeleconsulto)
+* generalPractitioner[mmgPls] ^short = "Dettagli del medico di medicina generale o del pediatra di libera scelta."
 * generalPractitioner[aziendaAssistenza] only Reference(OrganizationT1)
+* generalPractitioner[aziendaAssistenza] ^short = "Azienda Sanitaria di riferimento dell'assistito."
 
 
 Invariant: pat-id-cf-1

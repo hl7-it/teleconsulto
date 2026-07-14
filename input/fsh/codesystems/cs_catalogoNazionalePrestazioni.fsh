@@ -1,11 +1,12 @@
-CodeSystem: CsCatalogoNazionalePrestazioni
-Id: CsCatalogoNazionalePrestazioni
+CodeSystem: CodesystemCatalogoNazionalePrestazioni
+Id: CodesystemCatalogoNazionalePrestazioni
 Title: "Codesystem catalogo nazionale prestazioni"
 Description: "Definisce il sistema di terminologie da usare per i codici prestazione definiti dal catalogo nazionale"
-* ^status = #active
-* ^content = #complete
+* ^name = "CodesystemCatalogoNazionalePrestazioni"
+* ^version = "1.0.0"
+* ^status = #draft
+* ^experimental = true
 * ^caseSensitive = false
-* ^experimental = false
 * #02.39.1 "PUNTURA DI RESERVOIR CRANICO PER DELIQUORAZIONE"
 * #02.93.1 "CONTROLLO / PROGRAMMAZIONE DI NEUROSTIMOLATORE ENCEFALICONon associabile a Visita neurologica di controllo 89.01.C"
 * #02.95 "RIMOZIONE DI TRAZIONE TRANSCRANICA O DISPOSITIVO DI HALO"
@@ -519,8 +520,8 @@ Description: "Definisce il sistema di terminologie da usare per i codici prestaz
 * #85.11 "AGOASPIRATO DELLA MAMMELLA. Incluso: valutazione adeguatezza del prelievo"
 * #85.11.1 "AGOSPIRATO ECOGUIDATO DELLA MAMMELLA. Biopsia con ago sottile della mammella"
 * #85.11.2 "AGOASPIRATO DELLA MAMMELLA IN STEREOTASSI. Incluso: valutazione adeguatezza del prelievo"
-* #85.11.3 "BIOPSIA [PERCUTANEA] MAMMARIA 'VACUUM ASSISTED ECOGUIDATA'"
-* #85.11.4 "BIOPSIA [PERCUTANEA] MAMMARIA 'VACUUM ASSISTED' IN STEREOTASSI"
+* #85.11.3 "BIOPSIA [PERCUTANEA] MAMMARIA \"\"VACUUM ASSISTED\"\" ECOGUIDATA"
+* #85.11.4 "BIOPSIA [PERCUTANEA] MAMMARIA \"\"VACUUM ASSISTED\"\" IN STEREOTASSI"
 * #85.11.5 "BIOPSIA DELLA MAMMELLA CON TRU-CUT"
 * #85.11.6 "BIOPSIA ECOGUIDATA DELLA MAMMELLA CON TRU-CUT"
 * #85.11.7 "BIOPSIA STEROTASSICA DELLA MAMMELLA CON TRU-CUT"
@@ -1721,7 +1722,7 @@ Description: "Definisce il sistema di terminologie da usare per i codici prestaz
 * #92.02.2 "SCINTIGRAFIA EPATICA PER RICERCA DI LESIONI ANGIOMATOSE CON INDAGINE TOMOGRAFICA"
 * #92.02.3 "SCINTIGRAFIA SEQUENZIALE EPATOBILIARE INCLUSA VALUTAZIONE DELLA FUNZIONE COLECISTICA E/O DEL REFLUSSO DUODENO-GASTRICO"
 * #92.03.1 "SCINTIGRAFIA RENALE STATICA. Non associabile a SCINTIGRAFIA RENALE STATICA CON INDAGINE TOMOGRAFICA (92.03.8)"
-* #92.03.3 "SCINTIGRAFIA SEQUENZIALE RENALE. Studio sequenziale della funzione renale senza o con prove farmacologiche Incluso: misura contestuale della funzionalità renale separata (in vivo)"
+* #92.03.3 "SCINTIGRAFIA SEQUENZIALE RENALE. Studio sequenziale della funzione renale senza o con prove farmacologiche Incluso: misura contestuale della funzionalità renale separata (\"in vivo\")"
 * #92.03.4 "STUDIO DEL REFLUSSO VESCICO-URETERALE. Mediante cistoscintigrafia minzionale diretta. Incluso: posizionamento di catetere"
 * #92.03.8 "SCINTIGRAFIA RENALE STATICA CON INDAGINE TOMOGRAFICA. Non associabile a SCINTIGRAFIA RENALE STATICA (92.03.1)"
 * #92.04.1 "SCINTIGRAFIA SEQUENZIALE DELLE GHIANDOLE SALIVARI CON STUDIO FUNZIONALE"
@@ -1853,8 +1854,8 @@ Description: "Definisce il sistema di terminologie da usare per i codici prestaz
 * #93.08.F "EMG DINAMICA DELL'ARTO SUPERIORE. Valutazione EMG di superficie o con elettrodi a filo (4 muscoli)"
 * #93.09.1 "VELOCITA' DI CONDUZIONE NERVOSA MOTORIA. Per nervo principale. Fino a 6 segmenti"
 * #93.09.2 "VELOCITA' DI CONDUZIONE NERVOSA SENSITIVA. Per nervo principale. Fino a 4 segmenti"
-* #93.09.3 "VALUTAZIONE GLOBALE DEL LIVELLO DI AUTONOMIA (ADL primarie o di base e ADL secondarie e/o IADL). Con l'utilizzo di strumenti di misura validati e/o condivisi a livello scientifico e relativa refertazione secondo attività e partecipazione ICF. Non associabile a PRIMA VISITA (89.7B.2); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLA CURA DELLA PROPRIA PERSONA (93.09.5); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLE ATTIVITA' DI VITA DOMESTICA E AREE DI VITA PRINCIPALE (93.09.4)"
-* #93.09.4 "VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLE ATTIVITA' DI VITA DOMESTICA E AREE DI VITA PRINCIPALE (ADL secondarie e/o IADL). Con l'utilizzo di strumenti di misura validati e/o condivisi a livello scientifico e relativa refertazione secondo attività e partecipazione ICF (d510- d699). Non associabile a: PRIMA VISITA (89.7B.2); VALUTAZIONE GLOBALE DEL LIVELLO DI AUTONOMIA (93.09.3); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLA CURA DELLA PROPRIA PERSONA (93.09.5)"
+* #93.09.3 "VALUTAZIONE GLOBALE DEL LIVELLO DI AUTONOMIA (ADL primarie o di base e ADL secondarie e\\o IADL). Con l'utilizzo di strumenti di misura validati e/o condivisi a livello scientifico e relativa refertazione secondo attività e partecipazione ICF. Non associabile a PRIMA VISITA (89.7B.2); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLA CURA DELLA PROPRIA PERSONA (93.09.5); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLE ATTIVITA' DI VITA DOMESTICA E AREE DI VITA PRINCIPALE (93.09.4)"
+* #93.09.4 "VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLE ATTIVITA' DI VITA DOMESTICA E AREE DI VITA PRINCIPALE (ADL secondarie e\\o IADL). Con l'utilizzo di strumenti di misura validati e/o condivisi a livello scientifico e relativa refertazione secondo attività e partecipazione ICF (d510- d699). Non associabile a: PRIMA VISITA (89.7B.2); VALUTAZIONE GLOBALE DEL LIVELLO DI AUTONOMIA (93.09.3); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLA CURA DELLA PROPRIA PERSONA (93.09.5)"
 * #93.09.5 "VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLA CURA DELLA PROPRIA PERSONA (ADL primarie o di base). Con l'utilizzo di strumenti di misura validati e/o condivisi a livello scientifico e relativa refertazione secondo attività e partecipazione ICF (d510-d599 e d350- d499). Non associabile a PRIMA VISITA (89.7B.2); VALUTAZIONE GLOBALE DEL LIVELLO DI AUTONOMIA (93.09.3); VALUTAZIONE DEL LIVELLO DI AUTONOMIA NELLE ATTIVITA' DI VITA DOMESTICA E AREE DI VITA PRINCIPALE (93.09.4). Non ripetibile entro un mese"
 * #93.11.1 "RIEDUCAZIONE MOTORIA INDIVIDUALE relativa alle “funzioni delle articolazioni, delle ossa e del movimento” secondo ICF dell’OMS e caratterizzata prevalentemente dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle protesi, ortesi ed ausili utilizzati e dalle attività terapeutiche manuali. Per seduta di trattamento di 30 minuti. Ciclo massimo di 10 sedute"
 * #93.11.2 "RIEDUCAZIONE MOTORIA INDIVIDUALE IN DISABILITA' COMPLESSE CON USO DI TERAPIE FISICHE STRUMENTALI DI SUPPORTO relativa alle “funzioni delle articolazioni, delle ossa e del movimento” secondo ICF dell’OMS e caratterizzata prevalentemente dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle protesi, ortesi ed ausili utilizzati e dalle attività terapeutiche manuali. Per seduta di trattamento di 60 minuti con almeno 40 minuti di esercizio terapeutico. Ciclo massimo di 10 sedute"
@@ -1873,8 +1874,8 @@ Description: "Definisce il sistema di terminologie da usare per i codici prestaz
 * #93.11.H "RIEDUCAZIONE MOTORIA INDIVIDUALE CON USO DI TERAPIE FISICHE STRUMENTALI DI SUPPORTO relativa alle “funzioni delle articolazioni, delle ossa e del movimento” secondo ICF dell’OMS e caratterizzata dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle protesi, ortesi ed ausili utilizzati e dalle attività terapeutiche manuali. Per seduta di trattamento di 45 minuti con almeno 30 minuti di esercizio terapeutico. Ciclo fino a 10 sedute"
 * #93.15 "MANIPOLAZIONE DELLA COLONNA VERTEBRALE. Per seduta. Ciclo fino a 4 sedute"
 * #93.16 "MOBILIZZAZIONE DI ALTRE ARTICOLAZIONI Manipolazione incruenta di rigidità di piccole articolazioni. Escluso: Manipolazione di articolazione temporo-mandibolare"
-* #93.18.1 "RIEDUCAZIONE MOTORIA CARDIO-RESPIRATORIA INDIVIDUALE relativa alle “funzioni dell'apparato cardiovascolare, ematologico, immunologico e respiratorio secondo ICF dell’OMS. Per seduta di 30 minuti caratterizzata prevalentemente dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle ortesi ed ausili utilizzati. Ciclo fino a 10 sedute"
-* #93.18.2 "RIEDUCAZIONE MOTORIA CARDIO-RESPIRATORIA DI GRUPPO relativa alle “funzioni dell'apparato cardiovascolare, ematologico, immunologico e respiratorio secondo ICF dell’OMS. Per seduta di 60 minuti caratterizzata prevalentemente dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle ortesi ed ausili utilizzati. Max 6 pazienti. Ciclo fino a 10 sedute"
+* #93.18.1 "RIEDUCAZIONE MOTORIA CARDIO-RESPIRATORIA INDIVIDUALE relativa alle “funzioni dell'apparato cardiovascolare, ematologico, immunologico e respiratorio\"\" secondo ICF dell’OMS. Per seduta di 30 minuti caratterizzata prevalentemente dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle ortesi ed ausili utilizzati. Ciclo fino a 10 sedute"
+* #93.18.2 "RIEDUCAZIONE MOTORIA CARDIO-RESPIRATORIA DI GRUPPO relativa alle “funzioni dell'apparato cardiovascolare, ematologico, immunologico e respiratorio\"\" secondo ICF dell’OMS. Per seduta di 60 minuti caratterizzata prevalentemente dall’esercizio terapeutico motorio, indipendentemente dalla tecnica utilizzata, dal mezzo in cui viene realizzato e dalle ortesi ed ausili utilizzati. Max 6 pazienti. Ciclo fino a 10 sedute"
 * #93.19.3 "TEST DI VALUTAZIONE DELLA RISPOSTA MOTORIA ALLA LEVODOPA /APOMORFINAIncluso farmaco"
 * #93.22.1 "REALIZZAZIONE E APPLICAZIONE DI ORTESI STATICA e/o dinamica e di cast compreso il materiale di realizzazione"
 * #93.22.2 "REALIZZAZIONE E APPLICAZIONE DI ORTESI DINAMICA"

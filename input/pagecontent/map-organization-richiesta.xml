@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
+    </p>
+
+
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> OrganizationT1 o OrganizationT2 o OrganizationT3">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>codRegione</td>
+            <td>Codice Regione/Provincia Autonoma del medico titolare</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.requester.resolve().PractitionerRole.organization.resolve().address.state</td>
+          </tr>
+          <tr>
+            <td>codASL/AO</td>
+            <td>Codice ASL del medico prescrittore indicato in cfMedico1</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.requester.resolve().PractitionerRole.organization.resolve().identifier[asl].value</td>
+          </tr>
+          <tr>
+            <td>codStruttura</td>
+            <td>Codice della struttura dove opera il medico prescrittore</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.requester.resolve().PractitionerRole.organization.resolve().identifier[struttura].value</td>
+          </tr>
+          <tr>
+            <td>Tipo struttura Richiedente</td>
+            <td>Tipologia di struttura richiedente (ASL/AO/IRCCS etc)</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.requester.resolve().PractitionerRole.organization.resolve().type</td>
+          </tr>
+          <tr>
+            <td>Provincia medico richiedente</td>
+            <td>Codice provincia medico richiedente</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.requester.resolve().PractitionerRole.organization.resolve().address.district</td>
+          </tr>
+          <tr>
+            <td>RegioneMedicoConsulente</td>
+            <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.performer.resolve().PractitionerRole.organization.resolve().address.state</td>
+          </tr>
+          <tr>
+            <td>EntemedicoConsulente</td>
+            <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.performer.resolve().PractitionerRole.organization.resolve().identifier[asl].value</td>
+          </tr>
+          <tr>
+            <td>StrutturaMedicoConsulente</td>
+            <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
+            <td>OrganizationT1</td>
+            <td>ServiceRequest.performer.resolve().PractitionerRole.organization.resolve().identifier[struttura].value</td>
+          </tr>
+          <tr>
+            <td>RepartoMedicoConsulente</td>
+            <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
+            <td>OrganizationT3</td>
+            <td>ServiceRequest.performer.resolve().PractitionerRole.organization.resolve().identifier</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

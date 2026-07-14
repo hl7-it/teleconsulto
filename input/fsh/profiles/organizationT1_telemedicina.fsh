@@ -1,22 +1,21 @@
 Profile: OrganizationT1
 Parent: Organization
 Id: OrganizationT1
-Description: "Profilo di Organization di tipo 1 (es. ASL, AO, IRCCS)"
+Description: "Profilo di un'Azienda Sanitaria (es. ASL, AO, IRCCS)"
 
 * identifier ^short = "Identificativo dell'organizzazione."
 * identifier ^definition = "Identificativi di Organization usati per identificare l'Organization su diversi sistemi"
 * identifier 1..*
 
 * type ^short = "Tipo di organizzazione"
-* type ^definition = "Il tipo di organizzazione di cui si tratta"
-* type ^comment = "Le organizzazioni possono essere di diversi tipi"
+* type ^definition = "Il tipo di organizzazione di cui si tratta (es. ASL/AO/IRCCS)"
 
 * name ^short = "Nome dell'organizzazione."
 * name ^definition = "Descrizione della Organization"
 
 * address.city ^short = "Comune"
-* address.district ^short = "Nome della provincia"
-* address.state ^short = "Sotto-unità dello stato (Regione)."
+* address.district ^short = "Provincia"
+* address.state ^short = "Sotto-unità dello stato (Regione o Provincia Autonoma)."
 
 * partOf ^short = "L'Organization di cui questa Organization è parte"
 * partOf ^definition = "L'Organization di cui questa Organization è parte"
@@ -40,12 +39,12 @@ Description: "Profilo di Organization di tipo 1 (es. ASL, AO, IRCCS)"
 
 * identifier[asl] ^short = "Identificativo Azienda Sanitaria Locale"
 * identifier[asl].system = "http://hl7.it/sid/fls" (exactly) // pattern
-* identifier[asl].value from VsMinisteroSaluteAsl (required) //$asl
+* identifier[asl].value from ValuesetMinisteroSaluteidASL (required) //$asl
 
-* identifier[aslRegione].value from https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione // pattern $asl
+* identifier[aslRegione].value from VsAnagrafiRegionali // pattern $asl
 * identifier[aslRegione] ^short = "Identificativo Regionale Azienda Sanitaria Locale"
 
-* identifier[aziendaOspedaliera].value from https://www.hl7.it/fhir/terminology/ValueSet/minsan-idAziendeOspedaliere (required)
+* identifier[aziendaOspedaliera].value from VsMinisteroSaluteIdAziendeOspedaliere (required)
 * identifier[aziendaOspedaliera].system = "http://hl7.it/sid/hsp" (exactly)  // pattern
 * identifier[aziendaOspedaliera] ^short = "Identificativo Azienda Ospedaliera"
 //* identifier[aziendaOspedaliera].value from VsMinisteroSaluteIdAziendeOspedaliere (required)
@@ -53,10 +52,10 @@ Description: "Profilo di Organization di tipo 1 (es. ASL, AO, IRCCS)"
 * identifier[struttura].system = "http://hl7.it/sid/hsp" (exactly) // pattern
 * identifier[struttura] ^short = "Identificativo Struttura di Ricovero"
 //* identifier[struttura].value from VsMinisteroSaluteIdStrutture (required)
-* identifier[struttura].value from https://www.hl7.it/fhir/terminology/ValueSet/minsan-idStrutture (required)
+* identifier[struttura].value from VsMinisteroSaluteIdStrutture (required)
 
 * identifier[strutturaInterna].system = "http://hl7.it/sid/hsp" (exactly) // pattern
-* identifier[strutturaInterna].value from $minsan-idStruttureInterne-vs (required)
+* identifier[strutturaInterna].value from VsMinisteroSaluteIdStruttureInterne (required)
 
 * identifier[partitaIva].system = "http://hl7.it/sid/partitaIva" (exactly)  // pattern
 * identifier[partitaIva] ^short = "Partita IVA Organizzazione"

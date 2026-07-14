@@ -1,6 +1,6 @@
 CodeSystem: CsTipoRicetta
 Id: cs-tipo-ricetta
-Title: "Codici Assistenza per Stranieri"
+Title: "CodeSystem per i Codici Assistenza per Stranieri"
 Description: "Codici identificativi per tipologie di assistenza a stranieri in temporaneo soggiorno, secondo classificazioni italiane ed europee."
 * ^status = #active
 * ^content = #complete

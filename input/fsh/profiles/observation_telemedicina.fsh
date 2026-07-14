@@ -7,9 +7,9 @@ Description: "Profilo di Observation utilizzato nel contesto di Teleconsulto"
 * ^status = #draft
 * ^experimental = true
 * code MS
+* code ^short = "Codice che identifica l'osservazione"
 * note MS
-* effective[x] ^short = "Data di rilevazione del parametro"
+* effective[x] ^short = "Data e ora nella quale è stata eseguita l'osservazione o rilevato il parametro"
 
-* performer ^short = "Medico consultato"
+* performer ^short = "Professionista che ha eseguito l'osservazione o rilevato il parametro."
 * performer only Reference(PractitionerRoleTeleconsulto) 
-* performer 1..1

@@ -3,7 +3,7 @@
 Profile: OrganizationT2
 Parent: Organization
 Id: OrganizationT2
-Description: "Profilo base di Organization di tipo 2 (es. ospedale, distretto)"
+Description: "Profilo di un Presidio (es. ospedale, distretto)"
 // * identifier ^slicing.discriminator.type = #value
 // * identifier ^slicing.discriminator.path = "system"
 // * identifier ^slicing.rules = #open
@@ -14,6 +14,6 @@ Description: "Profilo base di Organization di tipo 2 (es. ospedale, distretto)"
 * identifier ^short = "Codice del presidio"
 * identifier 1..
 
-
+* partOf ^short = "Azienda Sanitaria di cui questo presidio è parte"
 * partOf only Reference(OrganizationT1)
 

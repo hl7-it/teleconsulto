@@ -4,6 +4,8 @@ Id: BundleRelazioneCollaborativaTeleconsulto
 Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto e le risorse correlate"
 * ^status = #draft
 * type = #document (exactly)
+* type ^short = "Tipologia del Bundle."
+* type ^definition = "Indica la tipologia del Bundle. Nel contesto del referto di televisita identifica un Bundle di tipo document."
 
 // Slicing su entry secondo profili usati
 * entry ^slicing.discriminator.type = #type

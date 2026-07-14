@@ -6,6 +6,8 @@ Id: BundleRichiestaTeleconsultoTransaction
 Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse correlate (TRANSACTION: cliniche in POST, amministrative in PUT)"
 * ^status = #draft
 * type = #transaction (exactly)
+* type ^short = "Tipo del Bundle: transaction."
+* type ^definition = "Il Bundle è di tipo transaction: ogni entry contiene un elemento request con method e url per l'operazione da eseguire sul server FHIR."
 
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"

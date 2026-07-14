@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
+    </p>
+
+
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> EncounterTeleconsulto">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>EncounterTeleconsulto / Practitioner</td>
+            <td>Encounter.participant.individual.resolve().name.family</td>
+          </tr>
+          <tr>
+            <td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>EncounterTeleconsulto / Practitioner</td>
+            <td>Encounter.participant.individual.resolve().name.given</td>
+          </tr>
+          <tr>
+            <td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>EncounterTeleconsulto / Practitioner</td>
+            <td>Encounter.participant.individual.resolve().identifier</td>
+          </tr>
+          <tr>
+            <td>Codice Nosologico</td>
+            <td>Codice Nosologico</td>
+            <td>EncounterTeleconsulto</td>
+            <td>Encounter.identifier.where(type='codiceNosologico').value</td>
+          </tr>
+          <tr>
+            <td>Provenienza</td>
+            <td>Provenienza (es PS, Reparto)</td>
+            <td>EncounterTeleconsulto</td>
+            <td>Encounter.class</td>
+          </tr>
+          <tr>
+            <td>Disciplina</td>
+            <td>Disciplina specialistica ambulatoriale</td>
+            <td>EncounterTeleconsulto</td>
+            <td>Encounter.type</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>
