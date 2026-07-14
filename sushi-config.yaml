@@ -80,9 +80,9 @@ menu:
   Home: index.html
   Functional:
     Scenario: scenario.html
-    ModelMaps: relazioneCollaborativaTeleconsulto.html  
+    ModelMaps: modelmaps.html  
   Implementation:
-    Mapping to Profiles: modelmap.html  
+    Mapping to Profiles: mapping.html  
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
