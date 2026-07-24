@@ -140,7 +140,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 // Slice: accertamentiControlliConsigliati
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
 * section[accertamentiControlliConsigliati].code = $loinc#80615-8 (exactly)
-* section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleconsultoNarrative)
+* section[accertamentiControlliConsigliati].entry only Reference(ObservationTeleconsulto)
 
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"

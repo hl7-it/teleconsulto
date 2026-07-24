@@ -10,7 +10,7 @@ Description: "Profilo della risorsa Coverage utilizzata nel contesto del Telecon
 * costToBeneficiary.exception MS
 * costToBeneficiary.exception.extension contains StatoEsenzioneCoverage named stato-esenzione 0..1 MS
 * costToBeneficiary.exception.type MS
-* costToBeneficiary.exception.type from VsMinisteroSaluteEsenzioni (extensible)
+* costToBeneficiary.exception.type from VsEsenzioni (extensible)
 * costToBeneficiary.exception.type ^short = "Codice esenzione"
 * costToBeneficiary.exception.type ^definition = "Codice che identifica la tipologia di esenzione"
 * costToBeneficiary.exception.period MS

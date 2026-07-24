@@ -13,3 +13,6 @@ Description: "Profilo di Observation utilizzato nel contesto di Teleconsulto"
 
 * performer ^short = "Professionista che ha eseguito l'osservazione o rilevato il parametro."
 * performer only Reference(PractitionerRoleTeleconsulto) 
+
+* value[x] ^short = "Valore misurato o rilevato."
+* value[x] ^definition = "Risultato dell'osservazione espresso come quantità, codice, stringa o altro tipo."

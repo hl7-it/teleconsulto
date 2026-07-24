@@ -4,10 +4,10 @@ Id: ServiceRequestRichiestaTeleconsulto
 Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleconsulto"
 * ^status = #draft
 
-* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method named ModalitaEsecuzionePrestazione 0..1 and OscuramentoDati named oscuramentoDati 0..1 and medicoSostituto named medicoSostituto 0..1
+* extension contains ModalitaEsecPrestazione named ModalitaEsecuzionePrestazione 0..1 and OscuramentoDati named oscuramentoDati 0..1 and medicoSostituto named medicoSostituto 0..1
 * extension[oscuramentoDati] ^short = "Campo che identifica la volontà del paziente nell'oscurare i propri dati."
 * extension[medicoSostituto] ^short = "Campo che identifica il medico sostituto."
-* extension[ModalitaEsecuzionePrestazione] ^short = "Modalità esecuzione prestazione: descrive se il teleconsulto è avvenuto in modalità sincrona o asincrona e se in presenza dell'assistito/in assenza dell'assistito"
+* extension[ModalitaEsecuzionePrestazione] ^short = "Modalità esecuzione prestazione: descrive se il teleconsulto avverrà in modalità sincrona o asincrona e se in presenza dell'assistito/in assenza dell'assistito"
 * extension[ModalitaEsecuzionePrestazione].valueCodeableConcept from vs-modalita-TC (preferred)
 
 * requisition 1..

@@ -101,7 +101,7 @@ Description: "Bundle FHIR transaction per la Relazione Collaborativa di Telecons
 
 
 // Slice: encounter
-* entry[encounter].request.method = #PUT (exactly)
+* entry[encounter].request.method = #POST (exactly)
 
 
 // Slice: documentReference
@@ -111,7 +111,7 @@ Description: "Bundle FHIR transaction per la Relazione Collaborativa di Telecons
 * entry[procedure].request.method = #POST (exactly)
 
 // Slice: appointment
-* entry[appointment].request.method = #PUT (exactly)
+* entry[appointment].request.method = #POST (exactly)
 
 
 // ==============================

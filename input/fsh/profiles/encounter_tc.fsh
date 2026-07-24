@@ -8,7 +8,7 @@ Description: "Profilo dell'Encounter utilizzato nel contesto del Teleconsulto"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier contains codiceNosologico 1..1
+* identifier contains codiceNosologico 0..1
 * identifier[codiceNosologico] ^short = "Codice nosologico dell'incontro."
 * identifier[codiceNosologico] ^definition = "Identificativo univoco dell'incontro di telemedicina nel sistema informativo della struttura erogante (numero di accettazione, codice nosologico)."
 * identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico" (exactly)

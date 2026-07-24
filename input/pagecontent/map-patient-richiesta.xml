@@ -79,7 +79,7 @@
             <td>aslAssistito</td>
             <td>Asl di residenza dell'assistito</td>
             <td>PatientTeleconsulto</td>
-            <td>ServiceRequest.patient.generalPractitioner[aziendaAssistenza]</td>
+            <td>ServiceRequest.patient.generalPractitioner.resolve().OrganizationT1</td>
           </tr>
 
         </tbody>
@@ -87,7 +87,7 @@
     </div>
 
     <p style="margin-top:2rem;color:#555;">
-      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+      Torna alla panoramica: <a href="mapping.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
     </p>
   </body>
 </div>

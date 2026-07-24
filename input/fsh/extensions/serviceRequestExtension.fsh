@@ -1,3 +1,12 @@
+Extension: ModalitaEsecPrestazione
+Id: modalitaEsecPrestazione
+Title: "Extension Modalità di Esecuzione della Prestazione"
+Description: "Extension per specificare la modalità di esecuzione della prestazione, nella Richiesta di Teleconsulto."
+* ^status = #active
+* ^context[+].type = #element
+* ^context[=].expression = "ServiceRequest"
+* value[x] only CodeableConcept
+
 Extension: OscuramentoDati
 Id: oscuramentodati
 Title: "Extension Oscuramento Dati"

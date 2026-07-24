@@ -60,5 +60,5 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].entry only Reference(ObservationTeleconsulto)
 * section[diagnosi].entry ^short = "Diagnosi o sospetto diagnostico che ha portato alla richiesta di teleconsulto"
-* section[diagnosi].code = $loinc#29548-5
+* section[diagnosi].code = $loinc#29299-5
 

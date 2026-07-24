@@ -99,20 +99,8 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * maritalStatus ^definition = "Questo campo contiene l'ultimo stato civile del paziente."
 * maritalStatus ^comment = "Non tutti gli usi della terminologia si adattano a questo schema generale. In alcuni casi, i modelli non dovrebbero usare CodeableConcept e utilizzare direttamente la codifica, fornendo la propria struttura per la gestione del testo, delle codifiche, delle traduzioni e delle relazioni tra gli elementi e il pre e post coordinamento."
 
-
-* generalPractitioner ^slicing.discriminator.type = #profile
-* generalPractitioner ^slicing.discriminator.path = "$this"
-* generalPractitioner ^slicing.rules = #open
-* generalPractitioner contains
-    mmgPlsRole 0..* and
-    mmgPls 0..* and
-    aziendaAssistenza 0..* 
-* generalPractitioner[mmgPlsRole] only Reference(PractitionerRoleTeleconsulto)
-* generalPractitioner[mmgPlsRole] ^short = "Medico di medicina generale o del pediatra di libera scelta."
-* generalPractitioner[mmgPls] only Reference(PractitionerTeleconsulto)
-* generalPractitioner[mmgPls] ^short = "Dettagli del medico di medicina generale o del pediatra di libera scelta."
-* generalPractitioner[aziendaAssistenza] only Reference(OrganizationT1)
-* generalPractitioner[aziendaAssistenza] ^short = "Azienda Sanitaria di riferimento dell'assistito."
+* generalPractitioner ^short = "Professionista o organizzazione responsabile principale dell'assistenza al paziente. Utilizzare OrganizationT1 per riportare l'ASL di riferimento"
+* generalPractitioner only Reference(PractitionerRoleTeleconsulto or PractitionerTeleconsulto or OrganizationT1)
 
 
 Invariant: pat-id-cf-1

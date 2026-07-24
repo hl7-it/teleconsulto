@@ -157,15 +157,6 @@ menu:
 #
 groups:
   GroupA:
-    name: Profili Relazione collaborativa di Teleconsulto
-    description: Profili utilizzati nel contesto della Relazione collaborativa di Teleconsulto
-    resources:
-    - StructureDefinition/BundleRelazioneCollaborativaTeleconsulto
-    - StructureDefinition/BundleRelazioneCollaborativaTeleconsultoTransaction
-    - StructureDefinition/CompositionRelazioneCollaborativaTeleconsulto 
-    - StructureDefinition/ServiceRequestRelazioneCollaborativaTeleconsulto
-#    - StructureDefinition/EncounterTeleconsulto
-  GroupB:
     name: Profili Richiesta di Teleconsulto
     description: Profili utilizzati nel contesto della Richiesta di Teleconsulto
     resources:
@@ -173,6 +164,116 @@ groups:
     - StructureDefinition/BundleRichiestaTeleconsultoTransaction
     - StructureDefinition/CompositionRichiestaTeleconsulto
     - StructureDefinition/ServiceRequestRichiestaTeleconsulto
+  GroupB:
+    name: Profili Relazione collaborativa di Teleconsulto
+    description: Profili utilizzati nel contesto della Relazione collaborativa di Teleconsulto
+    resources:
+    - StructureDefinition/BundleRelazioneCollaborativaTeleconsulto
+    - StructureDefinition/BundleRelazioneCollaborativaTeleconsultoTransaction
+    - StructureDefinition/CompositionRelazioneCollaborativaTeleconsulto 
+    - StructureDefinition/ServiceRequestRelazioneCollaborativaTeleconsulto
+  GroupC:
+    name: Profili Correlati Teleconsulto
+    description: Profili correlati utilizzati a supporto nella Richiesta e nella Relazione Finale di Teleconsulto
+    resources:
+    - StructureDefinition/PatientTeleconsulto
+    - StructureDefinition/PractitionerTeleconsulto
+    - StructureDefinition/PractitionerRoleTeleconsulto
+    - StructureDefinition/EncounterTeleconsulto
+    - StructureDefinition/AppointmentTeleconsulto
+    - StructureDefinition/AllergyIntoleranceTeleconsulto
+    - StructureDefinition/MedicationRequestTeleconsulto
+    - StructureDefinition/MedicationStatementTeleconsulto
+    - StructureDefinition/ProcedureTeleconsulto
+    - StructureDefinition/ObservationTeleconsulto
+    - StructureDefinition/ObservationTeleconsultoNarrative
+    - StructureDefinition/CoverageTeleconsulto
+    - StructureDefinition/OrganizationT1
+    - StructureDefinition/OrganizationT2
+    - StructureDefinition/OrganizationT3
+    - StructureDefinition/AddressItTelemedicina
+  GroupD:
+    name: Estensioni
+    description: Estensioni FHIR definite nella guida di Teleconsulto
+    resources:
+    - StructureDefinition/modalitaEsecPrestazione
+    - StructureDefinition/medicoSostituto
+    - StructureDefinition/oscuramentodati
+    - StructureDefinition/it-societa-navigazione
+    - StructureDefinition/coverage-exceptionStatus
+    - StructureDefinition/address-official
+    - StructureDefinition/birth-place-ita
+    - StructureDefinition/recordCertification
+    - StructureDefinition/address-dug
+  GroupE:
+    name: ValueSet
+    description: ValueSet definiti nella guida di Teleconsulto
+    resources:
+    - ValueSet/vs-raggio-erogazione
+    - ValueSet/vs-modalita-TC
+    - ValueSet/vs-tipologia-accesso-TC
+    - ValueSet/vsTipologiaDocumentale
+    - ValueSet/VSActEncounterCodeExtended
+    - ValueSet/vsTipoIdentificatore
+    - ValueSet/vs-tipo-ricetta
+    - ValueSet/vsspecialityPractitionerRole
+    - ValueSet/specialita-mediche
+    - ValueSet/VsCatalogoNazionalePrestazioni
+    - ValueSet/minsan-esenzioni
+    - ValueSet/vs-anagrafi-regionali
+    - ValueSet/ValuesetMinisteroSaluteidASL
+    - ValueSet/minsan-idAziendeOspedaliere
+    - ValueSet/minsan-idStrutture
+    - ValueSet/minsan-idStruttureInterne
+    - ValueSet/istat-dug
+    - ValueSet/diagnosi-icd9cm
+  GroupF:
+    name: CodeSystem
+    description: CodeSystem definiti nella guida di Teleconsulto
+    resources:
+    - CodeSystem/csRaggioErogazione
+    - CodeSystem/csModalitaTC
+    - CodeSystem/csTipologiaAccessoTC
+    - CodeSystem/custom-encounter-type
+    - CodeSystem/cs-tipo-ricetta
+    - CodeSystem/csspecialityPractitionerRole
+    - CodeSystem/branca-prestazione
+    - CodeSystem/csCatalogoNazionalePrestazioni
+    - CodeSystem/cs-mds-esenzioni
+    - CodeSystem/CodesystemMinisteroSaluteASL
+    - CodeSystem/minsan-hsp
+    - CodeSystem/cs-mds-idStruttureInterne
+    - CodeSystem/dug
+    - CodeSystem/diagnosi-icd9cm
+  GroupG:
+    name: Esempi
+    description: >-
+      Caso d'uso esemplificativo: teleconsulto medico pneumologico (classe TC) erogato il 17/06/2026
+      dalla U.O. Pneumologia dell'Ospedale Sandro Pertini (ASL Roma 1). Il Dr. Marco Rossi, medico di 
+      Medicina Interna, richiede un teleconsulto con la Dr.ssa Laura Trevisan, Pneumologa, per il sig. 
+      Giovanni Bianchi (67 anni, bronchite cronica nota, ex fumatore), a seguito del peggioramento della
+      tosse e della dispnea. Il teleconsulto si svolge in modalità sincrona tra i due professionisti, 
+      senza la presenza del paziente, sulla base della condivisione della documentazione clinica
+      disponibile (anamnesi, esami ematochimici, radiografia del torace e terapia in corso).
+      La consultazione è finalizzata alla valutazione del quadro clinico e alla definizione condivisa 
+      del percorso terapeutico.
+    resources:
+    - Bundle/RichiestaDiTeleconsulto
+    - Bundle/RichiestaDiTeleconsultoTransaction
+    - Composition/1b724b4b-0cea-42ef-8a8c-1eb588fc1082
+    - Patient/64ab76df-be66-4f3e-b733-8a0437dc188d
+    - PractitionerRole/82c6c0d0-3035-4e51-8275-76fc9e83a3be
+    - Practitioner/1ad53a39-b844-4d12-aefb-6f9b4fff1dce
+    - PractitionerRole/0cad5e0f-5386-43b8-af1d-d2402d6dde8a
+    - Practitioner/ad98bbb3-0317-4c8d-8ed7-8ac76d5ecfe0
+    - ServiceRequest/13e1c13e-8ce2-4d78-b28e-bddae005223b
+    - Appointment/68f7f0c2-ffa4-4a23-bd17-265166685cc0
+    - Coverage/c468dfb9-a117-4c8f-9ac5-df0eef954d7e
+    - Observation/c87002c4-ff22-43f0-ba0d-85f0cd91c070
+    - Organization/asl-roma-1
+    - Organization/osp-pertini
+    - Organization/uo-medicinainterna-pertini
+    - Organization/uo-pneumologia-pertini
 #
 #
 # The ImplementationGuide resource defines several other properties

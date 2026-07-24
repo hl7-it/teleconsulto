@@ -1,7 +1,7 @@
 ValueSet: VstipoIdentificatore
-Id: VstipoIdentificatore
-Title: "Tipo identificatore"
-Description: "Value set che descrivie i diversi tipi di identificatori. Include i codici della tabella http://terminology.hl7.org/CodeSystem/v2-0203 piu' 'STP' ed 'ENI' "
+Id: vsTipoIdentificatore
+Title: "ValueSet per i tipi di identificatore di un soggetto"
+Description: "Value set che descrivi i diversi tipi di identificatori. Include i codici della tabella http://terminology.hl7.org/CodeSystem/v2-0203 piu' 'STP' ed 'ENI' "
 * ^version = "4.0.1"
 * ^status = #active
 * ^experimental = false

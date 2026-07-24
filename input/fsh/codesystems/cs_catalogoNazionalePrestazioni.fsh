@@ -1,5 +1,5 @@
 CodeSystem: CodesystemCatalogoNazionalePrestazioni
-Id: CodesystemCatalogoNazionalePrestazioni
+Id: csCatalogoNazionalePrestazioni
 Title: "Codesystem catalogo nazionale prestazioni"
 Description: "Definisce il sistema di terminologie da usare per i codici prestazione definiti dal catalogo nazionale"
 * ^name = "CodesystemCatalogoNazionalePrestazioni"
