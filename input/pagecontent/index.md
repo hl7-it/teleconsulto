@@ -41,6 +41,10 @@ Il bundle di tipo transaction, invece, consente di accedere alle singole informa
 
 L'adozione di entrambe le rappresentazioni permette quindi di supportare sia gli scenari orientati al documento sia gli scenari orientati ai dati, favorendo la continuità assistenziale, l'integrazione tra sistemi e il riutilizzo delle informazioni cliniche nel contesto dei servizi di telemedicina.
 
+<img src="design_teleconsulto.png" width="800"/>
+
+<br clear="all"/>
+
 ### Autori e contributori
 <table>
 <thead>

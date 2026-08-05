@@ -1,5 +1,3 @@
-Questa pagina descrive lo scenario funzionale di riferimento adottato dalla presente guida, illustrando gli attori coinvolti e le macrofasi che caratterizzano il processo di teleconsulto, dalla richiesta della prestazione fino alla definizione e condivisione del referto clinico.
-
 Questa pagina descrive lo scenario funzionale di riferimento adottato dalla presente guida, illustrando le macrofasi che caratterizzano il processo di teleconsulto, dalla richiesta della prestazione fino alla definizione e condivisione della relazione.
 
 ### Flusso funzionale del teleconsulto
@@ -28,4 +26,4 @@ In questa fase vengono svolte le attività necessarie a erogare il Teleconsulto 
 
 #### Relazione collaborativa di Teleconsulto
 
-Una volta terminato il Teleconsulto, ogni medico consultato dichiara per scritto il proprio parere in merito a quanto discusso e lo invia al medico richiedente, il quale sintetizza una Relazione collaborativa contenente le la decisione collegiale, segnalando eventualmente la persistenza di opinioni contrastanti che non sia stato possibile comporre in una scelta condivisa. 
+Una volta terminato il Teleconsulto, il medico richiedente sintetizza quanto emerso nel corso del teleconsulto nella Relazione Collaborativa. 

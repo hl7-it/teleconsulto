@@ -45,14 +45,45 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
+pages:
+  index.md:
+    title: Home
+  scenario.md:
+    title: Scenario
+  modelmaps.md:
+    title: Model Maps
+  mapping.xml:
+    title: Mapping to Profiles
+    map-composition-richiesta.xml:
+      title: Mapping Composition (Richiesta)
+    map-serviceRequest-richiesta.xml:
+      title: Mapping ServiceRequest (Richiesta)
+    map-patient-richiesta.xml:
+      title: Mapping Patient (Richiesta)
+    map-practitioner-richiesta.xml:
+      title: Mapping Practitioner (Richiesta)
+    map-appointment-richiesta.xml:
+      title: Mapping Appointment (Richiesta)
+    map-coverage-richiesta.xml:
+      title: Mapping Coverage (Richiesta)
+    map-organization-richiesta.xml:
+      title: Mapping Organization (Richiesta)
+    map-composition-relazione.xml:
+      title: Mapping Composition (Relazione)
+    map-serviceRequest-relazione.xml:
+      title: Mapping ServiceRequest (Relazione)
+    map-patient-relazione.xml:
+      title: Mapping Patient (Relazione)
+    map-practitioner-relazione.xml:
+      title: Mapping Practitioner (Relazione)
+    map-appointment-relazione.xml:
+      title: Mapping Appointment (Relazione)
+    map-encounter-relazione.xml:
+      title: Mapping Encounter (Relazione)
+    map-organization-relazione.xml:
+      title: Mapping Organization (Relazione)
+  downloads.md:
+    title: Downloads
 #
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -246,30 +277,65 @@ groups:
     - CodeSystem/dug
     - CodeSystem/diagnosi-icd9cm
   GroupG:
-    name: Esempi
-    description: >-
+    name: Esempi - Richiesta di Teleconsulto
+    description: |
+      Esempi di profili generati per la Richiesta di Teleconsulto.
+
       Caso d'uso esemplificativo: teleconsulto medico pneumologico (classe TC) erogato il 17/06/2026
-      dalla U.O. Pneumologia dell'Ospedale Sandro Pertini (ASL Roma 1). Il Dr. Marco Rossi, medico di 
-      Medicina Interna, richiede un teleconsulto con la Dr.ssa Laura Trevisan, Pneumologa, per il sig. 
-      Giovanni Bianchi (67 anni, bronchite cronica nota, ex fumatore), a seguito del peggioramento della
-      tosse e della dispnea. Il teleconsulto si svolge in modalità sincrona tra i due professionisti, 
-      senza la presenza del paziente, sulla base della condivisione della documentazione clinica
-      disponibile (anamnesi, esami ematochimici, radiografia del torace e terapia in corso).
-      La consultazione è finalizzata alla valutazione del quadro clinico e alla definizione condivisa 
+      dalla U.O. Pneumologia dell'Ospedale Sandro Pertini (ASL Roma 1).
+      Il Dr. Marco Rossi, medico di Medicina Interna, richiede un teleconsulto con la Dr.ssa Laura Trevisan,
+      Pneumologa, per il sig. Giovanni Bianchi (67 anni, bronchite cronica nota, ex fumatore),
+      a seguito del peggioramento della tosse e della dispnea.
+      Il teleconsulto si svolge in modalità sincrona tra i due professionisti, senza la presenza del paziente,
+      sulla base della condivisione della documentazione clinica disponibile
+      (anamnesi, esami ematochimici, radiografia del torace e terapia in corso).
+      La consultazione è finalizzata alla valutazione del quadro clinico e alla definizione condivisa
       del percorso terapeutico.
     resources:
     - Bundle/RichiestaDiTeleconsulto
     - Bundle/RichiestaDiTeleconsultoTransaction
     - Composition/1b724b4b-0cea-42ef-8a8c-1eb588fc1082
+    - ServiceRequest/13e1c13e-8ce2-4d78-b28e-bddae005223b
+    - Observation/c87002c4-ff22-43f0-ba0d-85f0cd91c070
+  GroupH:
+    name: Esempi - Relazione Collaborativa di Teleconsulto
+    description: |
+      Esempi di profili generati per la Relazione Collaborativa di Teleconsulto.
+
+      Il caso d'uso di riferimento è quello sopradescritto.
+    resources:
+    - Bundle/RelazioneDiTeleconsulto
+    - Bundle/RelazioneDiTeleconsultoTransaction
+    - Composition/45cd16ea-d29f-46b2-b473-669bb9f79cff
+    - ServiceRequest/f486aac2-d97d-459b-9389-43e24de96d58
+    - Observation/f141f3d5-4019-4955-8f15-8205728bf6a9
+    - AllergyIntolerance/987d1265-614b-44a8-9372-a6371590511b
+    - MedicationStatement/c7d6c5a8-4660-4496-9919-d9fa11a9a709
+    - Observation/03cb6066-afd1-4c28-a0b0-c2f273ed08b9
+    - Observation/a4599b02-8230-4d9b-b6a8-5b959b001737
+    - Observation/769b88be-f738-48c6-be79-b565852397ab
+    - Observation/61f946a5-5872-4689-b4e9-1603a32420a0
+    - Observation/1f0c9a0f-7659-44f7-8f39-65ecb2d7cf9b
+    - MedicationRequest/b9c3233e-e045-4825-854b-00b5238a1709
+    - DocumentReference/5ac4bdff-a87e-4efe-b0d6-85af60444f5f
+    - Procedure/a283da7c-933b-45ef-9f09-6287c787a980
+
+  GroupI:
+    name: Esempi - Informazioni clinico-amministrative
+    description: |
+      Esempi di profili generati per gestione delle informazioni clinico-amministrative del teleconsulto.
+
+      Il caso d'uso di riferimento è quello sopradescritto.
+    resources:
     - Patient/64ab76df-be66-4f3e-b733-8a0437dc188d
     - PractitionerRole/82c6c0d0-3035-4e51-8275-76fc9e83a3be
     - Practitioner/1ad53a39-b844-4d12-aefb-6f9b4fff1dce
     - PractitionerRole/0cad5e0f-5386-43b8-af1d-d2402d6dde8a
     - Practitioner/ad98bbb3-0317-4c8d-8ed7-8ac76d5ecfe0
-    - ServiceRequest/13e1c13e-8ce2-4d78-b28e-bddae005223b
+    - Encounter/938977bc-b40e-4f2f-b0c7-9c98b3141d54
     - Appointment/68f7f0c2-ffa4-4a23-bd17-265166685cc0
+    - Appointment/938977bc-b40e-4f2f-b0c7-9c98b3141d54
     - Coverage/c468dfb9-a117-4c8f-9ac5-df0eef954d7e
-    - Observation/c87002c4-ff22-43f0-ba0d-85f0cd91c070
     - Organization/asl-roma-1
     - Organization/osp-pertini
     - Organization/uo-medicinainterna-pertini
