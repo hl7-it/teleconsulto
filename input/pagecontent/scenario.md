@@ -26,4 +26,4 @@ In questa fase vengono svolte le attività necessarie a erogare il Teleconsulto 
 
 #### Relazione collaborativa di Teleconsulto
 
-Una volta terminato il Teleconsulto, il medico richiedente sintetizza quanto emerso nel corso del teleconsulto nella Relazione Collaborativa. 
+Una volta terminato il Teleconsulto, il professionista sanitario consultato sintetizza quanto emerso nella Relazione Collaborativa. 
