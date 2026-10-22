@@ -31,43 +31,43 @@
             <td>Cognome medico consultato</td>
             <td>Cognome del medico refertante</td>
             <td>Practitioner</td>
-            <td>Composition.author.resolve().Practitioner.name.family</td>
+            <td>Practitioner.name.family</td>
           </tr>
           <tr>
             <td>Nome medico consultato</td>
             <td>Nome del medico refertante</td>
             <td>Practitioner</td>
-            <td>Composition.author.resolve().Practitioner.name.given</td>
+            <td>Practitioner.name.given</td>
           </tr>
           <tr>
             <td>Codice fiscale medico consultato</td>
             <td>Codice Fiscale del medico refertante</td>
             <td>Practitioner</td>
-            <td>Composition.author.resolve().Practitioner.identifier</td>
+            <td>Practitioner.identifier</td>
           </tr>
           <tr>
             <td>Cognome medico firmatario</td>
             <td>Cognome del medico firmatario</td>
             <td>Practitioner</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().practitioner.resolve().name.family</td>
+            <td>Practitioner.name.family</td>
           </tr>
           <tr>
             <td>Nome medico firmatario</td>
             <td>Nome del medico firmatario</td>
             <td>Practitioner</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().practitioner.resolve().name.given</td>
+            <td>Practitioner.name.given</td>
           </tr>
           <tr>
             <td>Codice fiscale medico firmatario</td>
             <td>Codice Fiscale del medico firmatario</td>
             <td>Practitioner</td>
-            <td>Composition.attester[legalAuthenticator].party.resolve().practitioner.resolve().identifier</td>
+            <td>Practitioner.identifier</td>
           </tr>
           <tr>
             <td>DisciplinaMedicoConsulente</td>
             <td>Disciplina medica (es. Cardiologia, Neurologia, ecc.) per la quale si effettua la richiesta di Teleconsulto se non è richiesto un professionista specifico disponibile su piattaforme regionali di telemedicina</td>
             <td>PractitionerRole</td>
-            <td>Composition.author.resolve().PractitionerRole.specialty</td>
+            <td>PractitionerRole.specialty</td>
           </tr>
         </tbody>
       </table>

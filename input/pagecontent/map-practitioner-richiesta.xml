@@ -31,43 +31,43 @@
             <td>cfMedico1</td>
             <td>Codice fiscale del medico 'titolare'</td>
             <td>PractitionerTeleconsulto</td>
-            <td>ServiceRequest.requester.resolve().Practitioner.identifier</td>
+            <td>Practitioner.identifier</td>
           </tr>
           <tr>
             <td>cfMedico2</td>
             <td>Codice fiscale del medico 'sostituto'</td>
             <td>PractitionerTeleconsulto</td>
-            <td>ServiceRequest.extension:medicoSostituto.resolve().Practitioner.identifier</td>
+            <td>Practitioner.identifier</td>
           </tr>
           <tr>
             <td>codSpecializzazione</td>
             <td>Specializzazione del medico prescrittore indicato in cfMedico1</td>
             <td>PractitionerRoleTeleconsulto</td>
-            <td>ServiceRequest.requester.resolve().PractitionerRole.specialty</td>
+            <td>PractitionerRole.specialty</td>
           </tr>
           <tr>
             <td>NomeMedicoConsulente</td>
             <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
             <td>PractitionerTeleconsulto</td>
-            <td>ServiceRequest.performer.resolve().Practitioner.name.family</td>
+            <td>Practitioner.name.family</td>
           </tr>
           <tr>
             <td>CognomeMedicoConsulente</td>
             <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
             <td>PractitionerTeleconsulto</td>
-            <td>ServiceRequest.performer.resolve().Practitioner.name.given</td>
+            <td>Practitioner.name.given</td>
           </tr>
           <tr>
             <td>CFMedicoConsulente</td>
             <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
             <td>PractitionerTeleconsulto</td>
-            <td>ServiceRequest.performer.resolve().Practitioner.identifier</td>
+            <td>Practitioner.identifier</td>
           </tr>
           <tr>
             <td>DisciplinaMedicoConsulente</td>
             <td>Disciplina medica (es. Cardiologia Neurologia ecc.) per la quale si effettua la richiesta di Teleconsulto se non è richiesto un professionista specifico disponibile su piattaforme regionali di telemedicina</td>
             <td>PractitionerRoleTeleconsulto</td>
-            <td>ServiceRequest.performer.resolve().PractitionerRole.specialty</td>
+            <td>PractitionerRole.specialty</td>
           </tr>
         </tbody>
       </table>

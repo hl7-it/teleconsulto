@@ -79,7 +79,7 @@
             <td>aslAssistito</td>
             <td>Asl di residenza dell'assistito</td>
             <td>PatientTeleconsulto</td>
-            <td>ServiceRequest.patient.generalPractitioner.resolve().OrganizationT1</td>
+            <td>OrganizationT1</td>
           </tr>
 
         </tbody>

@@ -31,37 +31,37 @@
             <td>Codice e descrizione dell'azienda sanitaria</td>
             <td>Codice e descrizione dell'azienda sanitaria</td>
             <td>OrganizationT1</td>
-            <td>Composition.author.resolve().PractitionerRole.organization.resolve().identifier + name</td>
+            <td>Organization.identifier + name</td>
           </tr>
           <tr>
             <td>Tipo struttura richiedente</td>
             <td>Tipo struttura richiedente (ASL/AO etc)</td>
             <td>OrganizationT1</td>
-            <td>ServiceRequest.requester.resolve().PractitionerRole.organization.resolve().type</td>
+            <td>Organization.type</td>
           </tr>
           <tr>
             <td>Tipo struttura erogante</td>
             <td>Tipo struttura erogante (ASL/AO etc)</td>
             <td>OrganizationT1</td>
-            <td>Composition.author.resolve().PractitionerRole.organization.resolve().type</td>
+            <td>Organization.type</td>
           </tr>
           <tr>
             <td>Codice e descrizione del presidio</td>
             <td>Codice e descrizione del presidio</td>
             <td>OrganizationT2</td>
-            <td>Composition.author.resolve().PractitionerRole.organization.resolve().identifier + name</td>
+            <td>Organization.identifier + name</td>
           </tr>
           <tr>
             <td>Codice e descrizione dell'unità operativa</td>
             <td>Codice e descrizione dell'unità operativa</td>
             <td>OrganizationT3</td>
-            <td>Composition.author.resolve().PractitionerRole.organization.resolve().identifier + name</td>
+            <td>Organization.identifier + name</td>
           </tr>
           <tr>
             <td>Numero telefono Unità Operativa / CUP / Azienda Sanitaria</td>
             <td>Numero di telefono dell'Unità Operativa / CUP / Azienda Sanitaria</td>
             <td>OrganizationT1 o OrganizationT2 o OrganizationT3</td>
-            <td>Composition.author.resolve().PractitionerRole.organization.resolve().telecom.where(system='phone')</td>
+            <td>Organization.telecom.where(system='phone')</td>
           </tr>
         </tbody>
       </table>
