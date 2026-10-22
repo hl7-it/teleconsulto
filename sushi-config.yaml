@@ -82,7 +82,7 @@ menu:
     Scenario: scenario.html
     ModelMaps: modelmaps.html  
   Implementation:
-    Mapping to Profiles: mapping.html  
+    Mapping to Profiles: modelmap.html  
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
