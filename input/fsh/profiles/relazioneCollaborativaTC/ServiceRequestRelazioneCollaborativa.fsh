@@ -7,7 +7,6 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * identifier ^short = "IdRichesta, identificativo della richiesta di teleconsulto."
 * identifier ^definition = "Identificativo della richiesta di teleconsulto."
 
-* requisition 1..
 * requisition ^short = "Identificativo univoco della richiesta composita"
 * requisition ^definition = "Un identificativo condiviso comune a tutte le singole istanze della richiesta, generate contemporaneamente da un singolo autore: rappresenta l'identificativo composito o di gruppo.\n\nPer i casi di richieste di prescrizione rappresenterà l'NRE oppure il numero di ricetta cartacea."
 * requisition.type ^short = "Descrizione della tipologia di identificativo"
@@ -21,10 +20,18 @@ Description: "Profilo della ServiceRequest utilizzata per la relazione finale di
 * intent ^definition = "Indica l'intento della richiesta, ovvero se si tratta di una proposta, un piano, un ordine originale o un ordine riflesso.\n\nPer i casi d'uso gestiti dell'ambito di questa IG deve essere valorizzato fisso ad order."
 * intent ^comment = "Questo elemento è etichettato come modificatore perché l'intento altera quando e come la risorsa è effettivamente applicabile."
 
-* category 1..
 * category ^short = "Branca medica richiesta"
-* category ^definition = "Branca medica per la quale si effettua la richiesta di Teleconsulto"
-* category from specialita-mediche (preferred)
+* category ^definition = "Branca medica per la quale si effettua la richiesta di Teleconsulto se non è richiesto un professionista specifico disponibile su piattaforme regionali di telemedicina"
+
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding.system"
+* category ^slicing.rules = #open
+* category contains brancaPrestazione 0..*
+* category[brancaPrestazione].coding ..1
+* category[brancaPrestazione].coding from specialita-mediche (preferred)
+* category[brancaPrestazione].coding ^short = "Codice della branca"
+* category[brancaPrestazione].coding.system = "http://hl7.it/fhir/teleconsulto/ValueSet/specialita-mediche"
+* category[brancaPrestazione].coding.system ^short = "Identifica il sistema di terminologia"
 
 * priority ^short = "priorità della richiesta"
 * priority ^definition = "Indica la priorità della richiesta."

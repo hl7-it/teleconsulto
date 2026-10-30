@@ -4,20 +4,15 @@
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box">
-          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-ServiceRequestRichiestaTeleconsulto.html">ServiceRequestRichiestaTeleconsulto</a>.
         </div>
       </div>
     </div>
 
-    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
-    <p>
-      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
-    </p>
-
-
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; ServiceRequestRichiestaTeleconsulto</p>
 
     <div class="table-wrap">
-      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> ServiceRequestRichiesta">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> ServiceRequestRichiestaTeleconsulto">
         <thead>
           <tr>
             <th>Contenuto informativo</th>
@@ -30,81 +25,119 @@
           <tr>
             <td>idRichiesta</td>
             <td>Codice identificativo della richiesta</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.requisition</td>
+          </tr>
+          <tr>
+            <td>Dati del medico titolare *</td>
+            <td>Dettagli relativi al medico 'titolare' / 'richiedente' (medico1)</td>
+            <td>Practitioner</td>
+            <td>ServiceRequest.requester</td>
+          </tr>
+          <tr>
+            <td>Dati del medico sostituto *</td>
+            <td>Dettagli relativi al medico 'sostituto' (medico2)</td>
+            <td>Practitioner</td>
+            <td>ServiceRequest.extension:medicoSostituto</td>
+          </tr>
+          <tr>
+            <td>Dati dell'assistito *</td>
+            <td>Dettagli relativi al paziente</td>
+            <td>Patient</td>
+            <td>ServiceRequest.subject</td>
+          </tr>
+          <tr>
+            <td>Dati relativi alle esenzioni *</td>
+            <td>Dettagli relativi alle esenzioni</td>
+            <td>Coverage</td>
+            <td>ServiceRequest.insurance</td>
           </tr>
           <tr>
             <td>dataCompilazione</td>
             <td>Data compilazione della ricetta da parte del medico</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.authoredOn</td>
           </tr>
           <tr>
             <td>indicazionePrescr</td>
             <td>Indicazione della prescrizione</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.note</td>
           </tr>
           <tr>
             <td>classePriorita</td>
             <td>Classe di priorità della prescrizione</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.priority</td>
           </tr>
           <tr>
             <td>Slot temporale</td>
             <td>Proposta di slot temporale per la presa in carico della teleconsulenza</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.occurence</td>
+          </tr>
+          <tr>
+            <td>Richiesta disponibilità immediata</td>
+            <td>Richiesta di disponibilità immediata dell'attivazione della consulenza (compatibile solo con urgenza alta)</td>
+            <td>Appointment</td>
+            <td></td>
           </tr>
           <tr>
             <td>Modalità esecuzione procedura operativa</td>
             <td>Descrizione modalità di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura. Nel caso del teleconsulto indicare se è stata eseguita una estemporaneo/programmato sincrono/asincrono con la presenza dell'assistito/senza presenza assistito</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.extension:modalitàEsecuzionePrestazione.code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Dati del medico consultato *</td>
+            <td>Dati del medico richiesto per la consulenza se espressamente richiesto uno specifico specialista (es Codice fiscale Nome e Cognome Regione/ Ente/Struttura/Reparto di appartenenza) disponibile su piattaforme regionali di telemedicina</td>
+            <td>Practitioner</td>
+            <td>ServiceRequest.performer</td>
           </tr>
           <tr>
             <td>BrancaMedicoConsulente</td>
             <td>Branca medica per la quale si effettua la richiesta di Teleconsulto se non è richiesto un professionista specifico disponibile su piattaforme regionali di telemedicina</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
-            <td>ServiceRequest.category</td>
+            <td>ServiceRequest</td>
+            <td>ServiceRequest.category[brancaPrestazione]</td>
           </tr>
           <tr>
             <td>Raggiodierogazione</td>
             <td>Raggio di erogazione all'interno del quale viene estesa la ricerca dei professionisti che erogheranno la consulenza: aziendale regionale nazionale</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.orderDetail[raggioErogazione].code.coding.code</td>
           </tr>
           <tr>
             <td>codProdPrest</td>
             <td>Codice prestazione specialistica da nomenclatore nazionale</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.code.coding[codiceCatalogoNazionalePrestazioni].code</td>
           </tr>
           <tr>
             <td>descrProdPrest</td>
             <td>Descrizione testuale più particolareggiata possibile della prestazione</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.code.coding[codiceCatalogoNazionalePrestazioni].display</td>
           </tr>
           <tr>
             <td>descrTestoLiberoNote</td>
             <td>Nota esplicativa di ciò che è stato prescritto per prestazioni specialistiche</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.note</td>
           </tr>
           <tr>
             <td>codCatalogoPrescr</td>
             <td>Deve contenere il codice della prestazione secondo il catalogo regionale unico delle prestazioni</td>
-            <td>ServiceRequestRichiestaTeleconsulto</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.code.coding[codiceCatalogoRegionalePrestazioni].code</td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <p>* I campi contrassegnati da asterisco non compaiono come contenuti informativi nell'Allegato 1, ma raggruppano più contenuti in esso previsti.</p>
+
     <p style="margin-top:2rem;color:#555;">
-      Torna alla panoramica: <a href="mapping.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
     </p>
   </body>
 </div>

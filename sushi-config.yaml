@@ -52,36 +52,34 @@ pages:
     title: Scenario
   modelmaps.md:
     title: Model Maps
-  mapping.xml:
+  modelmap.xml:
     title: Mapping to Profiles
     map-composition-richiesta.xml:
       title: Mapping Composition (Richiesta)
     map-serviceRequest-richiesta.xml:
       title: Mapping ServiceRequest (Richiesta)
-    map-patient-richiesta.xml:
-      title: Mapping Patient (Richiesta)
-    map-practitioner-richiesta.xml:
-      title: Mapping Practitioner (Richiesta)
-    map-appointment-richiesta.xml:
-      title: Mapping Appointment (Richiesta)
-    map-coverage-richiesta.xml:
-      title: Mapping Coverage (Richiesta)
-    map-organization-richiesta.xml:
-      title: Mapping Organization (Richiesta)
     map-composition-relazione.xml:
       title: Mapping Composition (Relazione)
     map-serviceRequest-relazione.xml:
       title: Mapping ServiceRequest (Relazione)
-    map-patient-relazione.xml:
-      title: Mapping Patient (Relazione)
-    map-practitioner-relazione.xml:
-      title: Mapping Practitioner (Relazione)
-    map-appointment-relazione.xml:
-      title: Mapping Appointment (Relazione)
-    map-encounter-relazione.xml:
-      title: Mapping Encounter (Relazione)
-    map-organization-relazione.xml:
-      title: Mapping Organization (Relazione)
+    map-patient.xml:
+      title: Mapping Patient
+    map-practitioner.xml:
+      title: Mapping Practitioner
+    map-encounter.xml:
+      title: Mapping Encounter
+    map-appointment.xml:
+      title: Mapping Appointment
+    map-organization.xml:
+      title: Mapping Organization
+    map-coverage.xml:
+      title: Mapping Coverage
+    map-medicationRequest.xml:
+      title: Mapping MedicationRequest
+    map-medicationStatement.xml:
+      title: Mapping MedicationStatement
+    map-procedure.xml:
+      title: Mapping Procedure
   downloads.md:
     title: Downloads
 #

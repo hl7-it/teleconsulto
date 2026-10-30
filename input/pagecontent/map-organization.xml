@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sui profili <a href="StructureDefinition-OrganizationT1.html">OrganizationT1</a>, <a href="StructureDefinition-OrganizationT2.html">OrganizationT2</a> e <a href="StructureDefinition-OrganizationT3.html">OrganizationT3</a>.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; OrganizationT1 / OrganizationT2 / OrganizationT3</p>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> OrganizationT1 o OrganizationT2 o OrganizationT3">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Regione del professionista sanitario *</td>
+            <td>Codice Regione/Provincia Autonoma del professionista sanitario</td>
+            <td>Organization (T1)</td>
+            <td>Organization.address.state</td>
+          </tr>
+          <tr>
+            <td>Azienda sanitaria del professionista sanitario *</td>
+            <td>Codice Ente (ASL/AO) del professionista sanitario</td>
+            <td>Organization (T1)</td>
+            <td>Organization.identifier[asl].value</td>
+          </tr>
+          <tr>
+            <td>Struttura del professionista sanitario *</td>
+            <td>Codice della struttura/presidio dove opera il professionista sanitario</td>
+            <td>Organization (T2)</td>
+            <td>Organization.identifier</td>
+          </tr>
+          <tr>
+            <td>Reparto del professionista sanitario *</td>
+            <td>Reparto/Unità operativa dove opera il professionista sanitario</td>
+            <td>Organization (T3)</td>
+            <td>Organization.identifier</td>
+          </tr>
+          <tr>
+            <td>Tipo struttura del professionista sanitario *</td>
+            <td>Tipologia di struttura</td>
+            <td>Organization (T1)</td>
+            <td>Organization.type</td>
+          </tr>
+          <tr>
+            <td>Provincia del professionista sanitario *</td>
+            <td>Codice provincia del professionista sanitario</td>
+            <td>Organization (T1)</td>
+            <td>Organization.address.district</td>
+          </tr>
+          <tr>
+            <td>Regione del professionista sanitario *</td>
+            <td>Codice regione del professionista sanitario</td>
+            <td>Organization (T1)</td>
+            <td>Organization.address.state</td>
+          </tr>
+          <tr>
+            <td>Numero telefono Unità Operativa / CUP / Azienda Sanitaria</td>
+            <td>Numero di telefono dell'Unità Operativa / CUP / Azienda Sanitaria</td>
+            <td>Organization</td>
+            <td>Organization.telecom</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>* I campi contrassegnati da asterisco non compaiono come contenuti informativi nell'Allegato 1, ma raggruppano più contenuti in esso previsti.</p>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

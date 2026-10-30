@@ -4,18 +4,13 @@
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box">
-          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-CompositionRichiestaTeleconsulto.html">CompositionRichiestaTeleconsulto</a>.
         </div>
       </div>
     </div>
 
-    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
-    <p>
-      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
-    </p>
-
-
-
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; CompositionRichiestaTeleconsulto</p>
+ 
     <div class="table-wrap">
       <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> CompositionRelazioneCollaborativaTC">
         <thead>
@@ -28,23 +23,25 @@
         </thead>
         <tbody>
           <tr>
-            <td>codDiagnosi</td>
-            <td>Codice diagnosi o del sospetto diagnostico</td>
-            <td>Composition / ObservationTeleconsulto</td>
-            <td>Composition.section[diagnosi].entry.resolve().code.coding.code</td>
+            <td>Sezione Richiesta di Teleconsulto *</td>
+            <td>Contiene i dettagli della richiesta</td>
+            <td>ServiceRequest</td>
+            <td>Composition.section[richiestaTeleconsulto].entry</td>
           </tr>
           <tr>
-            <td>descrizioneDiagnosi</td>
-            <td>Descrizione della diagnosi o del sospetto diagnostico</td>
-            <td>Composition / ObservationTeleconsulto</td>
-            <td>Composition.section[diagnosi].entry.resolve().text</td>
+            <td>Sezione Diagnosi (codDiagnosi e descrizioneDiagnosi)*</td>
+            <td>Contiene codice e descrizione della diagnosi o del sospetto diagnostico</td>
+            <td>Observation</td>
+            <td>Composition.section[diagnosi].entry</td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <p>* I campi contrassegnati da asterisco non compaiono come contenuti informativi nell'Allegato 1, ma raggruppano più contenuti in esso previsti.</p>
+
     <p style="margin-top:2rem;color:#555;">
-      Torna alla panoramica: <a href="mapping.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
     </p>
   </body>
 </div>

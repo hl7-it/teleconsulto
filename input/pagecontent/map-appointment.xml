@@ -4,18 +4,11 @@
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box">
-          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-AppointmentTeleconsulto.html">AppointmentTeleconsulto</a>.
         </div>
       </div>
     </div>
-
-    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
-    <p>
-      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
-    </p>
-
-
-
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; AppointmentTeleconsulto</p>
     <div class="table-wrap">
       <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> AppointmentTeleconsulto">
         <thead>
@@ -28,15 +21,21 @@
         </thead>
         <tbody>
           <tr>
+            <td>Richiesta disponibilità immediata</td>
+            <td>Richiesta di disponibilità immediata dell'attivazione della consulenza (compatibile solo con urgenza alta)</td>
+            <td>Appointment</td>
+            <td>Appointment.priority</td>
+          </tr>
+          <tr>
             <td>Data presa in carico consulenza</td>
             <td>Data e ora della presa in carico della richiesta da parte del consulente</td>
-            <td>AppointmentTeleconsulto</td>
+            <td>Appointment</td>
             <td>Appointment.created</td>
           </tr>
           <tr>
             <td>Data pianificazione della consulenza</td>
             <td>Data e ora della programmazione della consulenza in caso sincrono, con o senza presenza del paziente</td>
-            <td>AppointmentTeleconsulto</td>
+            <td>Appointment</td>
             <td>Appointment.start</td>
           </tr>
         </tbody>
@@ -44,7 +43,7 @@
     </div>
 
     <p style="margin-top:2rem;color:#555;">
-      Torna alla panoramica: <a href="mapping.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
     </p>
   </body>
 </div>

@@ -18,7 +18,7 @@ Di seguito si riportano le caratteristiche di esecuzione di un teleconsulto:
 
 #### Preparazione tecnica-amministrativa del Teleconsulto
 
-In fase di preparazione vengono svolte una serie di attività tecniche-amministrative volte a verificare la correttezza della procedura amministrativa che sottende all’ erogazione della prestazione programmata, nonché l’adeguatezza della dotazione tecnologica per portare a compimento la prestazione in sicurezza.
+In fase di preparazione vengono svolte una serie di attività tecniche-amministrative volte a verificare la correttezza della procedura amministrativa che sottende all’erogazione della prestazione programmata, nonché l’adeguatezza della dotazione tecnologica per portare a compimento la prestazione in sicurezza.
 
 #### Erogazione del servizio di Teleconsulto
 

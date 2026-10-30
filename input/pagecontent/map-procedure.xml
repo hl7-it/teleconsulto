@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-ProcedureTeleconsulto.html">ProcedureTeleconsulto</a>.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; ProcedureTeleconsulto</p>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
+    </p>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; ProcedureTeleconsulto</p>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> ProcedureTeleconsulto">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice prestazione eseguita</td>
+            <td>Codice della prestazione eseguita</td>
+            <td>Procedure</td>
+            <td>Procedure.code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione prestazione eseguita</td>
+            <td>Descrizione della prestazione eseguita</td>
+            <td>Procedure</td>
+            <td>Procedure.code.text</td>
+          </tr>
+          <tr>
+            <td>Data e ora di inizio erogazione</td>
+            <td>Data e ora di inizio erogazione della prestazione</td>
+            <td>Procedure</td>
+            <td>Procedure.performedPeriod.start</td>
+          </tr>
+          <tr>
+            <td>Data e ora di fine erogazione</td>
+            <td>Data e ora di fine erogazione della prestazione</td>
+            <td>Procedure</td>
+            <td>Procedure.performedPeriod.end</td>
+          </tr>
+          <tr>
+            <td>Modalità esecuzione procedura operativa</td>
+            <td>Descrizione modalità di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura.</td>
+            <td>Procedure</td>
+            <td>Procedure.extension:ModalitaEsecuzionePrestazione</td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td>Note</td>
+            <td>Procedure</td>
+            <td>Procedure.note.text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

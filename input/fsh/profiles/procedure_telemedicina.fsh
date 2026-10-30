@@ -17,6 +17,7 @@ Description:  "Profilo della Procedure utilizzata nel contesto del Teleconsulto"
 
 * code ^short = "Prestazione eseguita"
 * code ^definition = "CodeableConcept che contiene il codice identificativo e la descrizione della prestazione eseguita"
+* code 1..
 * code from VsCatalogoNazionalePrestazioni (preferred)
 * code.text MS
 * code.text ^short = "Descrizione della prestazione eseguita"

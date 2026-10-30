@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sul profilo <a href="StructureDefinition-EncounterTeleconsulto.html">EncounterTeleconsulto</a>.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; EncounterTeleconsulto</p>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> EncounterTeleconsulto">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice Nosologico</td>
+            <td>Codice Nosologico</td>
+            <td>Encounter</td>
+            <td>Encounter.identifier[codiceNosologico]</td>
+          </tr>
+          <tr>
+            <td>Provenienza</td>
+            <td>Provenienza (es PS, Reparto)</td>
+            <td>Encounter</td>
+            <td>Encounter.class</td>
+          </tr>
+          <tr>
+            <td>Date di presa in carico e pianificazione consulenza *</td>
+            <td>Data della presa in carico e della pianificazione della consulenza</td>
+            <td>Appointment</td>
+            <td>Encounter.appointment</td>
+          </tr>
+          <tr>
+            <td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Practitioner</td>
+            <td>Encounter.participant</td>
+          </tr>
+          <tr>
+            <td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Practitioner</td>
+            <td>Encounter.participant</td>
+          </tr>
+          <tr>
+            <td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Practitioner</td>
+            <td>Encounter.participant</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>* I campi contrassegnati da asterisco non compaiono come contenuti informativi nell'Allegato 1, ma raggruppano più contenuti in esso previsti.</p>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

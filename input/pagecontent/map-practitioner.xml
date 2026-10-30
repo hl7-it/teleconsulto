@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025 e sono mappate sui profili <a href="StructureDefinition-PractitionerTeleconsulto.html">PractitionerTeleconsulto</a> e <a href="StructureDefinition-PractitionerRoleTeleconsulto.html">PractitionerRoleTeleconsulto</a>.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; PractitionerTeleconsulto / PractitionerRoleTeleconsulto</p>
+    <p>Con "professionista sanitario" si fa riferimento alle seguenti figure previste da decreto: "Medico consultato", "Medico firmatario", "Medico richiedente", "Altra figura tecnica coinvolta", "Medico1 (titolare)", "Medico2 (sostituto)".</p>
+    
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> PractitionerRoleTeleconsulto o PractitionerTeleconsulto">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CF professionista sanitario *</td>
+            <td>Codice fiscale del professionista sanitario</td>
+            <td>Practitioner</td>
+            <td>Practitioner.identifier</td>
+          </tr>
+          <tr>
+            <td>Nome professionista sanitario *</td>
+            <td>Nome del professionista sanitario</td>
+            <td>Practitioner</td>
+            <td>Practitioner.name.family</td>
+          </tr>
+          <tr>
+            <td>Cognome professionista sanitario *</td>
+            <td>Cognome del professionista sanitario</td>
+            <td>Practitioner</td>
+            <td>Practitioner.name.given</td>
+          </tr>
+          <tr>
+            <td>Regione del professionista sanitario *</td>
+            <td>Codice Regione/Provincia Autonoma del professionista sanitario</td>
+            <td>Organization</td>
+            <td>PractitionerRole.organization</td>
+          </tr>
+          <tr>
+            <td>Provincia del professionista sanitario *</td>
+            <td>Provincia del professionista sanitario</td>
+            <td>Organization</td>
+            <td>PractitionerRole.organization</td>
+          </tr>
+          <tr>
+            <td>Azienda sanitaria del professionista sanitario *</td>
+            <td>ASL/AO del professionista sanitario</td>
+            <td>Organization</td>
+            <td>PractitionerRole.organization</td>
+          </tr>
+          <tr>
+            <td>Struttura del professionista sanitario *</td>
+            <td>Dettagli della struttura dove opera il professionista sanitario</td>
+            <td>Organization</td>
+            <td>PractitionerRole.organization</td>
+          </tr>
+          <tr>
+            <td>Reparto del professionista sanitario *</td>
+            <td>Dettagli del reparto dove opera il professionista sanitario</td>
+            <td>Organization</td>
+            <td>PractitionerRole.organization</td>
+          </tr>
+          <tr>
+            <td>Specializzazione/Disciplina *</td>
+            <td>Specializzazione del medico</td>
+            <td>PractitionerRole</td>
+            <td>PractitionerRole.specialty</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>* I campi contrassegnati da asterisco non compaiono come contenuti informativi nell'Allegato 1, ma raggruppano più contenuti in esso previsti.</p>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>
