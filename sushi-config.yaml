@@ -211,6 +211,7 @@ groups:
     - StructureDefinition/EncounterTeleconsulto
     - StructureDefinition/AppointmentTeleconsulto
     - StructureDefinition/AllergyIntoleranceTeleconsulto
+    - StructureDefinition/MedicationTeleconsulto
     - StructureDefinition/MedicationRequestTeleconsulto
     - StructureDefinition/MedicationStatementTeleconsulto
     - StructureDefinition/ProcedureTeleconsulto
@@ -256,6 +257,7 @@ groups:
     - ValueSet/minsan-idStruttureInterne
     - ValueSet/istat-dug
     - ValueSet/diagnosi-icd9cm
+    - ValueSet/aifa-aic
   GroupF:
     name: CodeSystem
     description: CodeSystem definiti nella guida di Teleconsulto
@@ -274,6 +276,7 @@ groups:
     - CodeSystem/cs-mds-idStruttureInterne
     - CodeSystem/dug
     - CodeSystem/diagnosi-icd9cm
+    - CodeSystem/aifa-atc
   GroupG:
     name: Esempi - Richiesta di Teleconsulto
     description: |
