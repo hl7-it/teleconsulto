@@ -26,10 +26,15 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[composition].resource only CompositionRichiestaTeleconsulto
 * entry[serviceRequest].resource only ServiceRequestRichiestaTeleconsulto
 * entry[patient].resource only PatientTeleconsulto
+* entry[patient].resource 1..
 * entry[practitionerRole].resource only PractitionerRoleTeleconsulto
+* entry[practitionerRole].resource 1..
 * entry[practitioner].resource only PractitionerTeleconsulto
+* entry[practitioner].resource 1..
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3 
+* entry[organization].resource 1..
 * entry[appointment].resource only AppointmentTeleconsulto
+* entry[appointment].resource 1..
 
 // ==============================
 //  Vincoli transaction per slice
@@ -39,7 +44,7 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 * entry[composition].request.method = #POST (exactly)
 
 // Slice: serviceRequest
-* entry[serviceRequest].request.url 1..1
+* entry[serviceRequest].request.method = #POST (exactly)
 
 // Slice: patient
 * entry[patient].request.method = #PUT (exactly)

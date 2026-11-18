@@ -8,7 +8,6 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * extension[oscuramentoDati] ^short = "Campo che identifica la volontà del paziente nell'oscurare i propri dati."
 * extension[medicoTitolare] ^short = "Campo che identifica il medico titolare."
 
-* requisition 1..
 * requisition ^short = "IdRichiesta: codice Identificativo della richiesta"
 * requisition ^definition = "Un identificativo condiviso comune a tutte le singole istanze della richiesta, generate contemporaneamente da un singolo autore: rappresenta l'identificativo composito o di gruppo.\n\nPer i casi di richieste di prescrizione rappresenterà l'NRE oppure il numero di ricetta cartacea."
 * requisition.type ^short = "Descrizione della tipologia di identificativo"

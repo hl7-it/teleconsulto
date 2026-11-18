@@ -26,33 +26,47 @@ Description: "Bundle FHIR transaction per la Relazione Collaborativa di Telecons
   organization 1..* and
   observation 0..* and
   allergyIntolerance 0..* and
-  // condition 0..* and
-  // diagnosticReport 0..* and
   medicationRequest 0..* and
   medicationStatement 0..* and
-  // imagingStudy 0..* and
-  familyMemberHistory 0..* and
   encounter 1..1 and
   documentReference 0..* and
   procedure 0..* and 
   appointment 1..1
-  //deviceUseStatement 0..*
 
 * entry[composition].resource only CompositionRelazioneCollaborativaTeleconsulto
+<<<<<<< HEAD
 * entry[serviceRequest].resource only ServiceRequestRichiestaTeleconsulto
+=======
+* entry[composition].resource 1..
+* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
+* entry[serviceRequest].resource 1..
+
+>>>>>>> fcb75862e4a778ae4ecb38fdcb67a5cfaa69ac2d
 * entry[patient].resource only PatientTeleconsulto
+* entry[patient].resource 1..
 * entry[practitionerRole].resource only PractitionerRoleTeleconsulto
+* entry[practitionerRole].resource 1..
 * entry[practitioner].resource only PractitionerTeleconsulto
+* entry[practitioner].resource 1..
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3  
+* entry[organization].resource 1..
 * entry[observation].resource only ObservationTeleconsulto
+* entry[observation].resource 1..
+* entry[allergyIntolerance].resource 1..
 * entry[allergyIntolerance].resource only AllergyIntoleranceTeleconsulto
 * entry[medicationRequest].resource only MedicationRequestTeleconsulto
+* entry[medicationRequest].resource 1..
 * entry[medicationStatement].resource only MedicationStatementTeleconsulto
-* entry[familyMemberHistory].resource only FamilyMemberHistory
+* entry[medicationStatement].resource 1..
 * entry[encounter].resource only EncounterTeleconsulto
+* entry[encounter].resource 1..
+
 * entry[documentReference].resource only DocumentReference
+* entry[documentReference].resource 1..
 * entry[procedure].resource only ProcedureTeleconsulto
+* entry[procedure].resource 1..
 * entry[appointment].resource only AppointmentTeleconsulto
+* entry[appointment].resource 1..
 
 // ==============================
 //  Vincoli transaction per slice
@@ -94,10 +108,6 @@ Description: "Bundle FHIR transaction per la Relazione Collaborativa di Telecons
 
 // Slice: medicationStatement
 * entry[medicationStatement].request.method = #POST (exactly)
-
-
-// Slice: familyMemberHistory
-* entry[familyMemberHistory].request.method = #POST (exactly)
 
 
 // Slice: encounter

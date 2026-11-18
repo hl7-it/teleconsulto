@@ -84,6 +84,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
 * section[questitoDiagnostico].entry only Reference(ObservationTeleconsulto)
 * section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
+* section[questitoDiagnostico].entry 1..*
 
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
@@ -128,12 +129,14 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 // Slice: referto
 * section[referto] ^sliceName = "referto"
 * section[referto].entry only Reference(ObservationTeleconsultoNarrative)
+* section[referto].entry 1..*
 * section[referto].code = $loinc#47045-0 (exactly)
 
 // Slice: diagnosi
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].code = $loinc#29548-5 (exactly)
 * section[diagnosi].entry only Reference(ObservationTeleconsulto)
+* section[diagnosi].entry 1..*
 
 
 // Slice: conclusioni
