@@ -34,14 +34,7 @@ Description: "Bundle FHIR transaction per la Relazione Collaborativa di Telecons
   appointment 1..1
 
 * entry[composition].resource only CompositionRelazioneCollaborativaTeleconsulto
-<<<<<<< HEAD
 * entry[serviceRequest].resource only ServiceRequestRichiestaTeleconsulto
-=======
-* entry[composition].resource 1..
-* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
-* entry[serviceRequest].resource 1..
-
->>>>>>> fcb75862e4a778ae4ecb38fdcb67a5cfaa69ac2d
 * entry[patient].resource only PatientTeleconsulto
 * entry[patient].resource 1..
 * entry[practitionerRole].resource only PractitionerRoleTeleconsulto
