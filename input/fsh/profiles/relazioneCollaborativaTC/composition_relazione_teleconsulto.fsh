@@ -5,9 +5,13 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * ^status = #draft
 * ^version = "1.0.0"
 * ^experimental = true
+
+* identifier 1..
 * identifier ^short = "Identificatore indipendente dalla versione."
+
 * status ^short = "Stato di completezza della risorsa Composition. Lo stato della risorsa rappresenta anche lo stato del documento."
 * status ^definition = "Lo stato della Composition si sviluppa generalmente solo attraverso questo elenco: passa da preliminary a final e poi può passare a amended (ovvero modificato)."
+
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
@@ -16,12 +20,15 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * subject 1..1
 * encounter only Reference(EncounterTeleconsulto)
 * encounter ^short = "Contesto in cui è stato generato il documento."
-* date ^short = "Data di modifica della risorsa da parte del firmatario."
+
+* date ^short = "Data di modifica del documento.."
 
 * author only Reference(PractitionerRoleTeleconsulto or PractitionerTeleconsulto)
 * author ^short = "Autore della Composition (Professionista sanitario refertante)."
 
 * title ^short = "Titolo del documento"
+* title 1..1
+* title = "Relazione collaborativa per il teleconsulto" (exactly)
 
 * attester ^slicing.discriminator.type = #value
 * attester ^slicing.discriminator.path = "mode"
@@ -33,25 +40,14 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * attester[legalAuthenticator].time ^short = "Data e ora in cui il firmatario ha firmato digitalmente il documento."
 * attester[legalAuthenticator].party 1..
 * attester[legalAuthenticator].party ^short = "Professionista che ha firmato digitalmente il documento."
-* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleconsulto)
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleconsulto or PractitionerTeleconsulto)
 
 * relatesTo ^short = "Ulteriori documenti correlati"
-
-* event ^short = "Tipologia di accesso: indica la modalità di attivazione del teleconsulto estemporanea/programmata"
-* event.code from vs-tipologia-accesso-TC (preferred) 
 
 * section.title ^short = "Titolo della sezione."
 * section.code ^short = "Codice della sezione."
 
-* status 1..1
-* status = #final (exactly)
-
 * type = http://loinc.org#85208-7 (exactly)
-
-* title 1..1
-* title = "Relazione Collaborativa di Teleconsulto" (exactly)
-
-* date 1..1
 
 // Slicing delle sezioni interne
 * section ^slicing.discriminator.type = #value
@@ -59,7 +55,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section ^slicing.rules = #open
 * section ^slicing.ordered = false
 * section contains
-    // terapiaFarmacologica 0..1 and
     questitoDiagnostico 1..1 and
     InquadramentoClinicoIniziale 0..1 and
     precedentiEsamiEseguiti 0..1 and
@@ -71,7 +66,19 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
     accertamentiControlliConsigliati 0..1 and
     terapiaFarmacologicaConsigliata 0..1 and
     allegati 0..1 and
-    prestazioni 0..*
+    prestazioni 0..1
+
+* section[questitoDiagnostico].entry 1..
+* section[precedentiEsamiEseguiti].entry 1..
+* section[confrontoPrecedentiEsamiEseguiti].entry 1..
+* section[referto].entry 1..
+* section[diagnosi].entry 1..
+* section[conclusioni].entry 1..
+* section[suggerimentiPerMedicoPrescrittore].entry 1..
+* section[accertamentiControlliConsigliati].entry 1..
+* section[terapiaFarmacologicaConsigliata].entry 1..
+* section[allegati].entry 1..
+* section[prestazioni].entry 1..
 
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
@@ -86,9 +93,11 @@ Description: "Profilo della Composition utilizzata nel contesto della Relazione 
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
 * section[InquadramentoClinicoIniziale].section contains
     anamnesi 0..1 and
-    allergie 0..* and
-    terapiaFarmacologicaInAtto 0..* and
+    allergie 0..1 and
+    terapiaFarmacologicaInAtto 0..1 and
     esameObiettivo 0..1
+
+* section[InquadramentoClinicoIniziale].section.entry 1..
 
 * section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
 * section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0 (exactly)

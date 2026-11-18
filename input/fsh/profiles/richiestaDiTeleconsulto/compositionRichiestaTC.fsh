@@ -5,14 +5,17 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * ^status = #draft
 * ^version = "1.0.0"
 * ^experimental = true
+
+* identifier 1..
 * identifier ^short = "Identificatore indipendente dalla versione."
+
 * status ^short = "Stato di completezza della risorsa Composition. Lo stato della risorsa rappresenta anche lo stato del documento."
 * status ^definition = "Lo stato della Composition si sviluppa generalmente solo attraverso questo elenco: passa da preliminary a final e poi può passare a amended (ovvero modificato)."
+
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
-* date 1..1
-* date ^short = "Data del documento."
+* date ^short = "Data di modifica del documento."
 
 * author only Reference(PractitionerRoleTeleconsulto or PractitionerTeleconsulto)
 * author ^short = "Autore della Composition (Medico Richiedente)."
@@ -29,18 +32,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * attester[legalAuthenticator].mode = #legal (exactly)
 * attester[legalAuthenticator].time 1..
 * attester[legalAuthenticator].party 1..
-* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleconsulto)
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTeleconsulto or PractitionerTeleconsulto)
 
 * relatesTo ^short = "Ulteriori documenti correlati"
 
-* event ^short = "Tipologia di accesso: indica la modalità di attivazione del teleconsulto estemporanea/programmata"
-* event.code from vs-tipologia-accesso-TC (preferred) 
-
 * section.title ^short = "Titolo della sezione."
 * section.code ^short = "Codice della sezione."
-
-* status 1..1
-* status = #final (exactly)
 
 * type = http://loinc.org#85208-7 (exactly)
 
@@ -51,7 +48,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Richiesta 
 * section ^slicing.ordered = false
 * section contains
     richiestaTeleconsulto 1..1 and
-    diagnosi 1..1
+    diagnosi 0..1 // la diagnosi potrebbe non essere presente al momento della richiesta di teleconsulto
+
+* section.entry 1..
 
 * section[richiestaTeleconsulto] ^sliceName = "richiestaTeleconsulto"
 * section[richiestaTeleconsulto].entry only Reference(ServiceRequestRichiestaTeleconsulto)

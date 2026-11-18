@@ -8,6 +8,7 @@ Description: "Descrizione di Address con parti addizionali specifiche per gli in
 * . ^definition = "Esiste una varietà di formati di indirizzi postali definiti in tutto il mondo. Questo profilo (address-it-base) estende il datatype base Address includendo una serie di informazioni rilevanti per esprimere gli indirizzi in Italia. \r \n \r \n Un address-it-base è un indirizzo FHIR valido; i sistemi che non supportano le estensioni utilizzate saranno in grado comunque di eseguire il rendering e lavorare con un XXXX. \r \n \r \n Un indirizzo rende alcune parti di indirizzo comunicabili separatamente. Queste parti sono necessarie in alcuni scenari d'uso italiani, ma potrebbero non avere valore per i sistemi internazionali quando le informazioni vengono inviate all'estero."
 * . ^comment = "Nota: address è per indirizzi postali, non per la localizzazione fisica."
 * . ^alias[0] = "Indirizzo"
+
 * extension contains
     OfficialAddress named residenza 0..1 and
     ExtRecordCertification named certificazioneIndirizzo 0..*
@@ -15,6 +16,7 @@ Description: "Descrizione di Address con parti addizionali specifiche per gli in
 * extension[residenza] ^definition = "Indica se questo indirizzo è quello di residenza, come indirizzo 'ufficialmente registrato' address."
 * extension[certificazioneIndirizzo] ^short = "Certificazione Indirizzo"
 * extension[certificazioneIndirizzo] ^definition = "Indica che i dati di questo indirizzo sono stati certificati da una specifica entità"
+
 * line ^short = "Nome completo strada (e.g. Via Corta 1, interno 2)"
 * line MS
 * line.extension contains
@@ -43,8 +45,10 @@ Description: "Descrizione di Address con parti addizionali specifiche per gli in
 * line.extension[houseNumber] ^requirements = "Numero Civico"
 * line.extension[houseNumber] ^example.label = "ex-1"
 * line.extension[houseNumber] ^example.valueString = "1"
+
 * city ^definition = "Nome della città, paese, frazione, ecc."
 * city ^alias[0] = "Comune"
+
 * district ^short = "Nome della Provincia"
 * district ^definition = "Nome dell'area amministrativa (county).\r\nPer gli indirizzi italiani è usato per indicare la Provincia"
 * district ^alias[0] = "Provincia"
@@ -52,6 +56,7 @@ Description: "Descrizione di Address con parti addizionali specifiche per gli in
     $iso21090-SC-coding named codiceProvincia 0..1
 * district.extension[codiceProvincia] ^sliceName = "codiceProvincia"
 * district.extension[codiceProvincia] ^short = "Codice Provincia"
+
 * state 1..
 * state ^short = "Sotto-unità dello stato (Regione)."
 * state ^definition = "Sotto-unità dello stato con limitata sovranità in uno stato oragnizzato federalmente.\r\nNel contesto italiano indica la \"Regione\""
@@ -103,10 +108,3 @@ Description: "Definizione dell'indirizzo inteso come indirizzo 'ufficiale' di qu
 * . ^definition = "This extension allows to specify if this address is or it is not the official address, or to indicate that this is the official address for that country (true assumed)."
 * value[x] 1..1
 * value[x] only boolean
-
-// Extension: BirthPlaceIta
-// Parent: $patient-birthPlace
-// Id: birth-place-ita
-// Title: "Address Birth Place"
-// Description: "Definizione dell'indirizzo base per la descrizione del luogo di nascita."
-// * value[x] only AddressItTelemedicina

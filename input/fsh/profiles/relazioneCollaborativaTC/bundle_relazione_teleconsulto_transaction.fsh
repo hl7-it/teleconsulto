@@ -39,7 +39,7 @@ Description: "Bundle FHIR transaction per la Relazione Collaborativa di Telecons
   //deviceUseStatement 0..*
 
 * entry[composition].resource only CompositionRelazioneCollaborativaTeleconsulto
-* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
+* entry[serviceRequest].resource only ServiceRequestRichiestaTeleconsulto
 * entry[patient].resource only PatientTeleconsulto
 * entry[practitionerRole].resource only PractitionerRoleTeleconsulto
 * entry[practitioner].resource only PractitionerTeleconsulto

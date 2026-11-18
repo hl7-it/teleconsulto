@@ -4,11 +4,9 @@ Id: ServiceRequestRichiestaTeleconsulto
 Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleconsulto"
 * ^status = #draft
 
-* extension contains ModalitaEsecPrestazione named ModalitaEsecuzionePrestazione 0..1 and OscuramentoDati named oscuramentoDati 0..1 and medicoSostituto named medicoSostituto 0..1
+* extension contains  OscuramentoDati named oscuramentoDati 0..1 and medicoTitolare named medicoTitolare 0..1
 * extension[oscuramentoDati] ^short = "Campo che identifica la volontà del paziente nell'oscurare i propri dati."
-* extension[medicoSostituto] ^short = "Campo che identifica il medico sostituto."
-* extension[ModalitaEsecuzionePrestazione] ^short = "Modalità esecuzione prestazione: descrive se il teleconsulto avverrà in modalità sincrona o asincrona e se in presenza dell'assistito/in assenza dell'assistito"
-* extension[ModalitaEsecuzionePrestazione].valueCodeableConcept from vs-modalita-TC (preferred)
+* extension[medicoTitolare] ^short = "Campo che identifica il medico titolare."
 
 * requisition 1..
 * requisition ^short = "IdRichiesta: codice Identificativo della richiesta"
@@ -23,30 +21,59 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * intent ^short = "Intento della richiesta."
 * intent ^definition = "Indica l'intento della richiesta, ovvero se si tratta di una proposta, un piano, un ordine originale o un ordine riflesso.\n\nPer i casi d'uso gestiti dell'ambito di questa IG deve essere valorizzato fisso ad order."
 * intent ^comment = "Questo elemento è etichettato come modificatore perché l'intento altera quando e come la risorsa è effettivamente applicabile."
+* intent = #order (exactly)
 
-* category 1..
-* category ^short = "Branca medico consulente."
-* category ^definition = "Un codice che classifica il servizio"
-* category from specialita-mediche (preferred)
-
-* priority 1..
-* priority ^short = "Classe di priorità della richiesta"
+//* priority 1.. TODO: capire se necessario renderlo obbligatorio
+* priority ^short = "Classe di priorità della richiesta di teleconsulto"
 
 * code ^short = "Codice della prestazione richiesta."
 * code ^definition = "Elemento di tipo CodeableConcept che contiene il codice identificativo della prestazione richiesta."
 
-* orderDetail ^short = "Informazioni aggiuntive sulla richiesta."
-* orderDetail ^definition = "Ulteriori dettagli e istruzioni sulla servizi da erogare."
-* orderDetail ^slicing.discriminator.type = #pattern
+* orderDetail ^short = "Informazioni aggiuntive sulla richiesta di teleconsulto."
+* orderDetail ^definition = "Specifica le caratteristiche cliniche e organizzative della prestazione richiesta, comprese la specialità medica, il raggio di erogazione e le modalità previste di attivazione ed esecuzione del teleconsulto."
+
+// Slicing basato sul sistema di codifica
+* orderDetail ^slicing.discriminator.type = #value
 * orderDetail ^slicing.discriminator.path = "coding.system"
-* orderDetail ^slicing.description = "Slice based on the coding system"
 * orderDetail ^slicing.rules = #open
-* orderDetail contains raggioDiErogazione 0..1
-* orderDetail[raggioDiErogazione] ^short = "Raggio di erogazione della prestazione"
+* orderDetail ^slicing.ordered = false
+
+* orderDetail contains
+    specialita 0..1 and
+    raggioDiErogazione 0..1 and
+    modalitaAttivazione 1..1 and
+    modalitaInterazione 1..1
+
+// Specialità medica richiesta
+* orderDetail[specialita] ^short = "Specialità medica richiesta."
+* orderDetail[specialita].coding 1..1
+* orderDetail[specialita].coding.system 1..1
+* orderDetail[specialita].coding.system = "http://hl7.it/fhir/teleconsulto/CodeSystem/csspecialityPractitionerRole" (exactly)
+* orderDetail[specialita] from ValueSet_specialita_PractitionerRole (required)
+
+// Raggio di erogazione
+* orderDetail[raggioDiErogazione] ^short = "Raggio di erogazione della prestazione."
 * orderDetail[raggioDiErogazione].coding 1..1
 * orderDetail[raggioDiErogazione].coding.system 1..1
-* orderDetail[raggioDiErogazione].coding.system = $csRaggioErogazione (exactly)
+* orderDetail[raggioDiErogazione].coding.system = "http://hl7.it/fhir/teleconsulto/CodeSystem/csRaggioErogazione" (exactly)
 * orderDetail[raggioDiErogazione] from vs-raggio-erogazione (required)
+
+// Modalità di attivazione
+* orderDetail[modalitaAttivazione] ^short = "Modalità di attivazione del teleconsulto."
+* orderDetail[modalitaAttivazione] ^definition = "Indica se il teleconsulto è richiesto in modalità estemporanea o programmata."
+* orderDetail[modalitaAttivazione].coding 1..1
+* orderDetail[modalitaAttivazione].coding.system 1..1
+* orderDetail[modalitaAttivazione].coding.system = "http://hl7.it/fhir/teleconsulto/CodeSystem/csTipologiaAccessoTC" (exactly)
+* orderDetail[modalitaAttivazione] from vs-tipologia-accesso-TC (required)
+
+// Modalità di interazione
+* orderDetail[modalitaInterazione] ^short = "Modalità di interazione prevista per il teleconsulto."
+* orderDetail[modalitaInterazione] ^definition = "Indica se il teleconsulto è previsto in modalità sincrona o asincrona."
+* orderDetail[modalitaInterazione].coding 1..1
+* orderDetail[modalitaInterazione].coding.system 1..1
+* orderDetail[modalitaInterazione].coding.system = "http://hl7.it/fhir/teleconsulto/CodeSystem/csModalitaTC" (exactly)
+* orderDetail[modalitaInterazione] from VsModalitaTC (required)
+
 
 * quantity[x] ^short = "Quantità prestazione."
 * quantity[x] ^definition = "Contiene la molteplicità della prestazione."
@@ -58,7 +85,6 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 
 * encounter ^short = "Riferimento all'evento del teleconsulto."
 * encounter ^definition = "Elemento di tipo Reference che contiene il riferimento alla risorsa Encounter."
-* encounter ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la non disponibilità temporanea, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
 * encounter only Reference(EncounterTeleconsulto)
 
 * occurrence[x] ^short = "Proposta di slot temporale per la presa in carico del teleconsulto."
@@ -83,9 +109,8 @@ Description: "Profilo della ServiceRequest utilizzata per la Richiesta di Teleco
 * note ^short = "Uleriori note e indicazioni della prescrizione"
 * note ^definition = "Note o commenti relative alla richiesta."
 
-* insurance ^short = "Assicurazione / Esenzioni."
+* insurance ^short = "Esenzioni associate alla richiesta di teleconsulto."
 * insurance only Reference(CoverageTeleconsulto)
-
 
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "extension.value"

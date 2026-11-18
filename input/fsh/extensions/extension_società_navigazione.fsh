@@ -6,5 +6,5 @@ Context: Patient
 * ^status = #active
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"
-* value[x] only Reference(Organization)
-* valueReference 1..1
+* value[x] only boolean
+* valueBoolean 1..1

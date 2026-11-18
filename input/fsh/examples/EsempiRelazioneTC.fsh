@@ -38,11 +38,13 @@ Usage: #example
 
 // ServiceRequest Relazione TC ----------------------------------------------------
 Instance: ServiceRequestRelazioneTCexample
-InstanceOf: ServiceRequestRelazioneCollaborativaTeleconsulto
+InstanceOf: ServiceRequestRichiestaTeleconsulto
 Title: "Service Request - Relazione Collaborativa di Teleconsulto"
 Description: "ServiceRequest nell'ambito della relazione collaborativa di teleconsulto per il paziente Giovanni Bianchi."
 Usage: #example
 * id = "f486aac2-d97d-459b-9389-43e24de96d58"
+* orderDetail[modalitaAttivazione] = CodeSystem_tipologiaAccessoTC#PROG "Programmata"
+* orderDetail[modalitaInterazione] = CodeSystem_modalitaTC#SINC "Sincrona"
 * requisition.value = "RQO-2026-06-16-002"
 * priority = #routine
 * intent = #order
@@ -237,12 +239,14 @@ Title: "Relazione Collaborativa di Teleconsulto - Composition"
 Description: "Relazione collaborativa di teleconsulto per il paziente Giovanni Bianchi, prodotta il 17/06/2026."
 Usage: #example
 * id = "45cd16ea-d29f-46b2-b473-669bb9f79cff"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:45cd16ea-d29f-46b2-b473-669bb9f79cff"
 * status = #final
 * type = http://loinc.org#85208-7
 * date = "2026-06-17T10:30:00+02:00"
 * author = Reference(PractitionerRoleConsultato)
 * subject = Reference(PatientExample)
-* title = "Relazione Collaborativa di Teleconsulto"
+* title = "Relazione collaborativa per il teleconsulto"
 * attester[legalAuthenticator].mode = #legal
 * attester[legalAuthenticator].time = "2026-06-17T10:30:00+02:00"
 * attester[legalAuthenticator].party = Reference(PractitionerRoleConsultato)

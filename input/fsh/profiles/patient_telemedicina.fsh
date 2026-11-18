@@ -10,7 +10,6 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * extension contains BirthPlaceIta named luogoNascita 0..1 and ItSocietaNavigazione named societaNavigazione 0..1 
 * extension[luogoNascita] ^short = "Luogo di nascita." 
 * extension[societaNavigazione] ^short = "Società di Navigazione." 
-* extension[societaNavigazione] ^definition = "Società di navigazione da compilarsi in maniera obbligatoria solo per assistiti SASN." 
 
 * identifier  
 * identifier 1..
@@ -18,7 +17,7 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 * identifier.extension[certificazioneId] ^short = "Identificativo certificato (tipicamente per CF)"
 * identifier.extension[certificazioneId] ^definition = "Indica che questo identificativo è stato certificato. Usato tipicamente per il Codice Fiscale."
 * identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "$this.system"
+* identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^short = "Identificativo del paziente."
 * identifier.type from VstipoIdentificatore (extensible)
@@ -104,10 +103,9 @@ Description: "Profilo del Patient utilizzato nel contesto del Teleconsulto"
 
 
 Invariant: pat-id-cf-1
-Description: "Il Codice Fiscale deve essere di 16 caratteri alfanumerici (3 per il cognome; 3 per il nome; 2 caratteri numerici per l'anno di nascita; 1 per il mese di nascita; 2 caratteri numerici per il giorno di nascita ed il sesso; 4 associati al Comune oppure allo Stato estero di nascita. 1 carattere di controllo"
-* severity = #error
-* expression = "matches('^[A-Za-z]{6}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{3}[A-Za-z]{1}$')"
-* xpath = "matches(@value,'^[A-Za-z]{6}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{2}[A-Za-z]{1}[0-9LMNPQRSTUV]{3}[A-Za-z]{1}$')"
+Description: "Il codice fiscale deve rispettare il formato di 16 caratteri previsto per le persone fisiche, considerando anche i caratteri di omocodia."
+Severity: #error
+Expression: "matches('^[A-Za-z]{6}[0-9LMNPQRSTUV]{2}[A-Za-z][0-9LMNPQRSTUV]{2}[A-Za-z][0-9LMNPQRSTUV]{3}[A-Za-z]$')"
 
 Invariant: it-pat-1
 Description: "Patient.name.given or Patient.name.family or both SHALL be present"

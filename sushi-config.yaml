@@ -113,7 +113,7 @@ menu:
     Scenario: scenario.html
     ModelMaps: modelmaps.html  
   Implementation:
-    Mapping to Profiles: modelmap.html  
+    Mapping to Profiles: mapping.html  
   Support:
     FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
     Downloads: downloads.html  
@@ -202,7 +202,7 @@ groups:
     - StructureDefinition/BundleRelazioneCollaborativaTeleconsulto
     - StructureDefinition/BundleRelazioneCollaborativaTeleconsultoTransaction
     - StructureDefinition/CompositionRelazioneCollaborativaTeleconsulto 
-    - StructureDefinition/ServiceRequestRelazioneCollaborativaTeleconsulto
+    # - StructureDefinition/ServiceRequestRelazioneCollaborativaTeleconsulto
   GroupC:
     name: Profili Correlati Teleconsulto
     description: Profili correlati utilizzati a supporto nella Richiesta e nella Relazione Finale di Teleconsulto
@@ -228,7 +228,7 @@ groups:
     description: Estensioni FHIR definite nella guida di Teleconsulto
     resources:
     - StructureDefinition/modalitaEsecPrestazione
-    - StructureDefinition/medicoSostituto
+    - StructureDefinition/medicoTitolare
     - StructureDefinition/oscuramentodati
     - StructureDefinition/it-societa-navigazione
     - StructureDefinition/coverage-exceptionStatus

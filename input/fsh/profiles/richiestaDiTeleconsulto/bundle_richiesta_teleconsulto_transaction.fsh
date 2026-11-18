@@ -24,7 +24,7 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
   appointment 1..*
 
 * entry[composition].resource only CompositionRichiestaTeleconsulto
-* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
+* entry[serviceRequest].resource only ServiceRequestRichiestaTeleconsulto
 * entry[patient].resource only PatientTeleconsulto
 * entry[practitionerRole].resource only PractitionerRoleTeleconsulto
 * entry[practitioner].resource only PractitionerTeleconsulto
@@ -52,7 +52,6 @@ Description: "Bundle FHIR contenente la richiesta di Teleconsulto e le risorse c
 
 // Slice: organization
 * entry[organization].request.method = #PUT (exactly)
-
 
 
 

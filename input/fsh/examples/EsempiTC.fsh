@@ -157,6 +157,8 @@ Description: "Profilo utilizzato nell'ambito della richiesta di teleconsulto per
 Usage: #example
 * id = "68f7f0c2-ffa4-4a23-bd17-265166685cc0"
 * status = #proposed
+* start = "2026-06-17T09:30:00+02:00"
+* end = "2026-06-17T09:51:00+02:00"
 * basedOn = Reference(ServiceRequestRichiestaTCexample) 
 * participant[0].actor = Reference(PractitionerRoleConsultato)
 * participant[0].status = #needs-action
@@ -186,7 +188,6 @@ Title: "Service Request - Richiesta di Teleconsulto"
 Description: "ServiceRequest nell'ambito della richiesta di teleconsulto per il paziente Giovanni Bianchi."
 Usage: #example
 * id = "13e1c13e-8ce2-4d78-b28e-bddae005223b"
-* extension[ModalitaEsecuzionePrestazione].valueCodeableConcept = CodeSystem_modalitaTC#SINC_ABS "Sincrona, in assenza dell'assistito"
 * requisition.value = "RQO-2026-06-16-002"
 * priority = #routine
 * intent = #order
@@ -194,6 +195,8 @@ Usage: #example
 * category = BrancaPrestazione#22 "Pneumologia"
 * code.text = "Teleconsulto (codice da catalogo)"
 * orderDetail[raggioDiErogazione] = CodeSystem_raggioErogazione#AZI "Aziendale"
+* orderDetail[modalitaAttivazione] = CodeSystem_tipologiaAccessoTC#PROG "Programmata"
+* orderDetail[modalitaInterazione] = CodeSystem_modalitaTC#SINC "Sincrona"
 * subject = Reference(PatientExample)
 * authoredOn = "2026-06-16T10:30:00+02:00"
 * occurrenceDateTime = "2026-06-17T09:30:00+02:00"
@@ -208,6 +211,8 @@ Title: "Richiesta di Teleconsulto - Composition"
 Description: "Richiesta di teleconsulto per il paziente Giovanni Bianchi, prodotta il 16/06/2026."
 Usage: #example
 * id = "1b724b4b-0cea-42ef-8a8c-1eb588fc1082"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:1b724b4b-0cea-42ef-8a8c-1eb588fc1082"
 * status = #final
 * type = http://loinc.org#85208-7
 * date = "2026-06-16T10:30:00+02:00"

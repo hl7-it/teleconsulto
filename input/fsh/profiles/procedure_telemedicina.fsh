@@ -10,7 +10,7 @@ Description:  "Profilo della Procedure utilizzata nel contesto del Teleconsulto"
 
 * basedOn ^short = "La richiesta su cui si basa questa procedura"
 * basedOn ^definition = "Riferimento alla risorsa ServiceRequest che contiene i dettagli della richiesta su cui si basa questa procedura di erogazione."
-* basedOn only Reference(ServiceRequestRelazioneCollaborativaTeleconsulto)
+* basedOn only Reference(ServiceRequestRichiestaTeleconsulto)
 
 * status ^definition = "Elemento di tipo code che contiene un codice che specifica lo stato della procedura. Campo required: http://hl7.org/fhir/event-status"
 * status ^comment = "Il codice \"unknown\" non deve essere utilizzato per comunicare altri stati.  Il codice \"unknown\" deve essere usato quando si applica uno degli stati, ma il sistema autore non conosce lo stato attuale della procedura.\n\nQuesto elemento è etichettato come modificatore perché lo stato contiene codici che contrassegnano la risorsa come non valida al momento."

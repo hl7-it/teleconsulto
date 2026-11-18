@@ -7,10 +7,8 @@ Description: "Profilo base della MedicationRequest utilizzato nel contesto del T
 * intent = #proposal
 * intent ^definition = "Scopo della request"
 
-* medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
-* medication[x] ^short = "Definizione del farmaco richiesto"
-* medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
-* medication[x] ^binding.strength = #preferred
+* medicationCodeableConcept from VsAic (required)
+* medicationReference only Reference(MedicationTeleconsulto)
 
 * subject only Reference(PatientTeleconsulto)
 * subject ^short = "Soggetto per cui è richiesto il farmaco"

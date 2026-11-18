@@ -9,6 +9,7 @@ Alias: $v2-0203                 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $icd-9-cm                = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $uri                               = urn:ietf:rfc:3986
 Alias: $mimeType                = urn:ietf:bcp:13
+Alias: $aic = http://hl7.it/fhir/teleconsulto/CodeSystem/aifa-aic
 
 // --- Estensioni FHIR core ---
 Alias: $iso21090-ADXP-streetName     = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName

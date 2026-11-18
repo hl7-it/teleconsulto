@@ -22,23 +22,22 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
   organization 1..* and
   observation 0..* and
   allergyIntolerance 0..* and
-  // condition 0..* and
-  // diagnosticReport 0..* and
   medicationRequest 0..* and
   medicationStatement 0..* and
-  // imagingStudy 0..* and
   familyMemberHistory 0..* and
   encounter 1..1 and
   documentReference 0..* and
   procedure 0..* and 
   appointment 1..1
-  //deviceUseStatement 0..*
+  
+// Se valorizzato l'elemento è necessario inserire la risorsa dedicata
+* entry.resource 1..1
 
 // Entry slice: composition
 * entry[composition].resource only CompositionRelazioneCollaborativaTeleconsulto
 
 // Entry slice: serviceRequest
-* entry[serviceRequest].resource only ServiceRequestRelazioneCollaborativaTeleconsulto
+* entry[serviceRequest].resource only ServiceRequestRichiestaTeleconsulto
 
 // Entry slice: patient
 * entry[patient].resource only PatientTeleconsulto
@@ -58,11 +57,6 @@ Description: "Bundle FHIR contenente la Relazione Collaborativa di Teleconsulto 
 // Entry slice: allergyIntolerance
 * entry[allergyIntolerance].resource only AllergyIntoleranceTeleconsulto
 
-// Entry slice: condition
-// * entry[condition].resource only ConditionTelemedicina
-
-// // Entry slice: diagnosticReport
-// * entry[diagnosticReport].resource only DiagnosticReportTelemedicina
 
 // Entry slice: medicationRequest
 * entry[medicationRequest].resource only MedicationRequestTeleconsulto
